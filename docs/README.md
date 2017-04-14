@@ -37,6 +37,8 @@ HappyMe is a web application inspired by Yelp to help you find the best Happy Ho
 
 ## DB Schema
 
+[schema.md](schema.md)
+
 ## API Endpoints
 
 ## Implementation Timeline
