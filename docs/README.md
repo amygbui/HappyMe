@@ -40,15 +40,15 @@ A Yelp clone to help you find the best Happy Hours near you.
 
 ## Implementation Timeline
 Week 1:
-Monday: Roll auth, set up DB, make models and controllers, make JBuilder views, push to Heroku
-Tuesday: Finish up back-end if necessary. Start on front landing page, work on search bar
-Wednesday:
-Thursday:
-Friday:
-
-Week 2:
-Monday:
-Tuesday:
-Wednesday:
-Thursday:
-Friday:
+\nMonday: Roll auth, set up DB, make models and controllers, make JBuilder views, push to Heroku
+\nTuesday: Finish up back-end if necessary. Start on front landing page, work on search bar
+\nWednesday:
+\nThursday:
+\nFriday:
+\n
+\nWeek 2:
+\nMonday:
+\nTuesday:
+\nWednesday:
+\nThursday:
+\nFriday:
