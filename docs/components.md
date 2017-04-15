@@ -3,7 +3,7 @@
 ### path = "/"
 1. Header Component
   1. Logo Image
-  2. Search Component ** (would the children components go here?)
+  2. Search Component
   3. Navigation Links Component
   4. User Detail Component || Sign Up button
 2. Children Components **

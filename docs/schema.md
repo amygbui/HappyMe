@@ -25,12 +25,14 @@ address         | string    | not null
 city            | string    | not null
 state           | string    | not null
 zip             | integer   | not null
+phone_number    | string    | not null
 lat             | float     | not null
 lon             | float     | not null
 description     | string    | not null
+profile_pic_url | string    | not null
 
 add_index [:name, :address], unique: true
-validates :name, :address, city, state, zip, description, presence: true
+validates :name, :address, city, state, zip, :phone_number, :description, :profile_pic_url, presence: true
 has_many :reviews
 has_many :reviewers, through: reviews, source: :reviewer
 has_many :dessert_types (change as needed if switched to HH offerings)

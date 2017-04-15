@@ -32,9 +32,13 @@ HappyMe is a web application inspired by Yelp to (help you find the best Happy H
 
 ## Design Documents
 [View Wireframes](wireframes)
+
 [React Components](components.md)
+
 [Sample State](sample-state.md)
+
 [DB Schema](schema.md)
+
 [API Endpoints](api-endpoints.md)
 
 ## Implementation Timeline
