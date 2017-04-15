@@ -7,25 +7,25 @@ HappyMe is a web application inspired by Yelp to (help you find the best Happy H
 
 ### Features and Implementation
 1. Authentication
-  * New account creation
-  * Login/logout for registered users
-  * Guest/demo login
+    * New account creation
+    * Login/logout for registered users
+    * Guest/demo login
 2. Production README
 3. Hosted on Heroku
 4. Search/filters
-  * At top of every page
-  * Allows search within/near specific areas
+    * At top of every page
+    * Allows search within/near specific areas
 5. Business Page
-  * Business info (name, address, website, phone number)
-  * Business details (hours of operations, reservations, delivery, take-out, etc.)
-  * Photos pertaining to business (pictures of food, menu, etc.)
+    * Business info (name, address, website, phone number)
+    * Business details (hours of operations, reservations, delivery, take-out, etc.)
+    * Photos pertaining to business (pictures of food, menu, etc.)
 6. Reviews / ratings
-  * Allow users to rate business
-  * Display average rating for business
-  * Allow users to post review about business
+    * Allow users to rate business
+    * Display average rating for business
+    * Allow users to post review about business
 7. Map
-  * Display close-up map of business location on business show page
-  * Allow search in a specified area
+    * Display close-up map of business location on business show page
+    * Allow search in a specified area
 8. Bonus: Mark reviews funny, cool, useful etc.
 9. Bonus: Profile
 10. Bonus: Friends
