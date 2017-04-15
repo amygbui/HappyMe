@@ -24,7 +24,7 @@
       lon: 341351,
       description: "Artisan ice cream. Started in Brooklyn, and slowly taking over the world.",
       profile_pic_url: "some_link_here"
-      pictures: {
+      photos: {
         1: {
           image_url: "another_link_here"
         }

@@ -20,7 +20,11 @@
 
 ### path = "/restaurants/:id"
 1. Business Info Container Component
+    1. Photos Container Component
+        * Photo Component
+    2. Dessert Types
 2. Business Detail Container Component
+    1. Business Details
 3. Review Container Component
     1. Review Component
 
