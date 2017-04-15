@@ -12,21 +12,33 @@
         * Various links: About, Careers, Press, Terms of Service, Privacy Policy, etc.
     2. Footer Image
 
+### path = "/sign-up" || "/sign-in"
+1. AuthForm Container
+    1. AuthForm Component
+        1. Error Component
+
 ### path = "/restaurants"
-1. Matched Businesses Component
-    1. Business Preview Component
-        * Contains business name, profile pic, location, phone number, types, description
-2. Map Component
+1. Search Container
+    1. Matched Businesses Container
+        1. Business Preview Component
+            * Contains business name, profile pic, location, phone number, types, description
+    2. Map Component
 
 ### path = "/restaurants/:id"
 1. Business Info Container Component
-    1. Photos Container Component
+    * Business Preview Component (switch out profile pic with map snapshot, change CSS styling)
+    1. Write a Review button
+    2. Photos Container
         * Photo Component
-    2. Dessert Types
+    2. Dessert Types?
 2. Business Detail Container Component
     1. Business Details
 3. Review Container Component
     1. Review Component
+
+### path = "/restaurants/:id/photos" --- Necessary or not? Already shown on business show page
+1. Photos Container Component
+    * Photo Component
 
 ### BONUS: path = '/users/:id' (link comes from Review)
 1. User Container Component
