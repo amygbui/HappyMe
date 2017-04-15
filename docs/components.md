@@ -2,10 +2,10 @@
 
 ### path = "/"
 1. Header Component
-  1. Logo Image
-  2. Search Component
-  3. Navigation Links Component
-  4. User Detail Component || Sign Up button
+    1. Logo Image
+    2. Search Component
+    3. Navigation Links Component
+    4. User Detail Component || Sign Up button
 2. Children Components **
 3. Footer Component Container (bonus during freetime)
   1. About Component
