@@ -5,14 +5,12 @@ Column          | Data Type | Details
 --------------- | --------- | -------
 id              | integer   | not null, primary key
 name            | string    | not null
-username        | string    | not null
-email           | string    | not null
 password_digest | string    | not null
 session_token   | string    | not null
 
-add_index :username, :email, :session_token, unique: true
-validates :name, :email, :password_digest, :session_token, presence: true
-validates :email, :session_token, uniqueness: true
+add_index :username, :session_token, unique: true
+validates :name, :password_digest, :session_token, presence: true
+validates :session_token, uniqueness: true
 validates :password, length: { minimum: 6, allow_nil: true }
 has_many :reviews
 has_many :reviewed_business, through: reviews, source: :business
