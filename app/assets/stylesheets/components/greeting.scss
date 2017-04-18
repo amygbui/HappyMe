@@ -1,4 +1,23 @@
+// .greeting {
+//   display: flex;
+//   flex-direction: column;
+// }
+
 .greeting {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: inline-block;
 }
+
+.greeting img {
+  display: block;
+}
+
+// .greeting span {
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   right: 0;
+//   transform: translate(0, -50%);
+//   text-align: center;
+//   color: #fff;
+// }

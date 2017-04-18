@@ -5,14 +5,22 @@
   margin: 0 auto;
   padding: 10px;
 
-  border: 1px solid #B0B0B0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
+
+  border: 1px solid #7A7A7A;
   width: 400px;
   font-family: serif;
   text-align: center;
 
+  background: white;
+  opacity: .8;
   box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: -5px 5px 15px #BDBDBD;
+  box-shadow: -5px 5px 15px #404040;
 }
 
 // lighter-gray C4C4C4

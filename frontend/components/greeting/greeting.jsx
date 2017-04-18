@@ -13,26 +13,30 @@ class Greeting extends React.Component {
   }
 
   render() {
+    let header;
+
     if (this.props.currentUser) {
-      return(
+      header = (
         <div>
           <h2>Hello, {this.props.currentUser.name}!</h2>
           <button onClick={this.logout}>Log Out</button>
-          <img src="assets/backsplash.jpg" />
         </div>
       );
     } else {
-      // <img src="assets/backsplash.jpg" />
-      return(
-        <div className="greeting">
-          <nav class="session-link">
-            <Link to='signup'>Sign Up</Link>
-            <Link to='login'>Log In</Link>
-          </nav>
-          <img src="assets/backsplash.jpg" />
-        </div>
+      header = (
+        <nav className="session-link">
+          <Link to='signup'>Sign Up</Link>
+          <Link to='login'>Log In</Link>
+        </nav>
       );
     }
+
+    return(
+      <div className="greeting">
+        { header }
+        <img src="assets/backsplash.jpg" />
+      </div>
+    )
   }
 }
 
