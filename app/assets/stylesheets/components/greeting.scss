@@ -1,0 +1,42 @@
+.header {
+  background: #13C9C2;
+  color: white;
+  // text-shadow: 0 0 1px #000;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.header-fixed {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.session-link {
+  background: #07BAB4;
+  padding: 10px 25px;
+  border-radius: 4px;
+}
+
+.header-fixed h1 {
+  font-size: 22px;
+  text-shadow: 0 0 1px #000;
+}
+
+.nav {
+  background: #07BAB4;
+  padding: 5px 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 14px;
+}
+
+.feature-pages {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
