@@ -18,14 +18,18 @@ class Greeting extends React.Component {
         <div>
           <h2>Hello, {this.props.currentUser.name}!</h2>
           <button onClick={this.logout}>Log Out</button>
+          <img src="assets/backsplash.jpg" />
         </div>
       );
     } else {
       // <img src="assets/backsplash.jpg" />
       return(
-        <div>
-          <Link to='signup'>Sign Up</Link>
-          <Link to='login'>Log In</Link>
+        <div className="greeting">
+          <nav class="session-link">
+            <Link to='signup'>Sign Up</Link>
+            <Link to='login'>Log In</Link>
+          </nav>
+          <img src="assets/backsplash.jpg" />
         </div>
       );
     }

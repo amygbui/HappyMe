@@ -67,6 +67,7 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session">
+        <h1>Welcome to <span>HappyMe</span></h1>
         <form onSubmit={ this.handleSubmit }>
           { extraFields }
 

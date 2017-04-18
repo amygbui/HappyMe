@@ -5,16 +5,18 @@
   margin: 0 auto;
   padding: 10px;
 
-  border: 1px solid black;
+  border: 1px solid #B0B0B0;
   width: 400px;
-  font-family: sans-serif;
+  font-family: serif;
   text-align: center;
 
   box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: -5px 5px 5px #989898;
+  box-shadow: -5px 5px 15px #BDBDBD;
 }
 
+// lighter-gray C4C4C4
+// gray B0B0B0
 
 .session form {
   display: flex;
@@ -38,8 +40,25 @@
 .session input {
   border-radius: 5px;
   height: 30px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin: 0 auto;
+  width: 100%
 }
 
+.session button {
+  padding: 7px;
+  border: 1px solid #B0B0B0;
+  border-radius: 5px;
+  display: inline;
+  margin: 5px auto;
+  margin-top: 10px;
+}
+
+.session h1 {
+  font-size: 22px;
+}
 // .session button {
 //   padding: 5px;
 //   border: 1px solid black;
