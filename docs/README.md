@@ -1,4 +1,4 @@
-# Yelp
+# HappyMe
 [Heroku link](www.fakelinkhere.com)
 
 ## Minimum Viable Product
