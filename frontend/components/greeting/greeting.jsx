@@ -37,7 +37,7 @@ class Greeting extends React.Component {
           <Link to='/'><h1>HappyMe</h1></Link>
           { header }
         </header>
-        <img src={ window.image.backsplash } />
+        <img src={ window.images.backsplash } />
       </div>
     )
   }
