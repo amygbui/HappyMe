@@ -1,26 +1,7 @@
-const path = require('path');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = {
-  context: __dirname,
-  entry: './frontend/happy_me.jsx',
-  output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: 'bundle.js'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '*']
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
-  },
-  devtool: 'source-maps'
-};
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('root')
+  ReactDOM.render(<h1>Welcome to HappyMe</h1>, root)
+})
