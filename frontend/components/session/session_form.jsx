@@ -11,17 +11,18 @@ class SessionForm extends React.Component {
     this.redirect = this.redirect.bind(this);
   }
 
-  // componentWillUnmount(){
-  //   this.setState = { name: "", username: "", password: "" };
-  //   this.props.clearErrors();
-  // }
+  componentWillUnmount() {
+    this.setState = { name: "", username: "", password: "" };
+    this.props.clearErrors();
+  }
+  // do I actually need this????
 
-  // componentWillReceiveProps(newProps) {
-  //   if (!this.props.formType === newProps.formType) {
-  //     this.setState = { name: "", username: "", password: "" };
-  //     this.props.clearErrors();
-  //   }
-  // }
+  componentWillReceiveProps(newProps) {
+    if (this.props.formType !== newProps.formType) {
+      this.setState({ name: "", username: "", password: "" });
+      this.props.clearErrors();
+    }
+  }
 
   redirect() {
     return this.props.router.push('/');
@@ -30,8 +31,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    // this.setState = { name: "", username: "", password: "" };
-    // this.props.clearErrors();
     this.props.processForm(user).then(() => this.redirect());
   }
 
@@ -49,7 +48,12 @@ class SessionForm extends React.Component {
     const linkAction = actionType === '/signup' ? 'login' : 'signup';
     const linkWord = actionType === '/signup' ? 'Log in instead': 'Sign up instead';
 
-    const errors = Object.values(this.props.errors);
+    // console.log(this.props.errors)
+    const all_errors = this.props.errors
+    const errors = Object.keys(this.props.errors).map(id => {
+      return `${id} ${all_errors[id]}`;
+    });
+
 
     let extraFields;
 
