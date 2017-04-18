@@ -21,6 +21,7 @@ class Greeting extends React.Component {
         </div>
       );
     } else {
+      // <img src="assets/backsplash.jpg" />
       return(
         <div>
           <Link to='signup'>Sign Up</Link>

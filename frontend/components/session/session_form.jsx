@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
     }
 
     return(
-      <div>
+      <div className="session">
         <form onSubmit={ this.handleSubmit }>
           { extraFields }
 

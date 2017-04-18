@@ -1,0 +1,48 @@
+.session {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 10px;
+
+  border: 1px solid black;
+  width: 400px;
+  font-family: sans-serif;
+  text-align: center;
+
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: -5px 5px 5px #989898;
+}
+
+
+.session form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.session label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5px;
+}
+
+.session input {
+  border-radius: 5px;
+  height: 30px;
+}
+
+// .session button {
+//   padding: 5px;
+//   border: 1px solid black;
+//   border-radius: 5px;
+//   width: 100px
+// }
