@@ -5,6 +5,10 @@
       user: current_user
     ).html_safe %>
   <% end %>
+
+  window.image = {
+    backsplash: <%= image_path("backsplash.jpg") %>
+  }
 </script>
 
 <main id="root"></main>
