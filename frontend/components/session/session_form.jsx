@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
     const linkAction = actionType === '/signup' ? 'login' : 'signup';
     const linkWord = actionType === '/signup' ? 'Log in instead': 'Sign up instead';
 
-    // console.log(this.props.errors)
     const all_errors = this.props.errors
     const errors = Object.keys(this.props.errors).map(id => {
       return `${id} ${all_errors[id]}`;

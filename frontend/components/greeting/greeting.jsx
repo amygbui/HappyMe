@@ -33,7 +33,10 @@ class Greeting extends React.Component {
 
     return(
       <div className="greeting">
-        { header }
+        <header className="header">
+          <Link to='/'><h1>HappyMe</h1></Link>
+          { header }
+        </header>
         <img src="assets/backsplash.jpg" />
       </div>
     )

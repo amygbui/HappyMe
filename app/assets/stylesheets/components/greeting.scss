@@ -1,23 +1,26 @@
-// .greeting {
-//   display: flex;
-//   flex-direction: column;
-// }
-
 .greeting {
-  position: relative;
   display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting img {
   display: block;
 }
 
-// .greeting span {
-//   position: absolute;
-//   top: 50%;
-//   left: 0;
-//   right: 0;
-//   transform: translate(0, -50%);
-//   text-align: center;
-//   color: #fff;
-// }
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.session-link {
+  display: flex;
+  text-align: space-between;
+  justify-content: center;
+}
+
+.session-link a {
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
