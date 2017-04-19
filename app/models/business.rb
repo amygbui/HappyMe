@@ -1,6 +1,6 @@
 class Business < ApplicationRecord
   validates :name, :address, :city, :state, :zip, :lat, :lng,
-            :phone_number, :description, :profile_pic_url
+            :phone_number, :description, :profile_pic_url, presence: true
 
   # has_many :reviews
   # has_many :reviewers, through: reviews, source: :reviewer

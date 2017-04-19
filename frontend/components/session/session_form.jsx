@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", username: "" };
+    this.state = { name: "", username: "" , password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.redirect = this.redirect.bind(this);
@@ -35,7 +35,6 @@ class SessionForm extends React.Component {
 
   update(property) {
     return e => {
-      e.preventDefault();
       this.setState({ [property]: e.currentTarget.value });
     };
   }
