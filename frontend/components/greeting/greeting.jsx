@@ -12,17 +12,20 @@ class Greeting extends React.Component {
     this.props.logout();
   }
 
-// Welcome, { this.props.currentUser.name }
-
   render() {
     let header;
-
-    if (this.props.currentUser) {
+    let currentUser = this.props.currentUser
+    if (currentUser) {
       header = (
-        <span>
-          <img src={ this.props.currentUser.image_url } />
-          <button className="session-link" onClick={this.logout}>Log Out</button>
-        </span>
+        <ul id="user-dropdown-btn">
+          <img src={ currentUser.image_url }
+               alt={`Hello ${currentUser}`} />
+
+          <button className="session-link"
+                  onClick={this.logout}>
+            Log Out
+          </button>
+        </ul>
       );
     } else {
       header = (
