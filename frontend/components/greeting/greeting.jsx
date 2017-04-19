@@ -37,6 +37,7 @@ class Greeting extends React.Component {
           <Link to='/'><h1>HappyMe</h1></Link>
           <form>
             <input type="search" placeholder="Let's get happy!" />
+            <i className="fa fa-search" aria-hidden="true"></i>
           </form>
           { header }
         </header>

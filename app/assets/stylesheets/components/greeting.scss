@@ -15,8 +15,20 @@
   text-shadow: 0 0 1px #000;
 }
 
+.header-fixed form {
+  flex-direction: row;
+}
+
 .header-fixed form input {
   width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.fa {
+  background: #07BAB4;
+  padding: 11.5px 15px;
+  border-radius: 4px;
 }
 
 .session-link {
