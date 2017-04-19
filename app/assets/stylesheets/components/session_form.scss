@@ -1,9 +1,9 @@
 .session {
   display: flex;
   width: 80%;
-  padding: 5%;
-
   margin: auto;
+  padding: 5% 10%;
+
   justify-content: space-around;
   text-align: center;
   box-sizing: border-box;
@@ -12,11 +12,12 @@
 }
 
 .session img {
-  width: 300px;
+  width: 500px;
+  height: auto;
 }
 
 .form {
-  margin: 10% 25% 0 0;
+  margin: 8% 15% 0 0;
 }
 
 .form input {

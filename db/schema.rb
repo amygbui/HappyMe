@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170419050132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "businesses", force: :cascade do |t|
+    t.string   "name",            null: false
+    t.string   "address",         null: false
+    t.string   "city",            null: false
+    t.string   "state",           null: false
+    t.integer  "zip",             null: false
+    t.string   "phone_number",    null: false
+    t.float    "lat",             null: false
+    t.float    "lng",             null: false
+    t.string   "description",     null: false
+    t.string   "profile_pic_url", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["name", "address"], name: "index_businesses_on_name_and_address", unique: true, using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            null: false
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.string   "session_token",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
+  end
 
 end

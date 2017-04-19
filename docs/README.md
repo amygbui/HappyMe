@@ -1,5 +1,5 @@
 # HappyMe
-[Heroku link](www.fakelinkhere.com)
+[Heroku link](https://happy-me.herokuapp.com/)
 
 ## Minimum Viable Product
 

@@ -9,8 +9,8 @@ class CreateBusinesses < ActiveRecord::Migration[5.0]
       t.string :phone_number, null: false
       t.float :lat, null: false
       t.float :lng, null: false
-      t.string :description, :null: false
-      t.string :profile_pic_url, :null, false
+      t.string :description, null: false
+      t.string :profile_pic_url, null: false
       t.timestamps
     end
 
