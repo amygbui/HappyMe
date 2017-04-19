@@ -4,8 +4,7 @@ import { Link } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", username: "",
-                   email: "", password: "" };
+    this.state = { name: "", username: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.redirect = this.redirect.bind(this);
@@ -50,9 +49,15 @@ class SessionForm extends React.Component {
 
     const all_errors = this.props.errors
     const errors = Object.keys(this.props.errors).map(id => {
-      return `${id} ${all_errors[id]}`;
+      if (id === "base") {
+        return (
+          <li key={ id }>{ all_errors[id] }</li>
+        )
+      }
+      return (
+        <li key={ id }>{id} {all_errors[id]}</li>
+      )
     });
-
 
     let extraFields;
 
@@ -86,11 +91,15 @@ class SessionForm extends React.Component {
             <button>{ buttonWord }</button>
           </form>
 
-          { errors }
+          <div className="errors">
+            <ul>
+              { errors }
+            </ul>
+          </div>
 
           <Link to={`/${linkAction}`}>{ linkWord }</Link>
         </div>
-        
+
         <img src={ window.images.happyhour } />
       </div>
     );
