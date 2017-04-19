@@ -1,16 +1,14 @@
 ```javascript
 {
-  currentUser: {
-    id: 1
-    name: "Amy"
-    username: "amygbui"
-  },
+  session: {
+    currentUser: {
+      id: 1
+      name: "Amy"
+      username: "amygbui"
+    },
 
-  forms: {
-    signUp: { errors: [] },
-    logIn: { errors: [] },
-    createReview: { errors: [] }
-  },
+    errors: []
+  }
 
   businesses: {
     1: {
