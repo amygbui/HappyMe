@@ -52,3 +52,10 @@ h1 {
   padding: 10px;
   font-family: 'Pacifico', cursive;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

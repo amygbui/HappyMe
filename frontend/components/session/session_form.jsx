@@ -66,28 +66,30 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session">
-        <h1>Welcome to <span>HappyMe</span></h1>
-        <form onSubmit={ this.handleSubmit }>
-          { extraFields }
+        <div className="form">
+          <h1>Welcome to <span>HappyMe</span></h1>
+          <form onSubmit={ this.handleSubmit }>
+            { extraFields }
 
-          <label>Username:
-            <input type="text" onChange={this.update('username')} value={this.state.username} />
-          </label>
+            <label>Username:
+              <input type="text" onChange={this.update('username')} value={this.state.username} />
+            </label>
 
-          <label>Password:
-            <input type="password" onChange={this.update('password')} value={this.state.password} />
-          </label>
+            <label>Password:
+              <input type="password" onChange={this.update('password')} value={this.state.password} />
+            </label>
 
-          <button>{ buttonWord }</button>
-        </form>
+            <button>{ buttonWord }</button>
+          </form>
 
-        { errors }
+          { errors }
 
-        <Link to={`/${linkAction}`}>{ linkWord }</Link>
-
+          <Link to={`/${linkAction}`}>{ linkWord }</Link>
+        </div>
       </div>
     );
   }
 }
+// <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/1e82406ff345/signup/signup_illustration.png" />
 
 export default SessionForm;
