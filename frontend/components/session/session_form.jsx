@@ -58,19 +58,17 @@ class SessionForm extends React.Component {
 
     if (actionType === "/signup") {
       extraFields = (
-        <label>Name:
           <input type="text"
                  onChange={this.update('name')}
-                 placeholder="Names"
+                 placeholder="Name"
                  value={this.state.name} />
-        </label>
       )
     }
 
     return(
       <div className="session">
         <div className="form">
-          <h1>Welcome to <span>HappyMe</span></h1>
+          Welcome to <strong>HappyMe</strong>
           <form onSubmit={ this.handleSubmit }>
             { extraFields }
 
@@ -91,10 +89,11 @@ class SessionForm extends React.Component {
 
           <Link to={`/${linkAction}`}>{ linkWord }</Link>
         </div>
-
+        <img src={ window.images.happyhour } />
       </div>
     );
   }
 }
+// <img src="https://s3-media4.fl.yelpcdn.com/assets/2/www/img/1e82406ff345/signup/signup_illustration.png" />
 
 export default SessionForm;

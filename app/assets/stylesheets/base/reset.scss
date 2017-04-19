@@ -15,7 +15,9 @@ span, article, footer, time, small {
   background: inherit;
 }
 
-// form,
+form, input {
+  box-sizing: inherit;
+}
 // fieldset, label, input, textarea,
 
 ol, ul {
@@ -24,7 +26,7 @@ ol, ul {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -53,5 +55,8 @@ body {
 
 h1 {
   padding: 10px;
+  font-family: 'Pacifico', cursive;
+}
+strong {
   font-family: 'Pacifico', cursive;
 }

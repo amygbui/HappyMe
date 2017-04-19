@@ -1,17 +1,29 @@
 .session {
   display: flex;
   width: 80%;
+  padding: 5%;
+
   margin: auto;
   justify-content: space-around;
   text-align: center;
+  box-sizing: border-box;
 
   color: #07BAB4;
+}
+
+.session img {
+  width: 300px;
 }
 
 .session form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px;
+}
+
+.form {
+  padding: 10%;
 }
 
 .form input {
@@ -30,4 +42,10 @@
   width: 100%;
   padding: 5px;
   margin: 8px;
+}
+
+.form a {
+  color: black;
+  font-weight: 100;
+  font-size: 12px;
 }
