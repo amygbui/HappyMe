@@ -22,7 +22,7 @@ class Greeting extends React.Component {
                alt={`Hello ${currentUser}`} />
 
           <button className="session-link"
-                  onClick={this.logout}>
+                  onClick={ this.logout }>
             Log Out
           </button>
         </ul>

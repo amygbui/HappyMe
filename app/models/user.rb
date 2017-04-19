@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_attached_file :avatar, default_url: "default_avatar.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-  # attr_accessor :image_file_name
   attr_reader :password
 
   # has_many :reviews
