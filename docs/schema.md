@@ -28,7 +28,6 @@ phone_number    | string    | not null
 lat             | float     | not null
 lng             | float     | not null
 description     | string    | not null
-profile_pic_url | string    | not null
 
 add_index [:name, :address], unique: true
 validates :name, :address, city, state, zip, :phone_number, :description, :profile_pic_url, presence: true

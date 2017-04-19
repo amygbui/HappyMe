@@ -1,6 +1,6 @@
-class CreateBusinesses < ActiveRecord::Migration[5.0]
+class CreateRestaurants < ActiveRecord::Migration[5.0]
   def change
-    create_table :businesses do |t|
+    create_table :restaurants do |t|
       t.string :name, null: false
       t.string :address, null: false
       t.string :city, null: false
@@ -10,10 +10,8 @@ class CreateBusinesses < ActiveRecord::Migration[5.0]
       t.float :lat, null: false
       t.float :lng, null: false
       t.string :description, null: false
-      t.string :profile_pic_url, null: false
       t.timestamps
     end
-
-    add_index :businesses, [:name, :address], unique: true
+    add_index :restaurants, [:name, :address], unique: true
   end
 end
