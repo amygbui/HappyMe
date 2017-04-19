@@ -1,0 +1,33 @@
+.session {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  text-align: center;
+
+  color: #07BAB4;
+}
+
+.session form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input {
+  padding: 5px;
+  margin: 8px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form button {
+  color: white;
+
+  background: #07BAB4;
+  border-radius: 4px;
+
+  width: 100%;
+  padding: 5px;
+  margin: 8px;
+}

@@ -69,26 +69,28 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session">
-        <h1>Welcome to <span>HappyMe</span></h1>
-        <form onSubmit={ this.handleSubmit }>
-          { extraFields }
+        <div className="form">
+          <h1>Welcome to <span>HappyMe</span></h1>
+          <form onSubmit={ this.handleSubmit }>
+            { extraFields }
 
-          <input type="text"
-                 onChange={this.update('username')}
-                 placeholder="Username"
-                 value={this.state.username} />
+            <input type="text"
+              onChange={this.update('username')}
+              placeholder="Username"
+              value={this.state.username} />
 
-          <input type="password"
-                 onChange={this.update('password')}
-                 placeholder="Password"
-                 value={this.state.password} />
+            <input type="password"
+              onChange={this.update('password')}
+              placeholder="Password"
+              value={this.state.password} />
 
-          <button>{ buttonWord }</button>
-        </form>
+            <button>{ buttonWord }</button>
+          </form>
 
-        { errors }
+          { errors }
 
-        <Link to={`/${linkAction}`}>{ linkWord }</Link>
+          <Link to={`/${linkAction}`}>{ linkWord }</Link>
+        </div>
 
       </div>
     );
