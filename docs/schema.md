@@ -26,7 +26,7 @@ state           | string    | not null
 zip             | integer   | not null
 phone_number    | string    | not null
 lat             | float     | not null
-lon             | float     | not null
+lng             | float     | not null
 description     | string    | not null
 profile_pic_url | string    | not null
 

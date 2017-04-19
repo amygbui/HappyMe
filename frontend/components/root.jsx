@@ -4,6 +4,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
+import SearchContainer from './search/search_container'
+
 
 const Root = ({ store }) => {
   const redirectUnlessLoggedIn = (nextState, replace) => {
@@ -29,6 +31,9 @@ const Root = ({ store }) => {
           <Route path="/signup"
                  component={ SessionFormContainer }
                  onEnter={ redirectIfLoggedIn }
+            />
+          <Route path="/search"
+                component={ SearchContainer }
             />
         </Route>
       </Router>
