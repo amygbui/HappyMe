@@ -59,7 +59,10 @@ class SessionForm extends React.Component {
     if (actionType === "/signup") {
       extraFields = (
         <label>Name:
-          <input type="text" onChange={this.update('name')} value={this.state.name} />
+          <input type="text"
+                 onChange={this.update('name')}
+                 placeholder="Names"
+                 value={this.state.name} />
         </label>
       )
     }
@@ -70,13 +73,15 @@ class SessionForm extends React.Component {
         <form onSubmit={ this.handleSubmit }>
           { extraFields }
 
-          <label>Username:
-            <input type="text" onChange={this.update('username')} value={this.state.username} />
-          </label>
+          <input type="text"
+                 onChange={this.update('username')}
+                 placeholder="Username"
+                 value={this.state.username} />
 
-          <label>Password:
-            <input type="password" onChange={this.update('password')} value={this.state.password} />
-          </label>
+          <input type="password"
+                 onChange={this.update('password')}
+                 placeholder="Password"
+                 value={this.state.password} />
 
           <button>{ buttonWord }</button>
         </form>
