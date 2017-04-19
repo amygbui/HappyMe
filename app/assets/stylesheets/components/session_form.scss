@@ -9,6 +9,7 @@
   box-sizing: border-box;
 
   color: #07BAB4;
+  font-size: 26px;
 }
 
 .session img {
@@ -20,6 +21,10 @@
   margin: 8% 15% 0 0;
 }
 
+.form form {
+  margin-top: 15px;
+}
+
 .form input {
   padding: 5px;
   margin: 8px;
@@ -29,6 +34,7 @@
 
 .form button {
   color: white;
+  font-size: 14px;
 
   background: #07BAB4;
   border-radius: 4px;
