@@ -20,6 +20,7 @@ class Greeting extends React.Component {
     if (this.props.currentUser) {
       header = (
         <span>
+          <img src={ this.props.currentUser.image_url } />
           <button className="session-link" onClick={this.logout}>Log Out</button>
         </span>
       );

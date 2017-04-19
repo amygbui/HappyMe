@@ -5,6 +5,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
+  has_attached_file :avatar, default_url: "default_avatar.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  # attr_accessor :image_file_name
   attr_reader :password
 
   # has_many :reviews
