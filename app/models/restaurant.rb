@@ -7,5 +7,4 @@ class Restaurant < ApplicationRecord
   # has_many :hh_types
   # has_many :prices, through: :reviews, source: :price (get average price from this?)
   # has_many :photos
-
 end
