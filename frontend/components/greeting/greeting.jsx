@@ -35,6 +35,9 @@ class Greeting extends React.Component {
       <div className="header">
         <header className="header-fixed">
           <Link to='/'><h1>HappyMe</h1></Link>
+          <form>
+            <input type="search" placeholder="Let's get happy!" />
+          </form>
           { header }
         </header>
 

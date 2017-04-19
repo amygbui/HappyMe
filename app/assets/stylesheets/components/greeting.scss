@@ -6,8 +6,17 @@
 .header-fixed {
   display: flex;
   justify-content: space-around;
+  margin: 0 100px;
   align-items: center;
-  margin-right: 10px;
+}
+
+.header-fixed h1 {
+  font-size: 22px;
+  text-shadow: 0 0 1px #000;
+}
+
+.header-fixed form input {
+  width: 100%;
 }
 
 .session-link {
@@ -18,11 +27,6 @@
   margin-left: 5px;
 
   font-size: 16px;
-}
-
-.header-fixed h1 {
-  font-size: 22px;
-  text-shadow: 0 0 1px #000;
 }
 
 .nav {
