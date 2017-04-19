@@ -58,26 +58,30 @@ class SessionForm extends React.Component {
 
     if (actionType === "/signup") {
       extraFields = (
-        <label>Name:
-          <input type="text" onChange={this.update('name')} value={this.state.name} />
-        </label>
+          <input type="text"
+                 onChange={this.update('name')}
+                 placeholder="Name"
+                 value={this.state.name} />
       )
     }
 
     return(
       <div className="session">
         <div className="form">
-          <h1>Welcome to <span>HappyMe</span></h1>
+
+          Welcome to <strong>HappyMe</strong>
           <form onSubmit={ this.handleSubmit }>
             { extraFields }
 
-            <label>Username:
-              <input type="text" onChange={this.update('username')} value={this.state.username} />
-            </label>
+            <input type="text"
+              onChange={this.update('username')}
+              placeholder="Username"
+              value={this.state.username} />
 
-            <label>Password:
-              <input type="password" onChange={this.update('password')} value={this.state.password} />
-            </label>
+            <input type="password"
+              onChange={this.update('password')}
+              placeholder="Password"
+              value={this.state.password} />
 
             <button>{ buttonWord }</button>
           </form>
@@ -86,6 +90,8 @@ class SessionForm extends React.Component {
 
           <Link to={`/${linkAction}`}>{ linkWord }</Link>
         </div>
+        
+        <img src={ window.images.happyhour } />
       </div>
     );
   }

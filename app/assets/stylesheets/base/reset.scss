@@ -15,7 +15,9 @@ span, article, footer, time, small {
   background: inherit;
 }
 
-// form,
+form, input {
+  box-sizing: inherit;
+}
 // fieldset, label, input, textarea,
 
 ol, ul {
@@ -24,7 +26,7 @@ ol, ul {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -46,16 +48,12 @@ input[type="submit"] {
 
 body {
   margin: 0 auto;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 h1 {
   padding: 10px;
   font-family: 'Pacifico', cursive;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
