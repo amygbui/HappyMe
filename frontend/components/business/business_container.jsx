@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Search from './search.jsx';
+import BusinessPreviewIndex from './business_preview_index.jsx';
 
 const mapStateToProps = state => {
   console.log(state)
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(BusinessPreviewIndex);

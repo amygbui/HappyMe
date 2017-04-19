@@ -3,14 +3,16 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
+import GreetingContainer from './greeting/greeting_container'
 import SessionFormContainer from './session/session_form_container';
-import SearchContainer from './search/search_container'
+import BusinessContainer from './business/business_container'
+import Splash from './splash/splash'
 
 
 const Root = ({ store }) => {
   const redirectUnlessLoggedIn = (nextState, replace) => {
     if (!store.getState().session.currentUser) {
-      replace("/login")
+      replace("/welcome")
     }
   }
 
@@ -20,10 +22,12 @@ const Root = ({ store }) => {
     }
   };
 
+  // <IndexRoute component={ GreetingContainer } />
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ App }>
+        <Route path="/" component={ Splash } />
+        <Route path="/welcome" component={ App }>
           <Route path="/login"
                  component={ SessionFormContainer }
                  onEnter={ redirectIfLoggedIn }
@@ -33,7 +37,7 @@ const Root = ({ store }) => {
                  onEnter={ redirectIfLoggedIn }
             />
           <Route path="/search"
-                component={ SearchContainer }
+                component={ BusinessContainer }
             />
         </Route>
       </Router>
