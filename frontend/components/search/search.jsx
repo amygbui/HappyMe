@@ -9,18 +9,12 @@ class Search extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  componentDidMount() {
-    /////// TESTING PURPOSES ONLY!!!!! //////
-    this.props.fetchRestaurants();
-  }
-
   update(e) {
     this.setState({ query: e.target.value })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     this.props.fetchRestaurants(this.state.query)
       .then(() => hashHistory.push("/search"))
       .then(() => this.setState({ query: "" }));
