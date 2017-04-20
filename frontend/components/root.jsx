@@ -3,10 +3,11 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
+import SplashContainer from './splash/splash_container';
 import GreetingContainer from './greeting/greeting_container'
 import SessionFormContainer from './session/session_form_container';
-import RestaurantContainer from './restaurant/preview/restaurant_container'
-import SplashContainer from './splash/splash_container'
+import RestaurantContainer from './restaurant/preview/restaurant_container';
+import RestaurantShowContainer from './restaurant/show/restaurant_show_container';
 
 
 const Root = ({ store }) => {
@@ -43,5 +44,8 @@ const Root = ({ store }) => {
     </Provider>
   );
 };
+// <Rout path="/restaurants/:restaurantId"
+//   component={ RestaurantShowContainer }
+//   />
 
 export default Root;
