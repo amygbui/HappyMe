@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BusinessPreviewIndex extends React.Component {
+class RestaurantPreviewIndex extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,4 +14,4 @@ class BusinessPreviewIndex extends React.Component {
   }
 }
 
-export default BusinessPreviewIndex;
+export default RestaurantPreviewIndex;

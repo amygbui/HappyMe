@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import RestaurantPreviewIndex from './business_preview_index.jsx';
+import RestaurantPreviewIndex from './restaurant_preview_index.jsx';
 
 const mapStateToProps = state => {
   console.log(state)
