@@ -30,7 +30,7 @@ class Greeting extends React.Component {
           </button>
         </ul>
       );
-      
+
       login = (<div></div>)
     } else {
       header = (
@@ -51,10 +51,22 @@ class Greeting extends React.Component {
 
         <nav className="nav">
           <nav className="feature-pages">
-            <Link to='/'>Beers</Link>
-            <Link to='/'>Cocktails</Link>
-            <Link to='/'>Oysters</Link>
-            <Link to='/'>Food</Link>
+            <Link to='/'>
+              <i className="fa fa-beer" aria-hidden="true"></i>
+              Beers
+            </Link>
+            <Link to='/'>
+              <i className="fa fa-glass" aria-hidden="true"></i>
+              Cocktails
+            </Link>
+            <Link to='/'>
+              <i className="fa fa-heart" aria-hidden="true"></i>
+              Oysters
+            </Link>
+            <Link to='/'>
+              <i className="fa fa-cutlery" aria-hidden="true"></i>
+              Food
+            </Link>
           </nav>
           { login }
         </nav>

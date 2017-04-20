@@ -44,10 +44,14 @@
   margin: 8px;
 }
 
-.form a {
+.form nav {
   color: black;
   font-weight: 100;
   font-size: 12px;
+}
+
+.form a {
+  margin: 0 5px;
 }
 
 .errors {

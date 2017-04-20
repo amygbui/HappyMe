@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.redirect = this.redirect.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillUnmount() {
@@ -33,6 +34,17 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(() => this.redirect());
   }
 
+  handleClick(e) {
+    e.preventDefault();
+
+    const demoUser = {
+      username: "guest",
+      password: "password"
+    }
+
+    this.props.processForm(demoUser).then(() => this.redirect());
+  }
+
   update(property) {
     return e => {
       this.setState({ [property]: e.currentTarget.value });
@@ -44,7 +56,7 @@ class SessionForm extends React.Component {
     const buttonWord = actionType === '/signup' ? 'Sign Up': 'Log In';
 
     const linkAction = actionType === '/signup' ? 'login' : 'signup';
-    const linkWord = actionType === '/signup' ? 'Log in instead': 'Sign up instead';
+    const linkWord = actionType === '/signup' ? 'Log in': 'Sign up';
 
     const all_errors = this.props.errors
     const errors = Object.keys(this.props.errors).map(id => {
@@ -72,7 +84,6 @@ class SessionForm extends React.Component {
     return(
       <div className="session">
         <div className="form">
-
           Welcome to <strong>HappyMe</strong>
           <form onSubmit={ this.handleSubmit }>
             { extraFields }
@@ -96,7 +107,10 @@ class SessionForm extends React.Component {
             </ul>
           </div>
 
-          <Link to={`/${linkAction}`}>{ linkWord }</Link>
+          <nav>
+            <Link to={`/${linkAction}`}>{ linkWord }</Link>|
+            <Link onClick={ this.handleClick }>Guest Demo</Link>
+          </nav>
         </div>
 
         <img src={ window.images.happyhour } />

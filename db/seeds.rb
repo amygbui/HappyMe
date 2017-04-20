@@ -11,7 +11,7 @@ Restaurant.destroy_all
 
 a = User.create(name: "Amy", username: "amy", password: "password")
 v = User.create(name: "Vince", username: "vince", password: "password")
-s = User.create(name: "Student", username: "student", password: "password")
+g = User.create(name: "Guest", username: "guest", password: "password")
 
 r1 = Restaurant.create(
   name: "Chuck and Blade",
