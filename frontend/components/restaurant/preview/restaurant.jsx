@@ -18,7 +18,9 @@ class Restaurant extends React.Component {
           <img src={ image_url} />
 
           <div>
-            <Link to={`/restaurants/${id}`}>{ name }</Link>
+            <strong>
+              <Link to={`/restaurants/${id}`}>{ name }</Link>
+            </strong>
             <br />
             Rating will go here!
             <br />

@@ -16,6 +16,7 @@
 
 .restaurant-preview p {
   text-align: center;
+  font-size: 14px;
 }
 
 .preview-info {
@@ -29,6 +30,12 @@
 }
 
 .preview-info img {
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
+}
+
+.preview-info strong {
+  // font-weight: bold;
+  color: #0073bb;
+  font-size: 16px;
 }
