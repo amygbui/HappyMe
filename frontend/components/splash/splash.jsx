@@ -28,7 +28,8 @@ class Splash extends React.Component {
       );
     } else {
       header = (
-        <nav>
+        <nav className="splash-session">
+          <Link to='login'>Log In</Link>
           <Link to='signup'>Sign Up</Link>
         </nav>
       );
@@ -44,19 +45,16 @@ class Splash extends React.Component {
             <input type="search" placeholder="Let's get happy!" />
             <i className="fa fa-search" aria-hidden="true"></i>
           </form>
-        </main>
-        
-          { header }
 
-        <nav>
           <nav>
             <Link to='/'>Beers</Link>
             <Link to='/'>Cocktails</Link>
             <Link to='/'>Oysters</Link>
             <Link to='/'>Food</Link>
           </nav>
-          <Link to='login'>Log In</Link>
-        </nav>
+        </main>
+
+        { header }
       </div>
     )
   }
