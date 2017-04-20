@@ -1,15 +1,17 @@
 class Api::RestaurantsController < ApplicationController
   def index
     if params[:query]
-      @restaurants = Restaurant
-        .where("lower(name) LIKE ?", "%#{params[:query]}%".downcase)
-        # .where("lower(description) LIKE ?", "%#{params[:query]}%".downcase)
+      matched_restaurants = PgSearch.multisearch(params[:query])
+      @restaurants = matched_restaurants.map do |restaurant|
+        restaurant.searchable
+      end
     else
-      @restaurants = Restaurant.all
+      @restaurants = {}
     end
 
     render :index
   end
+
 
   def create
     @restaurant = Restaurant.create(restaurant_params)

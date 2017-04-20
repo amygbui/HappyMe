@@ -1,6 +1,21 @@
 class Restaurant < ApplicationRecord
+  attr_reader :name, :description
+
   include PgSearch
-  
+
+  # PgSearch.multisearch_options = {
+  #   :using => [:tsearch, :trigram]
+  #   # :ignoring => :accents
+  # }
+
+  multisearchable against: [:name, :description]
+                  # using: {
+                  #   tsearch: {
+                  #     prefix: true, #allows searching partial words
+                  #     any_word: true
+                  #   }
+                  # }
+
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
 

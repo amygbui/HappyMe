@@ -19,10 +19,6 @@ class Search extends React.Component {
       .then(() => {
         hashHistory.push("/search")
       })
-      // Oscar suggests we keep the typed in query for now
-      // This is b/c we are not navigating to diff 'pages'/url
-      // potentially work on persisting query state as bonus?
-      // .then(() => this.setState({ query: "" }));
   }
 
   render() {
