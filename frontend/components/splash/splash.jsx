@@ -47,10 +47,22 @@ class Splash extends React.Component {
           </form>
 
           <nav>
-            <Link to='/'>Beers</Link>
-            <Link to='/'>Cocktails</Link>
-            <Link to='/'>Oysters</Link>
-            <Link to='/'>Food</Link>
+            <Link to='/'>
+              <i class="fa fa-beer" aria-hidden="true"></i>
+              Beers
+            </Link>
+            <Link to='/'>
+              <i class="fa fa-glass" aria-hidden="true"></i>
+              Cocktails
+            </Link>
+            <Link to='/'>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              Oysters
+            </Link>
+            <Link to='/'>
+              <i class="fa fa-cutlery" aria-hidden="true"></i>
+              Food
+            </Link>
           </nav>
         </main>
 
