@@ -6,7 +6,7 @@ import App from './app';
 import GreetingContainer from './greeting/greeting_container'
 import SessionFormContainer from './session/session_form_container';
 import BusinessContainer from './business/business_container'
-import Splash from './splash/splash'
+import SplashContainer from './splash/splash_container'
 
 
 const Root = ({ store }) => {
@@ -26,7 +26,7 @@ const Root = ({ store }) => {
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ Splash } />
+        <Route path="/" component={ SplashContainer } />
         <Route path="/welcome" component={ App }>
           <Route path="/login"
                  component={ SessionFormContainer }

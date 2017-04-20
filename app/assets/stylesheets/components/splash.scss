@@ -49,6 +49,12 @@
   border-radius: 4px;
 }
 
+.splash nav .fa {
+  background: transparent;
+  color: white;
+  padding: 0 10px;
+}
+
 .splash main nav {
   display: flex;
   justify-content: space-around;
@@ -66,8 +72,7 @@
   margin-left: 30px;
 }
 
-.splash nav .fa {
-  background: transparent;
-  color: white;
-  padding: 0 10px;
+.splash-session img {
+  width: 50px;
+  height: 50px;
 }
