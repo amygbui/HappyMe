@@ -12,10 +12,12 @@ class RestaurantIndex extends React.Component {
     ))
 
     return (
-      <div className="search-business">
-        <ul>
-          { restaurants }
-        </ul>
+      <div className="restaurant-search">
+        <div>
+          <ul className="restaurant-index">
+            { restaurants }
+          </ul>
+        </div>
       </div>
     );
   }

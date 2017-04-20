@@ -1,0 +1,20 @@
+.restaurant-index {
+  font-weight: normal;
+}
+
+.restaurant-preview:first-child {
+  border-top: 1px solid black;
+}
+
+.restaurant-preview {
+  border-bottom: 1px solid black;
+}
+
+.preview-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-info link {
+  font-weight: bold;
+}

@@ -13,14 +13,26 @@ class Restaurant extends React.Component {
     } = this.props.restaurant;
 
     return (
-      <li>
-        <Link to={`/restaurants/${id}`}>{ name }</Link>
+      <li className="restaurant-preview">
+        <section className="preview-info">
+          PIC HERE
 
-        <div>
-          { address }
-          { city }, { state } { zip }
-          { phone_number }
-        </div>
+          <div>
+            <Link to={`/restaurants/${id}`}>{ name }</Link>
+            <br />
+            Review info will go here!
+            <br />
+            Restaurant type will be here!
+          </div>
+
+          <div>
+            { address }
+            <br />
+            { city }, { state } { zip }
+            <br />
+            { phone_number }
+          </div>
+        </section>
 
         { description }
       </li>
