@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import Search from '../search/search';
+
 class Splash extends React.Component {
   constructor(props) {
     super(props);
@@ -41,11 +43,7 @@ class Splash extends React.Component {
 
         <main>
           <h1>HappyMe</h1>
-          <form>
-            <input type="search" placeholder="Let's get happy!" />
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </form>
-
+          < Search />
           <nav>
             <Link to='/'>
               <i className="fa fa-beer" aria-hidden="true"></i>
