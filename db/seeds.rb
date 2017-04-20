@@ -46,7 +46,7 @@ r3 = Restaurant.create(
   phone_number: "(212)466-3340",
   lat: 40.739143,
   lng: -73.989677,
-  description: "Happy hour every day!Cocktails, beer, wine, food, we have it all!"
+  description: "Happy hour every day! Cocktails, beer, wine, food, we have it all!"
 )
 
 r4 = Restaurant.create(

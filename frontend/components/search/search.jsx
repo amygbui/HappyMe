@@ -30,6 +30,7 @@ class Search extends React.Component {
     e.preventDefault();
     this.props.fetchRestaurants(e.target.value)
       .then(() => hashHistory.push("/search"));
+    this.setState({ query: "" });
   }
 
   render() {
@@ -40,11 +41,12 @@ class Search extends React.Component {
     return (
       <form onSubmit={ this.handleSubmit }>
         <input type="search" placeholder="Let's get happy!"
+               value={ this.state.query }
                onChange={ this.update } />
 
         <button>
           <i className="fa fa-search" aria-hidden="true"></i>
-          </button>
+        </button>
       </form>
     )
   }
