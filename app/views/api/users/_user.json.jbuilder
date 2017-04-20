@@ -1,2 +1,2 @@
 json.extract! user, :id, :name, :username, :session_token
-json.image_url asset_path(user.avatar.url)
+json.image_url asset_path(user.avatar.url(:original))

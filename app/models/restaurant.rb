@@ -2,6 +2,7 @@ class Restaurant < ApplicationRecord
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
 
+  has_attached_file :image, default_url: "restaurant_avatar.ico"
   # has_many :reviews
   # has_many :reviewers, through: reviews, source: :reviewer
   # has_many :hh_types

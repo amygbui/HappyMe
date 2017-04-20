@@ -8,19 +8,19 @@ class Restaurant extends React.Component {
 
   render () {
     const {
-      id, name, address, city, state,
-      zip, phone_number, description
+      id, name, address, city, state, zip,
+      phone_number, description, image_url
     } = this.props.restaurant;
 
     return (
       <li className="restaurant-preview">
         <section className="preview-info">
-          PIC HERE
+          <img src={ image_url} />
 
           <div>
             <Link to={`/restaurants/${id}`}>{ name }</Link>
             <br />
-            Review info will go here!
+            Rating will go here!
             <br />
             Restaurant type will be here!
           </div>
@@ -34,7 +34,7 @@ class Restaurant extends React.Component {
           </div>
         </section>
 
-        { description }
+        <p>{ description }</p>
       </li>
     );
   }
