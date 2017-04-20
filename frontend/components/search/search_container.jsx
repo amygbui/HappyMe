@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchRestaurants: () => dispatch(fetchRestaurants())
+    fetchRestaurants: query => dispatch(fetchRestaurants(query))
   };
 };
 

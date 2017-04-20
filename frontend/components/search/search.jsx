@@ -20,6 +20,7 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
     this.props.fetchRestaurants(this.state.query)
       .then(() => hashHistory.push("/search"))
       .then(() => this.setState({ query: "" }));

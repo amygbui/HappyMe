@@ -17,8 +17,8 @@ export const receiveRestaurant = restaurant => {
   };
 };
 
-export const fetchRestaurants = () => dispatch => {
-  return RestaurantApiUtil.fetchRestaurants()
+export const fetchRestaurants = query => dispatch => {
+  return RestaurantApiUtil.fetchRestaurants(query)
     .then(restaurants => dispatch(receiveRestaurants(restaurants)));
 };
 

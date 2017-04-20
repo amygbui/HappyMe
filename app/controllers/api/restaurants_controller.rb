@@ -1,14 +1,14 @@
 class Api::RestaurantsController < ApplicationController
   def index
     # if params.query
-      @searched = Restaurant.where("name LIKE ?", "%${params[:query]}%")
+      # @searched = Restaurant.where("name LIKE ?", "%$?{params[:query]}%")
+      # Restaurant.where(name.include?(params[:query]))
     # else
-    # debugger
+    debugger
       @restaurants = Restaurant.all
     # end
     # @searched = Restaurant.where("name.downcase LIKE %?%", params[:query])
-    # debugger
-    # @restaurants = {}
+
     render :index
   end
 
