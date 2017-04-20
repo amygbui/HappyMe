@@ -33,6 +33,7 @@ gem 'pry-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'pg_search'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,4 +1,6 @@
 class Restaurant < ApplicationRecord
+  include PgSearch
+  
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
 
