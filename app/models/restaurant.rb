@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  attr_reader :name, :description
+  # attr_reader :name, :description
 
   include PgSearch
 
@@ -7,6 +7,12 @@ class Restaurant < ApplicationRecord
   #   :using => [:tsearch, :trigram]
   #   # :ignoring => :accents
   # }
+
+  PgSearch.multisearch_options = {
+    using: {
+      tsearch: { prefix: true, dictionary: "english"}
+    }
+  }
 
   multisearchable against: [:name, :description]
                   # using: {

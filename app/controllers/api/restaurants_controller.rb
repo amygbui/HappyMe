@@ -1,10 +1,12 @@
 class Api::RestaurantsController < ApplicationController
   def index
     if params[:query]
-      matched_restaurants = PgSearch.multisearch(params[:query])
-      @restaurants = matched_restaurants.map do |restaurant|
-        restaurant.searchable
-      end
+      # matched_restaurants = PgSearch.multisearch(params[:query])
+      # @restaurants = matched_restaurants.map do |restaurant|
+      #   debugger
+      #   restaurant.searchable
+      @restaurants = Restaurant.all
+      # end
     else
       @restaurants = {}
     end
