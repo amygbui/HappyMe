@@ -6,7 +6,7 @@ import App from './app';
 import SplashContainer from './splash/splash_container';
 import GreetingContainer from './greeting/greeting_container'
 import SessionFormContainer from './session/session_form_container';
-import RestaurantContainer from './restaurant/preview/restaurant_container';
+import RestaurantSearchContainer from './restaurant/preview/restaurant_search_container';
 import RestaurantShowContainer from './restaurant/show/restaurant_show_container';
 
 
@@ -37,7 +37,7 @@ const Root = ({ store }) => {
                  onEnter={ redirectIfLoggedIn }
             />
           <Route path="/search"
-                component={ RestaurantContainer }
+                component={ RestaurantSearchContainer }
             />
         </Route>
       </Router>
