@@ -22,7 +22,6 @@ const Root = ({ store }) => {
     }
   };
 
-  // <IndexRoute component={ GreetingContainer } />
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>

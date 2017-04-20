@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import Search from '../search/search';
+import SearchContainer from '../search/search_container';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Greeting extends React.Component {
       <div className="header">
         <header className="header-fixed">
           <Link to='/'><h1>HappyMe</h1></Link>
-          <Search />
+          <SearchContainer />
           { header }
         </header>
 

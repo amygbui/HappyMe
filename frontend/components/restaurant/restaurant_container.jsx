@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import RestaurantPreviewIndex from './restaurant_preview_index.jsx';
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     // businesses: this.state.businesses
   }

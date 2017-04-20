@@ -1,8 +1,12 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { query: "" }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   // componentWillUnmount() {
@@ -18,11 +22,29 @@ class Search extends React.Component {
   //   }
   // }
 
+  update(e) {
+    this.setState({ query: e.target.value })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.fetchRestaurants(e.target.value)
+      .then(() => hashHistory.push("/search"));
+  }
+
   render() {
+    const searchButton = (
+      <i className="fa fa-search" aria-hidden="true"></i>
+    )
+
     return (
-      <form>
-        <input type="search" placeholder="Let's get happy!" />
-        <i className="fa fa-search" aria-hidden="true"></i>
+      <form onSubmit={ this.handleSubmit }>
+        <input type="search" placeholder="Let's get happy!"
+               onChange={ this.update } />
+
+        <button>
+          <i className="fa fa-search" aria-hidden="true"></i>
+          </button>
       </form>
     )
   }

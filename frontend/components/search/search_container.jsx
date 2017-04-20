@@ -1,8 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchRestaurants } from '../../util/search_api_util'
+import { fetchRestaurants } from '../../actions/restaurant_actions';
 import Search from './search';
+
+const mapStateToProps = state => {
+  return {
+    restaurants: state.restaurants
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -10,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
