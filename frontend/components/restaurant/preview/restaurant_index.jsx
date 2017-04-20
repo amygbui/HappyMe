@@ -1,11 +1,11 @@
 import React from 'react';
 
-import RestaurantPreviewItem from './restaurant_preview_item'
+import Restaurant from './restaurant'
 
-class RestaurantPreviewIndex extends React.Component {
+class RestaurantIndex extends React.Component {
   render() {
     const restaurants = Object.values(this.props.restaurants).map(restaurant => (
-      <RestaurantPreviewItem
+      <Restaurant
         key={ restaurant.id }
         restaurant={ restaurant }
         fetchRestaurant={ this.props.fetchRestaurant }/>
@@ -21,4 +21,4 @@ class RestaurantPreviewIndex extends React.Component {
   }
 }
 
-export default RestaurantPreviewIndex;
+export default RestaurantIndex;

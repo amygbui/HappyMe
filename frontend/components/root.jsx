@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import GreetingContainer from './greeting/greeting_container'
 import SessionFormContainer from './session/session_form_container';
-import RestaurantContainer from './restaurant/restaurant_container'
+import RestaurantContainer from './restaurant/preview/restaurant_container'
 import SplashContainer from './splash/splash_container'
 
 

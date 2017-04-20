@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import RestaurantPreviewIndex from './restaurant_preview_index';
+import RestaurantIndex from './restaurant_index';
 
 const mapStateToProps = state => {
   return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantPreviewIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantIndex);
