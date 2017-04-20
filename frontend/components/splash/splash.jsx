@@ -35,15 +35,18 @@ class Splash extends React.Component {
     }
 
     return(
-      <div>
-        <header>
-          <Link to='/'><h1>HappyMe</h1></Link>
+      <div className="splash">
+        <img src={ window.images.backsplash } />
+
+        <main>
+          <h1>HappyMe</h1>
           <form>
             <input type="search" placeholder="Let's get happy!" />
             <i className="fa fa-search" aria-hidden="true"></i>
           </form>
+        </main>
+        
           { header }
-        </header>
 
         <nav>
           <nav>

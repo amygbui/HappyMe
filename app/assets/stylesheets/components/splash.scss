@@ -1,0 +1,49 @@
+.splash {
+  position: relative;
+
+}
+.splash img {
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.splash main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: 22%;
+  left: 0;
+  right: 0;
+}
+
+.splash h1 {
+  display: inline-block;
+  margin-bottom: 0.5%;
+  color: white;
+  font-size: 55px;
+
+  text-shadow:
+    3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.splash form {
+  flex-direction: row;
+  font-size: 18px;
+}
+
+.splash form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-left: 1px;
+}
+
+.splash .fa {
+  padding: 9.5px 11px;
+}
+// #555555
