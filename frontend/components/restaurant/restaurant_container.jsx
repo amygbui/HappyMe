@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import RestaurantPreviewIndex from './restaurant_preview_index.jsx';
+import RestaurantPreviewIndex from './restaurant_preview_index';
 
 const mapStateToProps = state => {
   return {
-    // businesses: this.state.businesses
+    restaurants: state.restaurants
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    fetchRestaurant: id => dispatch(fetchRestaurant(id))
   }
 };
 

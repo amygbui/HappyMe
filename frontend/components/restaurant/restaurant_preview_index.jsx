@@ -1,14 +1,21 @@
 import React from 'react';
 
-class RestaurantPreviewIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+import RestaurantPreviewItem from './restaurant_preview_item'
 
+class RestaurantPreviewIndex extends React.Component {
   render() {
+    const restaurants = Object.values(this.props.restaurants).map(restaurant => (
+      <RestaurantPreviewItem
+        key={ restaurant.id }
+        restaurant={ restaurant }
+        fetchRestaurant={ this.props.fetchRestaurant }/>
+    ))
+
     return (
       <div className="search-business">
-        Businesses coming soon!
+        <ul>
+          { restaurants }
+        </ul>
       </div>
     );
   }
