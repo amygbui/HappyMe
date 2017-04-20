@@ -16,6 +16,7 @@ class Greeting extends React.Component {
 
   render() {
     let header;
+    let login;
     let currentUser = this.props.currentUser
     if (currentUser) {
       header = (
@@ -29,12 +30,15 @@ class Greeting extends React.Component {
           </button>
         </ul>
       );
+      
+      login = (<div></div>)
     } else {
       header = (
         <nav className="session-link">
-          <Link to='signup'>Sign Up</Link>
+          <Link to='/signup'>Sign Up</Link>
         </nav>
       );
+      login = (<Link to='/login'>Log In</Link>)
     }
 
     return(
@@ -52,7 +56,7 @@ class Greeting extends React.Component {
             <Link to='/'>Oysters</Link>
             <Link to='/'>Food</Link>
           </nav>
-          <Link to='login'>Log In</Link>
+          { login }
         </nav>
       </div>
     )
