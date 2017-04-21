@@ -20,23 +20,27 @@ class RestaurantShow extends React.Component {
     } = this.props.restaurant;
 
     return (
-      <div>
-        <main>
+      <div className="restaurant-show">
+        <main className="business-details">
           <section>
             <h2>{ name }</h2>
             Rating here<br />
             Restaurant type here<br />
 
             <article className="address">
+              Map Component here<br />
               { address }<br />
               { city }, { state } { zip }<br />
-              { phone_number }
+              <h3>{ phone_number }</h3>
             </article>
           </section>
            Photos go here
         </main>
 
-        <section>Reviews go here</section>
+        <section>
+          <h2><strong>Recommended Reviews</strong> for { this.props.restaurant.name }</h2>
+          Review Items go here
+        </section>
       </div>
     )
   }
