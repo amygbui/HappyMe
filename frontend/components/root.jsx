@@ -39,13 +39,13 @@ const Root = ({ store }) => {
           <Route path="/search"
                 component={ RestaurantSearchContainer }
             />
+          <Route path="/restaurants/:restaurantId"
+            component={ RestaurantShowContainer }
+            />
         </Route>
       </Router>
     </Provider>
   );
 };
-// <Rout path="/restaurants/:restaurantId"
-//   component={ RestaurantShowContainer }
-//   />
 
 export default Root;
