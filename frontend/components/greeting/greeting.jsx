@@ -49,27 +49,29 @@ class Greeting extends React.Component {
           { header }
         </header>
 
-        <nav className="nav">
-          <nav className="feature-pages">
-            <Link to='/'>
-              <i className="fa fa-beer" aria-hidden="true"></i>
-              Beers
-            </Link>
-            <Link to='/'>
-              <i className="fa fa-glass" aria-hidden="true"></i>
-              Cocktails
-            </Link>
-            <Link to='/'>
-              <i className="fa fa-heart" aria-hidden="true"></i>
-              Oysters
-            </Link>
-            <Link to='/'>
-              <i className="fa fa-cutlery" aria-hidden="true"></i>
-              Food
-            </Link>
-          </nav>
-          { login }
-        </nav>
+        <section>
+          <article className="nav">
+            <nav className="feature-pages">
+              <Link to='/'>
+                <i className="fa fa-beer" aria-hidden="true"></i>
+                Beers
+              </Link>
+              <Link to='/'>
+                <i className="fa fa-glass" aria-hidden="true"></i>
+                Cocktails
+              </Link>
+              <Link to='/'>
+                <i className="fa fa-heart" aria-hidden="true"></i>
+                Oysters
+              </Link>
+              <Link to='/'>
+                <i className="fa fa-cutlery" aria-hidden="true"></i>
+                Food
+              </Link>
+            </nav>
+            { login }
+          </article>
+        </section>
       </div>
     )
   }
