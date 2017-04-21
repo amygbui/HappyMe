@@ -1,6 +1,7 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.where(review_id = params[:query])
+    @reviews = Review.all
+    # @reviews = Review.where(review_id = params[:query])
     render :index
   end
 
@@ -10,6 +11,7 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
+    @review.author_id = current_user.id
     if @review.save
       render :show
     else
@@ -29,6 +31,6 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:rating, :review, :review_id, :author_id)
+    params.require(:review).permit(:rating, :review, :restaurant_id)
   end
 end

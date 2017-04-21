@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :rating, :review, :author, :restaurant, presence: true
+  validates :rating, :review, :reviewer, :restaurant, presence: true
 
   belongs_to :reviewer,
     class_name: 'User',

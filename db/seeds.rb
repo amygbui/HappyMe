@@ -214,3 +214,31 @@ r17 = Restaurant.create(
   # Hours: “Every day 5-7pm, but Sundays - all night!”
   description: "Half priced punch bowls, and $7 cocktails!"
 )
+
+review1 = Review.create(
+  rating: 3,
+  review: "Mediocre oysters at best, but great ambiance",
+  restaurant_id: r1.id,
+  author_id: a.id
+)
+
+review2 = Review.create(
+  rating: 5,
+  review: "Great food, great wine!",
+  restaurant_id: r2.id,
+  author_id: v.id
+)
+
+review3 = Review.create(
+  rating: 5,
+  review: "Who doesn't love $12 wine flights?!",
+  restaurant_id: r3.id,
+  author_id: a.id
+)
+
+review4 = Review.create(
+  rating: 4,
+  review: "Beautiful interior, and $1 oysters!!",
+  restaurant_id: r1.id,
+  author_id: v.id
+)
