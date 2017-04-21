@@ -22,8 +22,12 @@ class RestaurantShow extends React.Component {
 
     return (
       <div>
-        <h2>{ name }</h2>
-        Restaurant info will go here!
+        <main>
+          <h2>{ name }</h2>
+          Restaurant info will go here!
+        </main>
+
+        <section>Reviews go here</section>
       </div>
     )
   }
