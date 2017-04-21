@@ -27,7 +27,7 @@ class RestaurantShow extends React.Component {
             Rating here<br />
             Restaurant type here<br />
 
-            <article>
+            <article className="address">
               { address }<br />
               { city }, { state } { zip }<br />
               { phone_number }

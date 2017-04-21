@@ -27,7 +27,7 @@ class Restaurant extends React.Component {
             Restaurant types here!
           </div>
 
-          <div id="address">
+          <div id="preview-address">
             { address }
             <br />
             { city }, { state } { zip }
