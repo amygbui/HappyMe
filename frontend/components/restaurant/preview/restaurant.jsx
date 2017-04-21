@@ -24,10 +24,10 @@ class Restaurant extends React.Component {
             <br />
             Rating will go here!
             <br />
-            Restaurant type will be here!
+            Restaurant types here!
           </div>
 
-          <div>
+          <div id="address">
             { address }
             <br />
             { city }, { state } { zip }

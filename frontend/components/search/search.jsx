@@ -9,6 +9,11 @@ class Search extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  ////// TESTING ONLY
+  componentDidMount() {
+    this.props.fetchRestaurants("wine");
+  }
+
   update(e) {
     this.setState({ query: e.target.value })
   }
@@ -38,19 +43,15 @@ class Search extends React.Component {
     // }
 
     return (
-      <div>
-        <form onSubmit={ this.handleSubmit }>
-          <input type="search" placeholder="Let's get happy!"
-            value={ this.state.query }
-            onChange={ this.update } />
+      <form onSubmit={ this.handleSubmit }>
+        <input type="search" placeholder="Let's get happy!"
+          value={ this.state.query }
+          onChange={ this.update } />
 
-          <button>
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
-
-        { searchMessage }
-      </div>
+        <button>
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
     )
   }
 }

@@ -6,11 +6,11 @@
 }
 
 .restaurant-preview:first-child {
-  border-top: 1px solid black;
+  border-top: 1px solid #079E99;
 }
 
 .restaurant-preview {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #079E99;
   padding: 15px 0;
 }
 
@@ -23,6 +23,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  padding-right: 50px;
 }
 
 .preview-info link {
@@ -38,4 +39,8 @@
   // font-weight: bold;
   color: #0073bb;
   font-size: 16px;
+}
+
+.preview-info #address {
+  margin-left: 20px;
 }

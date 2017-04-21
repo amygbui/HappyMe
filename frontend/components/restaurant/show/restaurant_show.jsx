@@ -14,7 +14,6 @@ class RestaurantShow extends React.Component {
     // if (this.props.restaurant === undefined) {
     //   return <div>Loading...</div>
     // }
-
     const {
       id, name, address, city, state, zip,
       phone_number, description, image_url
@@ -23,8 +22,18 @@ class RestaurantShow extends React.Component {
     return (
       <div>
         <main>
-          <h2>{ name }</h2>
-          Restaurant info will go here!
+          <section>
+            <h2>{ name }</h2>
+            Rating here<br />
+            Restaurant type here<br />
+
+            <article>
+              { address }<br />
+              { city }, { state } { zip }<br />
+              { phone_number }
+            </article>
+          </section>
+           Photos go here
         </main>
 
         <section>Reviews go here</section>
