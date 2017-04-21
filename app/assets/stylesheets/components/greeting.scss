@@ -12,7 +12,7 @@
 }
 
 .header-fixed h1 {
-  margin-right: 90px;
+  margin-right: 60px;
   font-size: 30px;
   text-shadow:
     1.25px 1.25px 0 #000,
@@ -25,7 +25,7 @@
 .header-fixed form {
   flex-direction: row;
   width: 500px;
-  margin-right: 90px;
+  margin-right: 60px;
 }
 
 .header-fixed form input {
@@ -44,15 +44,15 @@
   width: 900px;
 }
 
-// .session-link {
-//   background: #07BAB4;
-//   border-radius: 4px;
-//
-//   padding: 10px 25px;
-//   margin-left: 5px;
-//
-//   font-size: 16px;
-// }
+.session-link {
+  background: #07BAB4;
+  border-radius: 4px;
+
+  padding: 10px 25px;
+  margin-left: 5px;
+
+  font-size: 16px;
+}
 //
 // .nav {
 //   background: #07BAB4;
