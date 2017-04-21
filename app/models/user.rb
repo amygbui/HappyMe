@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :reviews,
     class_name: 'Review',
     primary_key: :id,
-    foreign_key: :reviewer_id
+    foreign_key: :author_id
 
   has_many :reviewed_businesses,
     through: :reviews,

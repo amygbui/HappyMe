@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420202427) do
+ActiveRecord::Schema.define(version: 20170421214725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 20170420202427) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.index ["name", "address"], name: "index_restaurants_on_name_and_address", unique: true, using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating",        null: false
+    t.text     "review",        null: false
+    t.integer  "author_id",     null: false
+    t.integer  "restaurant_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["author_id", "restaurant_id"], name: "index_reviews_on_author_id_and_restaurant_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

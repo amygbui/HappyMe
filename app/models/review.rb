@@ -4,7 +4,7 @@ class Review < ApplicationRecord
   belongs_to :reviewer,
     class_name: 'User',
     primary_key: :id,
-    foreign_key: :reviewer_id
+    foreign_key: :author_id
 
   belongs_to :restaurant,
     class_name: 'Restaurant',
