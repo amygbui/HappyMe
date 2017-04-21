@@ -17,8 +17,10 @@ class Search extends React.Component {
     e.preventDefault();
     this.props.fetchRestaurants(this.state.query)
       .then(() => {
-        hashHistory.push("/search")
-      })
+        if (location.hash !== "#/search") {
+          return hashHistory.push("/search")
+        }
+      });
   }
 
   render() {
@@ -26,16 +28,29 @@ class Search extends React.Component {
       <i className="fa fa-search" aria-hidden="true"></i>
     )
 
-    return (
-      <form onSubmit={ this.handleSubmit }>
-        <input type="search" placeholder="Let's get happy!"
-               value={ this.state.query }
-               onChange={ this.update } />
+    let searchMessage;
+    // if (location.hash === "#/search") {
+    //   searchMessage = (
+    //     <div>
+    //       Your search results for { `${this.state.query}` }
+    //     </div>
+    //   )
+    // }
 
-        <button>
-          <i className="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </form>
+    return (
+      <div>
+        <form onSubmit={ this.handleSubmit }>
+          <input type="search" placeholder="Let's get happy!"
+            value={ this.state.query }
+            onChange={ this.update } />
+
+          <button>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        { searchMessage }
+      </div>
     )
   }
 }
