@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       password: "password"
     }
 
-    this.props.processForm(demoUser).then(() => this.redirect());
+    this.props.guestDemo(demoUser).then(() => this.redirect());
   }
 
   update(property) {
@@ -71,7 +71,6 @@ class SessionForm extends React.Component {
     });
 
     let extraFields;
-
     if (actionType === "/signup") {
       extraFields = (
           <input type="text"
