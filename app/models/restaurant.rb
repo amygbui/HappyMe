@@ -1,20 +1,12 @@
 class Restaurant < ApplicationRecord
-  # attr_reader :name, :description
-
   include PgSearch
 
-  # PgSearch.multisearch_options = {
-  #   :using => [:tsearch, :trigram]
-  #   :ignoring => :accents
-  # }
-
-  # PgSearch.multisearch_options = {
-  #   using: {
-  #     tsearch: { prefix: true, dictionary: "english", any_word: true }
-  #   }
-  # }
-
-  multisearchable against: [:name, :description]
+  pg_search_scope :search_restaurants, against: [:name, :description],
+                  # associated_against: {
+                  #   reviews: [:review]
+                  #   hh_types: [:type]
+                  # },
+                  using: { tsearch: { prefix: true } }
 
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true

@@ -1,11 +1,8 @@
 class Api::RestaurantsController < ApplicationController
   def index
-    debugger
     if params[:query]
-      matched_restaurants = PgSearch.multisearch(params[:query])
-      @restaurants = matched_restaurants.map do |restaurant|
-        restaurant.searchable
-      end
+      matched_restaurants = Restaurant.search_restaurants(params[:query])
+      @restaurants = matched_restaurants
     else
       @restaurants = {}
     end
@@ -39,6 +36,7 @@ class Api::RestaurantsController < ApplicationController
   end
 
   private
+
   def restaurant_params
     params.require(:restaurant).permit(
       :name, :address, :city, :state, :zip,
