@@ -10,8 +10,14 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  # has_many :reviews
-  # has_many :reviewed_businesses, through: reviews, source: :business
+  has_many :reviews,
+    class_name: 'Review',
+    primary_key: :id,
+    foreign_key: :reviewer_id
+
+  has_many :reviewed_businesses,
+    through: :reviews,
+    source: :business
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)

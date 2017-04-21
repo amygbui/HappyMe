@@ -12,8 +12,16 @@ class Restaurant < ApplicationRecord
             :phone_number, :description, presence: true
 
   has_attached_file :image, default_url: "restaurant_avatar.ico"
-  # has_many :reviews
-  # has_many :reviewers, through: reviews, source: :reviewer
+
+  has_many :reviews,
+    class_name: 'Review',
+    primary_key: :id,
+    foreign_key: :restaurant_id
+
+  has_many :reviewers,
+    through: :reviews,
+    source: :reviewer
+
   # has_many :hh_types
   # has_many :prices, through: :reviews, source: :price (get average price from this?)
   # has_many :photos
