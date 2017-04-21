@@ -11,7 +11,7 @@
 }
 
 .header-fixed h1 {
-  font-size: 22px;
+  font-size: 30px;
   text-shadow:
     1.25px 1.25px 0 #000,
     -0.5px -0.5px 0 #000,
@@ -22,10 +22,12 @@
 
 .header-fixed form {
   flex-direction: row;
+  width: 500px;
+  margin: 0 100px;
 }
 
 .header-fixed form input {
-  width: 100%;
+  width: 500px;
   padding: 10px;
   border-radius: 4px;
 }
