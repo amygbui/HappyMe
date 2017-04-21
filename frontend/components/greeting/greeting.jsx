@@ -51,7 +51,7 @@ class Greeting extends React.Component {
 
         <section>
           <article className="nav">
-            <nav className="feature-pages">
+            <nav>
               <Link to='/'>
                 <i className="fa fa-beer" aria-hidden="true"></i>
                 Beers
