@@ -5,22 +5,16 @@ class Restaurant < ApplicationRecord
 
   # PgSearch.multisearch_options = {
   #   :using => [:tsearch, :trigram]
-  #   # :ignoring => :accents
+  #   :ignoring => :accents
   # }
 
-  PgSearch.multisearch_options = {
-    using: {
-      tsearch: { prefix: true, dictionary: "english"}
-    }
-  }
+  # PgSearch.multisearch_options = {
+  #   using: {
+  #     tsearch: { prefix: true, dictionary: "english", any_word: true }
+  #   }
+  # }
 
   multisearchable against: [:name, :description]
-                  # using: {
-                  #   tsearch: {
-                  #     prefix: true, #allows searching partial words
-                  #     any_word: true
-                  #   }
-                  # }
 
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
