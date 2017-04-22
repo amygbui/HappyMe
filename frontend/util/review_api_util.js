@@ -13,13 +13,6 @@ export const createReview = review => {
   })
 }
 
-// review = Review.create(
-//   rating: 5,
-//   review: "Great spot for groups!",
-//   restaurant_id: 112,
-//   author_id: 35
-// )
-
 export const updateReview = review => {
   return $.ajax({
     method: 'PATCH',
