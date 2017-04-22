@@ -242,3 +242,10 @@ review4 = Review.create(
   restaurant_id: r1.id,
   author_id: v.id
 )
+
+review5 = Review.create(
+  rating: 5,
+  review: "Great spot for groups!",
+  restaurant_id: r17.id,
+  author_id: v.id
+)
