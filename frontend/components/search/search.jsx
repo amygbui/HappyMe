@@ -10,9 +10,9 @@ class Search extends React.Component {
   }
 
   ////// TESTING ONLY
-  componentDidMount() {
-    this.props.fetchRestaurants("wine");
-  }
+  // componentDidMount() {
+  //   this.props.fetchRestaurants("wine");
+  // }
 
   update(e) {
     this.setState({ query: e.target.value })
