@@ -1,7 +1,7 @@
 import merge from 'lodash';
 import { RECEIVE_REVIEWS, RECEIVE_REVIEW } from '../actions/restaurant_actions';
 
-const RestaurantReducer = (oldState = {}, action) => {
+const ReviewReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_REVIEWS:
