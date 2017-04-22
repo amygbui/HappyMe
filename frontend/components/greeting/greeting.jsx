@@ -21,12 +21,9 @@ class Greeting extends React.Component {
     if (currentUser) {
       header = (
         <ul id="user-dropdown-btn">
-          <img src={ currentUser.image_url }
-               alt={`Hello ${currentUser}`} />
-
-          <button className="session-link"
-                  onClick={ this.logout }>
-            Log Out
+          <button onClick={ this.logout }>
+            <img src={ currentUser.image_url }
+              alt={`Hello ${currentUser}`} />
           </button>
         </ul>
       );

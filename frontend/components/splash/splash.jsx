@@ -21,10 +21,9 @@ class Splash extends React.Component {
     if (currentUser) {
       header = (
         <ul className="splash-session">
-          <img src={ currentUser.image_url }
-               alt={`Hello ${currentUser}`} />
           <button onClick={ this.logout }>
-            Log Out
+            <img src={ currentUser.image_url }
+              alt={`Hello ${currentUser}`} />
           </button>
         </ul>
       );
