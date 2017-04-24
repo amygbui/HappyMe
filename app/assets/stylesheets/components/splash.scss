@@ -79,6 +79,7 @@
 
 .content {
   margin: auto;
+  text-align: center;
 }
 
 .content h2 {
@@ -90,7 +91,8 @@
 
 .highlights {
   width: 900px;
-  margin: 50px;
+  margin: auto;
+  padding: 50px;
 }
 
 .categories {
@@ -112,7 +114,6 @@
   border: 1px solid #ddd;
   width: 180px;
   height: 150px;
-  text-align: center;
   background: #fff;
   padding: 20px;
 }
