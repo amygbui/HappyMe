@@ -118,6 +118,12 @@
   padding: 20px;
 }
 
+.categories a:hover {
+  border: 1px solid #0073bb;
+  color: #0073bb;
+  box-shadow: 4px 4px 10px #ccc;
+}
+
 .categories img {
   width: 80px;
   height: 80px;
