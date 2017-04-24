@@ -108,7 +108,7 @@ class SessionForm extends React.Component {
 
           <nav>
             <Link to={`/${linkAction}`}>{ linkWord }</Link>|
-            <Link onClick={ this.handleClick }>Guest Demo</Link>
+            <Link className="guest-demo" onClick={ this.handleClick }>Guest Demo</Link>
           </nav>
         </div>
 

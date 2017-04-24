@@ -44,7 +44,7 @@ class Search extends React.Component {
 
     return (
       <form onSubmit={ this.handleSubmit }>
-        <input type="search" placeholder="Let's get happy!"
+        <input type="search" placeholder="Find: oysters, beer, Shorty's"
           value={ this.state.query }
           onChange={ this.update } />
 
