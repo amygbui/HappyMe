@@ -1,7 +1,6 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
-    # @reviews = Review.where(review_id = params[:query])
+    @reviews = Review.where("restaurant_id = ?", params[:restaurant_id])
     render :index
   end
 

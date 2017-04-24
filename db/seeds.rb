@@ -8,6 +8,7 @@
 
 User.destroy_all
 Restaurant.destroy_all
+Review.destroy_all
 
 a = User.create(name: "Amy", username: "amy", password: "password")
 v = User.create(name: "Vince", username: "vince", password: "password")

@@ -1,4 +1,4 @@
-import merge from 'lodash';
+import { merge } from 'lodash';
 import { RECEIVE_RESTAURANTS, RECEIVE_RESTAURANT } from '../actions/restaurant_actions';
 
 const RestaurantReducer = (oldState = {}, action) => {

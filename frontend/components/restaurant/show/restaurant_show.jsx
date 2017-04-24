@@ -4,18 +4,21 @@ import ReviewContainer from '../../review/review_container';
 
 class RestaurantShow extends React.Component {
   componentWillMount() {
+    debugger
     this.props.fetchReviews(this.props.params.restaurantId);
+    this.props.fetchRestaurant(this.props.params.restaurantId);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   this.props.fetchRestaurant(this.props.params.postId);
-  //   // THIS DOESN'T DO ANYTHING
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.props.fetchRestaurant(this.props.params.postId);
+    // THIS DOESN'T DO ANYTHING
+  }
 
   render () {
     // if (this.props.restaurant === undefined) {
     //   return <div>Loading...</div>
     // }
+
     const {
       id, name, address, city, state, zip,
       phone_number, description, image_url
