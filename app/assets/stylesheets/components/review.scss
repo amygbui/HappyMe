@@ -19,10 +19,25 @@
   margin-right: 10px;
 }
 
-#review {
-  margin-top: 20px;
+.user a {
+  padding-top: 4px;
+  color: #07BAB4;
 }
 
-.rating {
+#review {
+  margin-top: 20px;
+  font-weight: normal;
+}
+
+#review .rating {
   display: flex;
+  margin-bottom: 10px;
+}
+
+#review .rating li {
+  width: 20px;
+  height: 20px;
+  // border-top: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
+  // border-right: 1px solid #ccc;
 }

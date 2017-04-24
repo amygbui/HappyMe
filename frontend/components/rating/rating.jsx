@@ -6,12 +6,14 @@ const Rating = ({ rating }) => {
   if (rating) {
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
-        stars.push(<li><img src={ window.images.gold_star } /></li>)
+        stars.push(<li key={ i }><img src={ window.images.gold_star } /></li>)
       } else {
-        stars.push(<li><img src={ window.images.silver_star } /></li>)
-      }
-    }
-  }
+        stars.push(<li key={ i }><img src={ window.images.silver_star } /></li>)
+      };
+    };
+  } else {
+
+  };
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import Rating from '../rating/rating';
 
@@ -14,7 +15,7 @@ class Review extends React.Component {
       <article className="review">
         <div className="user">
           <img src={ reviewer.image_url } />
-          { reviewer.name }
+          <Link to={`/users/${reviewer.id}`}>{ reviewer.name }</Link>
         </div>
 
         <div id="review">
