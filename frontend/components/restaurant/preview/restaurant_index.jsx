@@ -30,6 +30,11 @@ class RestaurantIndex extends React.Component {
             { matchedRestaurants }
           </ul>
         </div>
+        <aside>
+          <div className="search-map">
+            Map goes here
+          </div>
+        </aside>
       </div>
     );
   }

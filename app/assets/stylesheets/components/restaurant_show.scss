@@ -1,0 +1,46 @@
+.restaurant-show {
+  width: 900px;
+  margin: auto;
+  padding-top: 30px
+  // justify-content: space-around;
+}
+.business-details {
+  display: flex;
+}
+
+.business-details h2 {
+  font-size: 30px
+}
+
+.address {
+  border: 1px solid #079E99;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.address h3 {
+  font-weight: normal;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.show-map {
+  width: 280px;
+  height: 130px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.business-info {
+  display: flex;
+  padding: 3px 0;
+  margin: 0 10px;
+}
+
+.business-info .fa {
+  font-size: 16px;
+  margin-right: 5px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+}

@@ -34,16 +34,30 @@ class RestaurantShow extends React.Component {
             Restaurant type here<br />
 
             <article className="address">
-              Map Component here<br />
-              { address }<br />
-              { city }, { state } { zip }<br />
-              <h3>{ phone_number }</h3>
+              <div className="show-map">
+                Map goes here
+              </div>
+
+              <aside>
+                <div className="business-info">
+                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                  <div>
+                    { address }<br />
+                    { city }, { state } { zip }<br />
+                  </div>
+                </div>
+
+                <div className="business-info">
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                  <h3>{ phone_number }</h3>
+                </div>
+              </aside>
             </article>
           </section>
            Photos go here
         </main>
 
-        <section>
+        <section className="reviews">
           <h2><strong>Recommended Reviews</strong> for { name }</h2>
           <ReviewContainer restaurantId={ id } />
         </section>
