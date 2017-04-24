@@ -37,34 +37,47 @@ class Splash extends React.Component {
     }
 
     return(
-      <div className="splash">
-        <img src={ window.images.backsplash } />
+      <div>
+        <header className="splash">
+          <img src={ window.images.backsplash } />
 
-        <main>
-          <h1>HappyMe</h1>
-          <SearchContainer />
-          <nav>
-            <Link to='/'>
-              <i className="fa fa-beer" aria-hidden="true"></i>
-              Beers
-            </Link>
-            <Link to='/'>
-              <i className="fa fa-glass" aria-hidden="true"></i>
-              Cocktails
-            </Link>
-            <Link to='/'>
-              <i className="fa fa-heart" aria-hidden="true"></i>
-              Oysters
-            </Link>
-            <Link to='/'>
-              <i className="fa fa-cutlery" aria-hidden="true"></i>
-              Food
-            </Link>
-          </nav>
-        </main>
+          <main>
+            <h1>HappyMe</h1>
+            <SearchContainer />
+            <nav>
+              <Link to='/'>
+                <i className="fa fa-beer" aria-hidden="true"></i>
+                Beers
+              </Link>
+              <Link to='/'>
+                <i className="fa fa-glass" aria-hidden="true"></i>
+                Cocktails
+              </Link>
+              <Link to='/'>
+                <i className="fa fa-heart" aria-hidden="true"></i>
+                Oysters
+              </Link>
+              <Link to='/'>
+                <i className="fa fa-cutlery" aria-hidden="true"></i>
+                Food
+              </Link>
+            </nav>
+          </main>
 
-        { header }
-      </div>
+          { header }
+        </header>
+
+        <section className="highlights">
+          Hot & New Businesses
+          <div className="restaurant-highlights">
+
+          </div>
+        </section>
+
+        <section className="categories">
+          Browse Restaurants by Category
+        </section>
+    </div>
     )
   }
 }
