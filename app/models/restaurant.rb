@@ -25,4 +25,11 @@ class Restaurant < ApplicationRecord
   # has_many :hh_types
   # has_many :prices, through: :reviews, source: :price (get average price from this?)
   # has_many :photos
+
+  def average_rating
+    return 0 if self.reviews.length == 0
+    rating_sum = self.reviews.inject(0) { |sum, review| sum + review.rating }
+    total_reviews = self.reviews.length
+    ((rating_sum.to_f / total_reviews) * 2).round / 2.0
+  end
 end

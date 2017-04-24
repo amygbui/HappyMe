@@ -23,7 +23,8 @@ class RestaurantShow extends React.Component {
 
     const {
       id, name, address, city, state, zip,
-      phone_number, description, image_url
+      phone_number, description, image_url,
+      average_rating
     } = this.props.restaurant;
 
     return (
@@ -31,7 +32,7 @@ class RestaurantShow extends React.Component {
         <main className="business-details">
           <section>
             <h2>{ name }</h2>
-            <Rating />
+            <Rating rating={ average_rating } />
             Restaurant type here<br />
 
             <article className="address">
