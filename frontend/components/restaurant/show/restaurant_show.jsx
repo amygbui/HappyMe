@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ReviewContainer from '../../review/review_container';
+
 class RestaurantShow extends React.Component {
   // componentDidMount() {
   //   this.props.fetchRestaurant(this.props.params.postId);
