@@ -5,6 +5,13 @@ export const fetchReviews = restaurantId => {
   });
 };
 
+export const fetchReview = reviewId => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/reviews/${reviewId}`
+  })
+}
+
 export const createReview = review => {
   return $.ajax({
     method: 'POST',

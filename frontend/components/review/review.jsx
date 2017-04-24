@@ -5,15 +5,22 @@ class Review extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchReview(this.props.review.id);
+  }
+
   render () {
-    const { rating, review } = this.this.props.
+    const { rating, review } = this.props
     // add in user for profile pic
-    
+
     return (
-      { rating }
-      { review }
+      <div>
+        { rating }
+        { review }
+      </div>
     )
   }
 }
+// Review here!
 
 export default Review;

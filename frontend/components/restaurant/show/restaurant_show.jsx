@@ -3,9 +3,9 @@ import React from 'react';
 import ReviewContainer from '../../review/review_container';
 
 class RestaurantShow extends React.Component {
-  // componentDidMount() {
-  //   this.props.fetchRestaurant(this.props.params.postId);
-  // }
+  componentWillMount() {
+    this.props.fetchReviews(this.props.params.restaurantId);
+  }
 
   // componentWillReceiveProps(nextProps) {
   //   this.props.fetchRestaurant(this.props.params.postId);
@@ -40,8 +40,8 @@ class RestaurantShow extends React.Component {
         </main>
 
         <section>
-          <h2><strong>Recommended Reviews</strong> for { this.props.restaurant.name }</h2>
-          Review Items go here
+          <h2><strong>Recommended Reviews</strong> for { name }</h2>
+          <ReviewContainer restaurantId={ id } />
         </section>
       </div>
     )

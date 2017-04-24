@@ -5,10 +5,15 @@ import Review from './review';
 class ReviewIndex extends React.Component {
   constructor(props) {
     super(props);
+    debugger
+  }
+
+  componentDidMount() {
+    this.props.fetchReviews(this.props.restaurantId);
   }
 
   render () {
-    const reviews = this.props.reviews.map(review => {
+    const reviews = Object.values(this.props.reviews).map(review => {
       return(
         <Review key={ review.id }
                 review={ review }
@@ -17,7 +22,9 @@ class ReviewIndex extends React.Component {
     });
 
     return (
-      { reviews }
+      <div>
+        { reviews }
+      </div>
     )
   }
 };

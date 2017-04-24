@@ -13,17 +13,22 @@ export const receiveReview = review => ({
   review
 });
 
-export const fetchReviews = restaurantId => (
+export const fetchReviews = restaurantId => dispatch => (
   ReviewApiUtil.fetchReviews(restaurantId)
     .then(reviews => dispatch(receiveReviews(reviews)))
 );
 
-export const createReview = review => (
+export const fetchReview = reviewId => dispatch => (
+  ReviewApiUtil.fetchReview(reviewId)
+    .then(review => dispatch(receiveReview(review)))
+)
+
+export const createReview = review => dispatch => (
   ReviewApiUtil.createReview(review)
     .then(newReview => dispatch(receiveReview(newReview)))
 );
 
-export const updateReview = review => (
+export const updateReview = review => dispatch => (
   ReviewApiUtil.updateReview(review)
     .then(updatedReview => dispatch(receiveReview(updatedReview)))
 );
