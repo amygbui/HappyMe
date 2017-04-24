@@ -76,3 +76,49 @@
   width: 50px;
   height: 50px;
 }
+
+.content {
+  margin: auto;
+}
+
+.content h2 {
+  text-align: center;
+  color: #07BAB4;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.highlights {
+  width: 900px;
+  margin: 50px;
+}
+
+.categories {
+  background: #eee;
+  padding: 40px;
+}
+
+.categories p {
+  width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.categories a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid #ddd;
+  width: 180px;
+  height: 150px;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+}
+
+.categories img {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}

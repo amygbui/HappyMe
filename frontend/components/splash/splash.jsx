@@ -67,15 +67,35 @@ class Splash extends React.Component {
           { header }
         </header>
 
-        <section className="highlights">
-          Hot & New Businesses
-          <div className="restaurant-highlights">
+        <section className="content">
+          <article className="highlights">
+            <h2>Hot & Popping Restaurants</h2>
+            <div className="restaurant-highlights">
 
-          </div>
-        </section>
+            </div>
+          </article>
 
-        <section className="categories">
-          Browse Restaurants by Category
+          <article className="categories">
+            <h2>Browse Restaurants by Category</h2>
+            <p>
+              <Link to="/search">
+                <img src={ window.images.beer } />
+                Beer
+              </Link>
+              <Link to="/search">
+                <img src={ window.images.cocktails } />
+                Cocktails
+              </Link>
+              <Link to="/search">
+                <img src={ window.images.oysters } />
+                Oysters
+              </Link>
+              <Link to="/search">
+                <img src={ window.images.food } />
+                Food
+              </Link>
+            </p>
+          </article>
         </section>
     </div>
     )
