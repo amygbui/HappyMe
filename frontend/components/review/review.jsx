@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Rating from '../rating/rating';
+
 class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,7 @@ class Review extends React.Component {
 
         <div id="review">
           <div>
-            { rating }
+            <Rating rating={ rating } />
           </div>
           { review }
         </div>

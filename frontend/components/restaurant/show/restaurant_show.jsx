@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ReviewContainer from '../../review/review_container';
+import Rating from '../../rating/rating';
 
 class RestaurantShow extends React.Component {
   componentDidMount() {
@@ -30,7 +31,7 @@ class RestaurantShow extends React.Component {
         <main className="business-details">
           <section>
             <h2>{ name }</h2>
-            Rating here<br />
+            <Rating />
             Restaurant type here<br />
 
             <article className="address">
