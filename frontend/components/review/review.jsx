@@ -9,14 +9,16 @@ class Review extends React.Component {
     const { rating, review, reviewer } = this.props.review;
     // add in user for profile pic
     return (
-      <article>
-        <div>
+      <article className="review">
+        <div className="user">
+          <img src={ reviewer.image_url } />
           { reviewer.name }
         </div>
-        <div>
-          { rating }
-        </div>
-        <div>
+
+        <div id="review">
+          <div>
+            { rating }
+          </div>
           { review }
         </div>
       </article>
