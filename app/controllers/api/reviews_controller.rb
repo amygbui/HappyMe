@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.where(review_id = params[:id])
+    @review = Review.find(params[:id])
   end
 
   def create

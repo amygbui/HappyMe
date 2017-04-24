@@ -3,21 +3,22 @@ import React from 'react';
 import ReviewContainer from '../../review/review_container';
 
 class RestaurantShow extends React.Component {
-  componentWillMount() {
-    debugger
+  componentDidMount() {
     this.props.fetchReviews(this.props.params.restaurantId);
     this.props.fetchRestaurant(this.props.params.restaurantId);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.fetchRestaurant(this.props.params.postId);
-    // THIS DOESN'T DO ANYTHING
+    if (this.props.params.restaurantId !== nextProps.params.restaurantId) {
+      this.props.fetchReviews(nextProps.params.restaurantId);
+      this.props.fetchRestaurant(nextProps.params.restaurantId);
+    }
   }
 
   render () {
-    // if (this.props.restaurant === undefined) {
-    //   return <div>Loading...</div>
-    // }
+    if (this.props.restaurant === undefined) {
+      return <div>Loading...</div>
+    }
 
     const {
       id, name, address, city, state, zip,

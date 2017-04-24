@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
 import { fetchReviews, fetchReview } from '../../actions/review_actions';
 
-const mapStateToProps = state => ({
-  reviews: state.reviews
+const mapStateToProps = (state, ownProps) => ({
+  reviews: state.reviews,
+  restaurantId: ownProps.restaurantId
 })
 
 const mapDispatchToProps = dispatch => ({
