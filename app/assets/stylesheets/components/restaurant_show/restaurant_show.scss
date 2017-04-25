@@ -81,15 +81,15 @@
 }
 
 .img-default {
-  width: 200px;
-  height: 200px;
+  width: 196px;
+  height: 196px;
   transition: all .5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .img-selected {
   margin: 0;
   z-index: 2;
-  width: 220px;
-  height: 220px;
+  width: 216px;
+  height: 216px;
   box-shadow: 0 5px 10px #999;
 }

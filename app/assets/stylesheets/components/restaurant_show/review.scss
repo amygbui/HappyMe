@@ -19,9 +19,18 @@
   margin-right: 10px;
 }
 
+.user nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 64px;
+}
+
 .user a {
   padding-top: 4px;
   color: #07BAB4;
+  // display: inline;
+  display: block;
 }
 
 #review {

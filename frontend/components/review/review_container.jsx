@@ -5,7 +5,8 @@ import { fetchReviews, fetchReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   reviews: state.reviews,
-  restaurantId: ownProps.restaurantId
+  restaurantId: ownProps.restaurantId,
+  currentUser: state.session.currentUser
 })
 
 const mapDispatchToProps = dispatch => ({

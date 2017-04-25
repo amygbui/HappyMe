@@ -83,7 +83,6 @@
   height: 150px;
   padding: 15px 0;
 
-  // font-weight: bold;
   font-size: 14px;
 }
 
@@ -97,6 +96,11 @@
   padding: 8px 15px;
   border-radius: 3px;
   margin: 10px 0;
+}
+
+#edit-review {
+  color: #0073bb;
+  font-size: 12px;
 }
 
 #star:hover {

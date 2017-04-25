@@ -45,7 +45,7 @@ const Root = ({ store }) => {
           <Route path="/restaurants/:restaurantId/review/new"
                  component={ ReviewFormContainer }
             />
-          <Route path="/restaurants/:restaurantId/review/edit"
+          <Route path="/restaurants/:restaurantId/review/edit/:reviewId"
                  component={ ReviewFormContainer }
             />
         </Route>

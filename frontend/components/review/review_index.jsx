@@ -16,6 +16,7 @@ class ReviewIndex extends React.Component {
       return(
         <Review key={ review.id }
                 review={ review }
+                currentUser={ this.props.currentUser }
                 fetchReview={ this.props.fetchReview } />
       )
     });

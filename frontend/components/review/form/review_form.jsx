@@ -7,9 +7,23 @@ import ReviewIndex from '../review_index';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { rating: "", review: "",
-                   restaurant_id: props.params.restaurantId,
-                   author_id: currentUser.id, id: "" }
+
+    let id;
+    let review;
+    let rating;
+    if (props.review) {
+      id = props.review.id
+      review = props.review.review;
+      rating = props.review.rating;
+    } else {
+      review: "";
+      rating: "";
+    }
+
+    this.state = { id, rating, review,
+                   restaurant_id: props.params.restaurantId }
+
+    debugger
 
     this.submitForm = this.submitForm.bind(this);
     this.highlightStar = this.highlightStar.bind(this);
@@ -17,9 +31,16 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
+    const restaurantId = parseInt(this.props.params.restaurantId);
+    const reviewId = parseInt(this.props.params.reviewId);
+
     if (!this.props.restaurant) {
-      this.props.fetchRestaurant(this.props.params.restaurantId);
-      this.props.fetchReviews(this.props.params.restaurantId);
+      this.props.fetchRestaurant(restaurantId);
+      this.props.fetchReviews(restaurantId)
+        .then((reviews => {
+          const { rating, review } = reviews.reviews[reviewId];
+          this.setState({ rating, review, id: reviewId })
+        }).bind(this))
     }
   }
 

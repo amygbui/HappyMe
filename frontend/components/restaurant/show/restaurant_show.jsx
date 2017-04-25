@@ -52,13 +52,13 @@ class RestaurantShow extends React.Component {
     } = this.props.restaurant;
 
     const currentUser = this.props.currentUser
-    let formType;
+    const formType = "new";
     let reviewButton;
+
     if (currentUser) {
       const alreadyReviewed = all_reviewers.includes(currentUser.username)
       reviewButton = alreadyReviewed ?
-      "Update My Review" : "Write a Review";
-      formType = alreadyReviewed ? "edit" : "new"
+      "Write An Update" : "Write a Review";
     } else {
       reviewButton = "Write a Review";
     }
