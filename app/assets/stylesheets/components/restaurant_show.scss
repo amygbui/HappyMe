@@ -58,19 +58,20 @@
 }
 
 .add-review {
-  font-size: 16px;
+  font-size: 15px;
   color: white;
   text-align: right;
   background: #07BAB4;
   border-radius: 3px;
   padding: 10px 15px;
-  text-align: right;
-  width: 200px;
+  text-align: center;
+  align-items: center;
+  width: 190px;
 }
 
 .add-review .fa {
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 7px;
+  font-size: 18px;
 }
 
 .photo-highlights {
@@ -79,20 +80,12 @@
   margin: 20px 0;
 }
 
-.photo-highlights img {
+.img-default {
   width: 200px;
   height: 200px;
 }
 
-.photo-highlights img:nth-child(2) {
-  margin: 0;
-  z-index: 2;
-  width: 220px;
-  height: 220px;
-  box-shadow: 0 5px 10px #999;
-}
-
-.photo-highlights img:hover {
+.img-selected {
   margin: 0;
   z-index: 2;
   width: 220px;
