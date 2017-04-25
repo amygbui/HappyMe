@@ -52,8 +52,8 @@ class RestaurantShow extends React.Component {
 
 
     let reviewAction;
-    if (store.getState().session.currentUser) {
-      reviewAction = all_reviewers.includes(currentUser.username) ?
+    if (this.props.currentUser) {
+      reviewAction = all_reviewers.includes(this.props.currentUser.username) ?
       "Update My Review" : "Write a Review";
     } else {
       reviewAction = "Write a Review";
