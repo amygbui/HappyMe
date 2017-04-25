@@ -33,4 +33,8 @@ class Restaurant < ApplicationRecord
     # total_reviews = self.reviews.length
     # ((rating_sum.to_f / total_reviews) * 2).round / 2.0
   end
+
+  def all_reviewers
+    reviewers.map(&:username)
+  end
 end

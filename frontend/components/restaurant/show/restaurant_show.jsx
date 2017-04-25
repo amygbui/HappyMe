@@ -24,10 +24,11 @@ class RestaurantShow extends React.Component {
     const {
       id, name, address, city, state, zip,
       phone_number, description, image_url,
-      average_rating
+      average_rating, all_reviewers
     } = this.props.restaurant;
 
-    const reviewAction = currentUser ? "Update My Revew" : "Write a Review"
+    const reviewAction = all_reviewers.includes(currentUser.username) ?
+                           "Update My Revew" : "Write a Review"
 
     return (
       <div className="restaurant-show">
@@ -59,9 +60,17 @@ class RestaurantShow extends React.Component {
             </article>
           </section>
 
-          <div>
-            <button to="/review">{ reviewAction }</button>
-            Photos go here
+          <div className="business-right">
+            <button className="add-review" to="/review">
+              <i className="fa fa-star" aria-hidden="true"></i>
+              { reviewAction }
+            </button>
+
+            <section className="photo-highlights">
+              <img src={ window.images.oysters1 } />
+              <img src={ window.images.oysters2 } />
+              <img src={ window.images.oysters3 } />
+            </section>
           </div>
         </main>
 

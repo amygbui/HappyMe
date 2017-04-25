@@ -6,6 +6,7 @@
 }
 .business-details {
   display: flex;
+  justify-content: space-between;
 }
 
 .business-details h2 {
@@ -47,4 +48,54 @@
 
 .business-details .rating {
   display: flex;
+}
+
+.business-right {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.add-review {
+  font-size: 16px;
+  color: white;
+  text-align: right;
+  background: #07BAB4;
+  border-radius: 3px;
+  padding: 10px 15px;
+  text-align: right;
+  width: 200px;
+}
+
+.add-review .fa {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.photo-highlights {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.photo-highlights img {
+  width: 200px;
+  height: 200px;
+}
+
+.photo-highlights img:nth-child(2) {
+  margin: 0;
+  z-index: 2;
+  width: 220px;
+  height: 220px;
+  box-shadow: 0 5px 10px #999;
+}
+
+.photo-highlights img:hover {
+  margin: 0;
+  z-index: 2;
+  width: 220px;
+  height: 220px;
+  box-shadow: 0 5px 10px #999;
 }

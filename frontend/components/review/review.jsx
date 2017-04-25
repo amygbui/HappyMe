@@ -9,9 +9,8 @@ class Review extends React.Component {
   }
 
   render () {
-    debugger
     const { rating, review, reviewer } = this.props.review;
-    // add in user for profile pic
+
     return (
       <article className="review">
         <div className="user">
@@ -29,6 +28,5 @@ class Review extends React.Component {
     )
   }
 }
-// Review here!
 
 export default Review;
