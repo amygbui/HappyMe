@@ -50,8 +50,14 @@ class RestaurantShow extends React.Component {
       average_rating, all_reviewers
     } = this.props.restaurant;
 
-    const reviewAction = all_reviewers.includes(currentUser.username) ?
-                           "Update My Review" : "Write a Review"
+
+    let reviewAction;
+    if (store.getState().session.currentUser) {
+      reviewAction = all_reviewers.includes(currentUser.username) ?
+      "Update My Review" : "Write a Review";
+    } else {
+      reviewAction = "Write a Review";
+    }
 
     return (
       <div className="restaurant-show">

@@ -12,6 +12,8 @@ Review.destroy_all
 
 a = User.create(name: "Amy", username: "amy", password: "password")
 v = User.create(name: "Vince", username: "vince", password: "password")
+s = User.create(name: "Ashley", username: "ashley", password: "password")
+j = User.create(name: "Joseph", username: "joe", password: "password")
 g = User.create(name: "Guest", username: "guest", password: "password")
 
 r1 = Restaurant.create(
@@ -86,6 +88,18 @@ r6 = Restaurant.create(
   description: "2 for $1 oysters and $5 shrimp cocktail, noon to 5pm"
 )
 
+r7 = Restaurant.create(
+  name: "Tropisueno",
+  address: "75 Yerba Buena Ln",
+  city: "San Francisco",
+  state: "CA",
+  zip: 94103,
+  phone_number: "(415) 243-0299",
+  lat: 37.785603,
+  lng: -122.403849,
+  description: "Great margaritas and amazing Mexican food"
+)
+
 r8 = Restaurant.create(
   name: "Grendel’s Den",
   address: "89 Winthrop Street",
@@ -95,7 +109,7 @@ r8 = Restaurant.create(
   phone_number: "(617) 491-1160",
   lat: 42.372723,
   lng: -71.120840,
-  # hours: “Every night 5pm-7:30pm”
+  # hours: "Every night 5pm-7:30pm"
   description: "All food 50% off"
 )
 
@@ -108,7 +122,7 @@ r9 = Restaurant.create(
   phone_number: "(617) 547-6666",
   lat: 42.372315,
   lng: -71.120419,
-  # Hours: “M-W 5pm - 6:30pm”
+  # Hours: "M-W 5pm - 6:30pm"
   description: "Half off chicken satay and spring rolls"
 )
 
@@ -121,7 +135,7 @@ r10 = Restaurant.create(
   phone_number: "(617) 500-3055",
   lat: 42.373298,
   lng: -71.119335,
-  # Hours: “Every day after 11pm”
+  # Hours: "Every day after 11pm"
   description: "$1 oysters"
 )
 
@@ -134,7 +148,7 @@ r11 = Restaurant.create(
   phone_number: "(212) 967-3055",
   lat: 40.743916,
   lng: -73.986166,
-  # Hours: “4-7p”
+  # Hours: "4-7p"
   description: "$4 fries, beers, and $5 shots"
 )
 
@@ -147,7 +161,7 @@ r12 = Restaurant.create(
   phone_number: "(212) 962-0053",
   lat: 40.707314,
   lng: -74.002524,
-  # Hours: “Every day from 4-8p”
+  # Hours: "Every day from 4-8p"
   description: "$5 beers, $5 well drinks, and $6 house wines"
 )
 
@@ -160,7 +174,7 @@ r13 = Restaurant.create(
   phone_number: "(212) 219-0666",
   lat: 40.720762,
   lng: -74.008441,
-  # Hours: “M-F 4-7p”
+  # Hours: "M-F 4-7p"
   description: "All drinks just $7"
 )
 
@@ -173,7 +187,7 @@ r14 = Restaurant.create(
   phone_number: "(917) 639-3352",
   lat: 40.722561,
   lng: -73.992154,
-  # Hours: “M-F 4-7p”
+  # Hours: "M-F 4-7p"
   description: "$10 for frozen margaritas, cocktails, and grilled cheese"
 )
 
@@ -186,7 +200,7 @@ r15 = Restaurant.create(
   phone_number: "(646) 726-4740",
   lat: 40.727482,
   lng: -73.999964,
-  # Hours: “M-F 4-7p”
+  # Hours: "M-F 4-7p"
   description: "$10 for frozen margaritas, cocktails, and grilled cheese"
 )
 
@@ -199,7 +213,7 @@ r16 = Restaurant.create(
   phone_number: "(212) 777-0327",
   lat: 40.727917,
   lng: -73.999556,
-  # Hours: “M-F 4-7p”
+  # Hours: "M-F 4-7p"
   description: "$6 beer, $8 wine, $9 cocktails"
 )
 
@@ -212,7 +226,7 @@ r17 = Restaurant.create(
   phone_number: "(212) 614-6818",
   lat: 40.725879,
   lng: -73.984097,
-  # Hours: “Every day 5-7pm, but Sundays - all night!”
+  # Hours: "Every day 5-7pm, but Sundays - all night!"
   description: "Half priced punch bowls, and $7 cocktails!"
 )
 
@@ -224,29 +238,322 @@ review1 = Review.create(
 )
 
 review2 = Review.create(
-  rating: 5,
-  review: "Great food, great wine!",
-  restaurant_id: r2.id,
-  author_id: v.id
-)
-
-review3 = Review.create(
-  rating: 5,
-  review: "Who doesn't love $12 wine flights?!",
-  restaurant_id: r3.id,
-  author_id: a.id
-)
-
-review4 = Review.create(
   rating: 4,
   review: "Beautiful interior, and $1 oysters!!",
   restaurant_id: r1.id,
   author_id: v.id
 )
 
+review3 = Review.create(
+  rating: 3,
+  review: "The oysters looked so sad :(",
+  restaurant_id: r1.id,
+  author_id: s.id
+)
+
+review4 = Review.create(
+  rating: 4,
+  review: "Yum yum yum!",
+  restaurant_id: r1.id,
+  author_id: j.id
+)
+
 review5 = Review.create(
   rating: 5,
+  review: "Great food, great wine!",
+  restaurant_id: r2.id,
+  author_id: v.id
+)
+
+review6 = Review.create(
+  rating: 4,
+  review: "Such great drinks!! Super cool vibe",
+  restaurant_id: r2.id,
+  author_id: a.id
+)
+
+review7 = Review.create(
+  rating: 5,
+  review: "Bartender is super funny. Jumped into a lot of my conversations with a friend. Made for a great time!",
+  restaurant_id: r2.id,
+  author_id: j.id
+)
+
+review8 = Review.create(
+  rating: 5,
+  review: "Really yummy pizzas! Will be going here often!",
+  restaurant_id: r2.id,
+  author_id: s.id
+)
+
+review9 = Review.create(
+  rating: 5,
+  review: "Who doesn't love $12 wine flights?!",
+  restaurant_id: r3.id,
+  author_id: a.id
+)
+
+review10 = Review.create(
+  rating: 4,
+  review: "Wine wednesdays, anyone?",
+  restaurant_id: r3.id,
+  author_id: v.id
+)
+
+review11 = Review.create(
+  rating: 3,
+  review: "I thought the wines were just alright. Definitely not your Chateaux de Margaux",
+  restaurant_id: r3.id,
+  author_id: j.id
+)
+
+review12 = Review.create(
+  rating: 3,
+  review: "Tastes like boxed wine",
+  restaurant_id: r3.id,
+  author_id: s.id
+)
+
+review13 = Review.create(
+  rating: 5,
+  review: "The coolest place in NYC!",
+  restaurant_id: r4.id,
+  author_id: a.id
+)
+
+review14 = Review.create(
+  rating: 4,
+  review: "Cocktails here are on point",
+  restaurant_id: r4.id,
+  author_id: v.id
+)
+
+review15 = Review.create(
+  rating: 4,
+  review: "Classy place with great cocktails",
+  restaurant_id: r4.id,
+  author_id: j.id
+)
+
+review16 = Review.create(
+  rating: 5,
+  review: "All the cool cats go here",
+  restaurant_id: r4.id,
+  author_id: s.id
+)
+
+review17 = Review.create(
+  rating: 3,
+  review: "Really solid fish tacos and shrimp enchiladas.  One of my favorite spots in New York.  The Happy Hour unfortunately is only a mediocre value at $8 for food and drink, but food is   good.  3 stars.",
+  restaurant_id: r5.id,
+  author_id: v.id
+)
+
+review18 = Review.create(
+  rating: 4,
+  review: "I really wanted to love this place as I’m a big fan of Mexican food!  It’s an ok value at $8 during the happy hour but the food is great.  Portions are reasonable and strong cocktails!",
+  restaurant_id: r5.id,
+  author_id: a.id
+)
+
+review19 = Review.create(
+  rating: 5,
+  review: "Delicious shrimp enchiladas, would definitely repeat!  Come for the happy hour.",
+  restaurant_id: r5.id,
+  author_id: j.id
+)
+
+review20 = Review.create(
+  rating: 4,
+  review: "Great food!!!",
+  restaurant_id: r5.id,
+  author_id: s.id
+)
+
+review21 = Review.create(
+  rating: 5,
+  review: "My favorite spot with unbeatable happy hour value for oysters - 2 for $1!!!",
+  restaurant_id: r6.id,
+  author_id: v.id
+)
+
+review22 = Review.create(
+  rating: 3,
+  review: "The oysters looked so sad :(",
+  restaurant_id: r6.id,
+  author_id: a.id
+)
+
+review23 = Review.create(
+  rating: 4,
+  review: "Mediocre oysters at best, but great ambiance",
+  restaurant_id: r6.id,
+  author_id: j.id
+)
+
+review24 = Review.create(
+  rating: 4,
+  review: "Such great drinks!! Super cool vibe",
+  restaurant_id: r7.id,
+  author_id: v.id
+)
+
+review25 = Review.create(
+  rating: 5,
   review: "Great spot for groups!",
+  restaurant_id: r7.id,
+  author_id: a.id
+)
+
+review26 = Review.create(
+  rating: 5,
+  review: "The most amazing and delicious chicken quesadillas ever! And only $5!!!",
+  restaurant_id: r7.id,
+  author_id: j.id
+)
+
+review27 = Review.create(
+  rating: 5,
+  review: "Wine wednesdays, anyone?",
+  restaurant_id: r8.id,
+  author_id: v.id
+)
+
+review28 = Review.create(
+  rating: 5,
+  review: "Yum yum yum!",
+  restaurant_id: r8.id,
+  author_id: a.id
+)
+
+review29 = Review.create(
+  rating: 5,
+  review: "Great spot for groups!",
+  restaurant_id: r8.id,
+  author_id: j.id
+)
+
+review30 = Review.create(
+  rating: 5,
+  review: "Beautiful interior, and $1 oysters!!!",
+  restaurant_id: r9.id,
+  author_id: v.id
+)
+
+review31 = Review.create(
+  rating: 5,
+  review: "The oysters looked so sad :(",
+  restaurant_id: r9.id,
+  author_id: a.id
+)
+
+review32 = Review.create(
+  rating: 5,
+  review: "Delicious food! Will be back every week!",
+  restaurant_id: r9.id,
+  author_id: j.id
+)
+
+review33 = Review.create(
+  rating: 5,
+  review: "Classy place to go if you wanna impress someone",
+  restaurant_id: r10.id,
+  author_id: v.id
+)
+
+review34 = Review.create(
+  rating: 4,
+  review: "Mediocre oysters at best, but great ambiance",
+  restaurant_id: r10.id,
+  author_id: a.id
+)
+
+review35 = Review.create(
+  rating: 4,
+  review: "Great food, great wine!",
+  restaurant_id: r11.id,
+  author_id: v.id
+)
+
+review36 = Review.create(
+  rating: 5,
+  review: "Classy place to go if you wanna impress someone",
+  restaurant_id: r11.id,
+  author_id: a.id
+)
+
+review37 = Review.create(
+  rating: 3,
+  review: "The oysters looked so sad :(",
+  restaurant_id: r12.id,
+  author_id: v.id
+)
+
+review38 = Review.create(
+  rating: 4,
+  review: "Mediocre oysters at best, but great ambiance",
+  restaurant_id: r12.id,
+  author_id: j.id
+)
+
+review39 = Review.create(
+  rating: 4,
+  review: "Yum yum yum!",
+  restaurant_id: r13.id,
+  author_id: v.id
+)
+
+review40 = Review.create(
+  rating: 5,
+  review: "The most amazing and yummy oysters ever! Plump, juicy, and absolutely devine!",
+  restaurant_id: r13.id,
+  author_id: a.id
+)
+
+review41 = Review.create(
+  rating: 5,
+  review: "Delicious food! Will be back every week!",
+  restaurant_id: r14.id,
+  author_id: v.id
+)
+
+review42 = Review.create(
+  rating: 5,
+  review: "Such great drinks!! Super cool vibe",
+  restaurant_id: r14.id,
+  author_id: j.id
+)
+
+review43 = Review.create(
+  rating: 4,
+  review: "Yum yum yum!",
+  restaurant_id: r15.id,
+  author_id: v.id
+)
+review44 = Review.create(
+  rating: 3,
+  review: "Mediocre oysters at best, but great ambiance",
+  restaurant_id: r15.id,
+  author_id: a.id
+)
+
+review45 = Review.create(
+  rating: 4,
+  review: "Classy place to go if you wanna impress someone",
+  restaurant_id: r16.id,
+  author_id: v.id
+)
+
+review46 = Review.create(
+  rating: 5,
+  review: "Great food, great wine!",
+  restaurant_id: r17.id,
+  author_id: v.id
+)
+
+review47 = Review.create(
+  rating: 5,
+  review: "The most amazing and yummy oysters ever! Plump, juicy, and absolutely devine!",
   restaurant_id: r17.id,
   author_id: v.id
 )
