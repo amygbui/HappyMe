@@ -8,7 +8,7 @@ import GreetingContainer from './greeting/greeting_container'
 import SessionFormContainer from './session/session_form_container';
 import RestaurantSearchContainer from './restaurant/preview/restaurant_search_container';
 import RestaurantShowContainer from './restaurant/show/restaurant_show_container';
-
+import ReviewFormContainer from './review/form/review_form_container';
 
 const Root = ({ store }) => {
   const redirectUnlessLoggedIn = (nextState, replace) => {
@@ -40,7 +40,10 @@ const Root = ({ store }) => {
                 component={ RestaurantSearchContainer }
             />
           <Route path="/restaurants/:restaurantId"
-            component={ RestaurantShowContainer }
+                 component={ RestaurantShowContainer }
+            />
+          <Route path="/restaurants/:restaurantId/review"
+                 component={ ReviewFormContainer }
             />
         </Route>
       </Router>

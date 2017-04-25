@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import ReviewContainer from '../../review/review_container';
 import Rating from '../../rating/rating';
@@ -59,6 +60,8 @@ class RestaurantShow extends React.Component {
       reviewAction = "Write a Review";
     }
 
+    // const formType = reviewAction === "Write a Review" ? "new" : "edit";
+
     return (
       <div className="restaurant-show">
         <main className="business-details">
@@ -90,10 +93,12 @@ class RestaurantShow extends React.Component {
           </section>
 
           <div className="business-right">
-            <button className="add-review" to="/review">
-              <i className="fa fa-star" aria-hidden="true"></i>
+            <Link to={`/restaurants/${id}/review`}>
+              <button className="add-review" to="/review">
+                <i className="fa fa-star" aria-hidden="true"></i>
               { reviewAction }
-            </button>
+              </button>
+            </Link>
 
             <section className="photo-highlights">
               <img className={ this.state.img1 }

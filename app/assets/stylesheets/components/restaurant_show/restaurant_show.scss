@@ -83,6 +83,7 @@
 .img-default {
   width: 200px;
   height: 200px;
+  transition: all .5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .img-selected {
@@ -91,4 +92,6 @@
   width: 220px;
   height: 220px;
   box-shadow: 0 5px 10px #999;
+  // transition: all .5s ease-in-out;
+  // transition-delay: 1s;
 }

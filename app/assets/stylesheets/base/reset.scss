@@ -1,7 +1,8 @@
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, h3,
-span, article, footer, time, small {
+span, article, footer, time, small,
+figure {
   margin: 0px;
   padding: 0px;
   border: 0px;
@@ -24,7 +25,7 @@ form, input {
 }
 // fieldset, label, input, textarea,
 
-ol, ul {
+ol, ul, li {
   list-style: none;
 }
 
@@ -38,11 +39,18 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="submit"],
+input[type="textarea"]
 textarea,
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+}
+
+input:focus {
+  // outline: 1px double #AEDCF3;
+  outline: none;
 }
 
 button,
