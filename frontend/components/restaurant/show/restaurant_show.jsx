@@ -27,6 +27,8 @@ class RestaurantShow extends React.Component {
       average_rating
     } = this.props.restaurant;
 
+    const reviewAction = currentUser ? "Update My Revew" : "Write a Review"
+
     return (
       <div className="restaurant-show">
         <main className="business-details">
@@ -56,7 +58,11 @@ class RestaurantShow extends React.Component {
               </aside>
             </article>
           </section>
-           Photos go here
+
+          <div>
+            <button to="/review">{ reviewAction }</button>
+            Photos go here
+          </div>
         </main>
 
         <section className="reviews">

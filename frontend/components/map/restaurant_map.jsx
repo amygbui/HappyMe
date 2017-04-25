@@ -1,6 +1,6 @@
 import React form 'react';
 
-class BenchMap extends React.Component {
+class RestaurantMap extends React.Component {
   render() {
     <div id="map-container" ref="map">
 
@@ -8,4 +8,4 @@ class BenchMap extends React.Component {
   }
 }
 
-export default BenchMap;
+export default RestaurantMap;

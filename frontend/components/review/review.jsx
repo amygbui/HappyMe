@@ -9,6 +9,7 @@ class Review extends React.Component {
   }
 
   render () {
+    debugger
     const { rating, review, reviewer } = this.props.review;
     // add in user for profile pic
     return (
