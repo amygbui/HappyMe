@@ -112,6 +112,7 @@
   flex-direction: column;
   justify-content: space-around;
   border: 1px solid #ddd;
+  border-radius: 5px;
   width: 180px;
   height: 150px;
   background: #fff;
@@ -125,7 +126,8 @@
 }
 
 .categories img {
-  width: 80px;
+  // width: 80px;
   height: 80px;
+  width: auto;
   margin: auto;
 }

@@ -7,28 +7,43 @@ import ReviewIndex from '../review_index';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      form: { rating: "", review: "" },
-      restaurant: props.restaurant
-    };
+    this.state = { rating: "", review: "",
+                   restaurant_id: props.params.restaurantId,
+                   author_id: currentUser.id, id: "" }
 
     this.submitForm = this.submitForm.bind(this);
     this.highlightStar = this.highlightStar.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchRestaurant(this.props.params.restaurantId);
+    if (!this.props.restaurant) {
+      this.props.fetchRestaurant(this.props.params.restaurantId);
+      this.props.fetchReviews(this.props.params.restaurantId);
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.restaurant !== nextProps.restaurant && nextProps.restaurant) {
+  //     this.props.fetchRestaurant(this.props.params.restaurantId);
+  //     this.props.fetchReviews(this.props.params.restaurantId);
+  //   }
+  // }
 
   submitForm(e) {
     e.preventDefault();
+    this.props.processForm(this.state)
+  }
+
+  update(e) {
+    this.setState({ review: e.target.value });
   }
 
   highlightStar(e) {
+    this.setState({ rating: e.target.getAttribute("value") })
+  }
+
+  stars() {
 
   }
 
@@ -50,8 +65,11 @@ class ReviewForm extends React.Component {
                 <Link to="/restaurants/${restaurant.id}">
                   { restaurant.name }
                 </Link> <br />
-                { restaurant.address } <br />
-                { restaurant.city }, { restaurant.state } { restaurant.zip}
+
+                <div>
+                  { restaurant.address } <br />
+                  { restaurant.city }, { restaurant.state } { restaurant.zip}
+                </div>
               </div>
             </article>
 
@@ -60,23 +78,31 @@ class ReviewForm extends React.Component {
               <section>
                 <figure>
                   <img id="star"
+                       value={ 1 }
                        onClick={ this.highlightStar }
                        src={ window.images.silver_star } />
                   <img id="star"
+                       value={ 2 }
                        onClick={ this.highlightStar }
                        src={ window.images.silver_star } />
                   <img id="star"
+                       value={ 3 }
                        onClick={ this.highlightStar }
                        src={ window.images.silver_star } />
                   <img id="star"
+                       value={ 4 }
                        onClick={ this.highlightStar }
                        src={ window.images.silver_star } />
                   <img id="star"
+                       value={ 5 }
                        onClick={ this.highlightStar }
                        src={ window.images.silver_star } />
                   Select your rating.
                 </figure>
-                <input type="textarea" placeholder="Got the inside scoop on the best happy hours? Let others know so they can enjoy it too!" />
+                <textarea
+                  onChange={ this.update }
+                  value={ this.state.review }
+                  placeholder="Got the inside scoop on the best happy hours? Let others know so they can get happy too!" />
               </section>
 
               <Link to={`/restaurants/${this.props.params.restaurantId}`}>

@@ -51,16 +51,17 @@ class RestaurantShow extends React.Component {
       average_rating, all_reviewers
     } = this.props.restaurant;
 
-
-    let reviewAction;
-    if (this.props.currentUser) {
-      reviewAction = all_reviewers.includes(this.props.currentUser.username) ?
+    const currentUser = this.props.currentUser
+    let formType;
+    let reviewButton;
+    if (currentUser) {
+      const alreadyReviewed = all_reviewers.includes(currentUser.username)
+      reviewButton = alreadyReviewed ?
       "Update My Review" : "Write a Review";
+      formType = alreadyReviewed ? "edit" : "new"
     } else {
-      reviewAction = "Write a Review";
+      reviewButton = "Write a Review";
     }
-
-    // const formType = reviewAction === "Write a Review" ? "new" : "edit";
 
     return (
       <div className="restaurant-show">
@@ -93,10 +94,10 @@ class RestaurantShow extends React.Component {
           </section>
 
           <div className="business-right">
-            <Link to={`/restaurants/${id}/review`}>
+            <Link to={`/restaurants/${id}/review/${formType}`}>
               <button className="add-review" to="/review">
                 <i className="fa fa-star" aria-hidden="true"></i>
-              { reviewAction }
+                { reviewButton }
               </button>
             </Link>
 

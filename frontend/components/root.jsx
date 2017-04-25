@@ -42,7 +42,10 @@ const Root = ({ store }) => {
           <Route path="/restaurants/:restaurantId"
                  component={ RestaurantShowContainer }
             />
-          <Route path="/restaurants/:restaurantId/review"
+          <Route path="/restaurants/:restaurantId/review/new"
+                 component={ ReviewFormContainer }
+            />
+          <Route path="/restaurants/:restaurantId/review/edit"
                  component={ ReviewFormContainer }
             />
         </Route>
