@@ -98,7 +98,7 @@ class ReviewForm extends React.Component {
             <article>
               <img src={ restaurant.image_url } />
               <div>
-                <Link to="/restaurants/${restaurant.id}">
+                <Link to={`/restaurants/${restaurant.id}`}>
                   { restaurant.name }
                 </Link> <br />
 
