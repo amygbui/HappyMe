@@ -37,10 +37,18 @@
 }
 
 .splash form input {
-  width: 100%;
   padding: 10px;
   border-radius: 4px;
   margin-left: 1px;
+  font-weight: bold;
+}
+
+.splash form input[type="search"] {
+  width: 350px;
+}
+
+.splash form input[type="text"] {
+  width: 200px;
 }
 
 .splash .fa {

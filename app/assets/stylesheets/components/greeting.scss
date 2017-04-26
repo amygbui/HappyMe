@@ -29,9 +29,17 @@
 }
 
 .header-fixed form input {
-  width: 500px;
   padding: 10px;
   border-radius: 4px;
+  font-weight: bold;
+}
+
+.header-fixed form input[type="search"] {
+  width: 275px;
+}
+
+.header-fixed form input[type="text"] {
+  width: 175px;
 }
 
 .header .fa {
