@@ -7,11 +7,22 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
+    this.makeSearch = this.makeSearch.bind(this);
   }
 
   logout(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  makeSearch(e) {
+    e.preventDefault();
+    this.props.fetchRestaurants(e.target.getAttribute("value"), this.props.bounds)
+      .then(() => {
+        if (location.hash !== "#/search") {
+          return hashHistory.push("/search")
+        }
+      });
   }
 
   render() {
@@ -49,19 +60,19 @@ class Greeting extends React.Component {
         <section>
           <article className="nav">
             <nav>
-              <Link to='/'>
+              <Link value="beer" onClick={ this.makeSearch }>
                 <i className="fa fa-beer" aria-hidden="true"></i>
                 Beers
               </Link>
-              <Link to='/'>
+              <Link value="cocktail" onClick={ this.makeSearch }>
                 <i className="fa fa-glass" aria-hidden="true"></i>
                 Cocktails
               </Link>
-              <Link to='/'>
+              <Link value="oyster" onClick={ this.makeSearch }>
                 <i className="fa fa-heart" aria-hidden="true"></i>
                 Oysters
               </Link>
-              <Link to='/'>
+              <Link value="all" onClick={ this.makeSearch }>
                 <i className="fa fa-cutlery" aria-hidden="true"></i>
                 Food
               </Link>
