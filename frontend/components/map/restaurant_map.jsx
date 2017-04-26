@@ -25,14 +25,6 @@ class RestaurantMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(Object.values(this.props.restaurants));
-
-    // const markers = Object.values(this.MarkerManager.markers)
-    // const bounds = new google.maps.LatLngBounds();
-    // for (let i = 0; i < markers.length; i++) {
-    //   bounds.extend(markers[i].getPosition());
-    // }
-    //
-    // this.map.fitBounds(bounds);
   }
 
   componentWillReceiveProps(nextProps) {

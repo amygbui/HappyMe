@@ -7,6 +7,14 @@ export default class MarkerManager {
   updateMarkers(restaurants) {
     this.markers = {};
     restaurants.map(restaurant => this.createMarkerFromRestaurant(restaurant));
+
+    const markers = Object.values(this.markers);
+    const bounds = new google.maps.LatLngBounds();
+    for (let i = 0; i < markers.length; i++) {
+     bounds.extend(markers[i].getPosition());
+    }
+
+    this.map.fitBounds(bounds);
   }
 
   createMarkerFromRestaurant(restaurant) {
@@ -18,6 +26,6 @@ export default class MarkerManager {
     });
 
     marker.setMap(this.map);
-    this.markers[restaurant.id] = restaurant;
+    this.markers[restaurant.id] = marker;
   }
 }
