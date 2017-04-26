@@ -4,7 +4,8 @@ import RestaurantMap from './restaurant_map';
 import { fetchRestaurants, fetchRestaurant } from '../../actions/restaurant_actions';
 
 const mapStateToProps = state => ({
-  restaurants: state.restaurants
+  restaurants: state.restaurants,
+  bounds: state.bounds
 });
 
 const mapDispatchToProps = dispatch => ({
