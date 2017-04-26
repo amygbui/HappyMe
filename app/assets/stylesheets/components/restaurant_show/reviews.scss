@@ -19,3 +19,14 @@
   font-weight: bold;
   color: #07BAB4;
 }
+
+#review .rating {
+  display: flex;
+  align-items: center;
+}
+
+#review #date {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}

@@ -67,7 +67,7 @@ class RestaurantShow extends React.Component {
     return (
       <div className="restaurant-show">
         <main className="business-details">
-          <p>
+          <div className="p">
             <section>
               <h2>{ name }</h2>
               <Rating rating={ average_rating } />
@@ -95,33 +95,33 @@ class RestaurantShow extends React.Component {
             </article>
           </section>
 
-          <div className="business-right">
-            <Link to={`/restaurants/${id}/review/${formType}`}>
-              <button className="add-review" to="/review">
-                <i className="fa fa-star" aria-hidden="true"></i>
-                { reviewButton }
-              </button>
-            </Link>
+            <div className="business-right">
+              <Link to={`/restaurants/${id}/review/${formType}`}>
+                <button className="add-review" to="/review">
+                  <i className="fa fa-star" aria-hidden="true"></i>
+                  { reviewButton }
+                </button>
+              </Link>
 
-            <section className="photo-highlights">
-              <img className={ this.state.img1 }
-                value={ "img1" }
-                onMouseEnter={ this.switchHover }
-                onMouseLeave={ this.resetHover }
-                src={ window.images.oysters1 } />
-              <img className={ this.state.img2 }
-                value={ "img2" }
-                onMouseEnter={ this.switchHover }
-                onMouseLeave={ this.resetHover }
-                src={ window.images.oysters2 } />
-              <img className={ this.state.img3 }
-                value={ "img3" }
-                onMouseEnter={ this.switchHover }
-                onMouseLeave={ this.resetHover }
-                src={ window.images.oysters3 } />
-            </section>
+              <section className="photo-highlights">
+                <img className={ this.state.img1 }
+                  value={ "img1" }
+                  onMouseEnter={ this.switchHover }
+                  onMouseLeave={ this.resetHover }
+                  src={ window.images.oysters1 } />
+                <img className={ this.state.img2 }
+                  value={ "img2" }
+                  onMouseEnter={ this.switchHover }
+                  onMouseLeave={ this.resetHover }
+                  src={ window.images.oysters2 } />
+                <img className={ this.state.img3 }
+                  value={ "img3" }
+                  onMouseEnter={ this.switchHover }
+                  onMouseLeave={ this.resetHover }
+                  src={ window.images.oysters3 } />
+              </section>
+            </div>
           </div>
-          </p>
         </main>
 
         <section className="reviews">

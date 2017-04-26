@@ -39,15 +39,15 @@
   width: 390px;
 }
 
-#review .rating {
-  display: flex;
-  margin-bottom: 10px;
-}
-
 #review .rating li {
   width: 20px;
   height: 20px;
-  // border-top: 1px solid #e6e6e6;
-  // border-bottom: 1px solid #e6e6e6;
-  // border-right: 1px solid #e6e6e6;
+}
+
+#review .rating {
+  margin-right: 5px;
+}
+
+#date {
+  margin-bottom: 10px;
 }

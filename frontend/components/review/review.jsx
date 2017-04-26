@@ -5,7 +5,7 @@ import Rating from '../rating/rating';
 
 class Review extends React.Component {
   render () {
-    const { id, rating, review, reviewer } = this.props.review;
+    const { id, rating, review, reviewer, date } = this.props.review;
     let editLink;
     if (this.props.currentUser){
       if (this.props.currentUser.id === reviewer.id) {
@@ -29,8 +29,9 @@ class Review extends React.Component {
         </div>
 
         <div id="review">
-          <div>
+          <div id="date">
             <Rating rating={ rating } />
+            { date }
           </div>
           { review }
         </div>
