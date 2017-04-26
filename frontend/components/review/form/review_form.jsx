@@ -2,28 +2,24 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Restaurant from '../../restaurant/preview/restaurant';
-import ReviewIndex from '../review_index';
+import ReviewContainer from '../review_container';
 
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
 
     let id;
-    let review;
-    let rating;
-    if (props.review) {
-      id = props.review.id
-      review = props.review.review;
-      rating = props.review.rating;
-    } else {
-      review: "";
-      rating: "";
+    let review = "";
+    let rating = "";
+    const editReview = props.reviews[props.params.reviewId]
+    if (editReview) {
+      id = editReview.id
+      review = editReview.review;
+      rating = editReview.rating;
     }
 
     this.state = { id, rating, review,
                    restaurant_id: props.params.restaurantId }
-
-    debugger
 
     this.submitForm = this.submitForm.bind(this);
     this.highlightStar = this.highlightStar.bind(this);
@@ -38,8 +34,10 @@ class ReviewForm extends React.Component {
       this.props.fetchRestaurant(restaurantId);
       this.props.fetchReviews(restaurantId)
         .then((reviews => {
-          const { rating, review } = reviews.reviews[reviewId];
-          this.setState({ rating, review, id: reviewId })
+          if (reviews.reviews[reviewId]) {
+            const { rating, review } = reviews.reviews[reviewId];
+            this.setState({ rating, review, id: reviewId })
+          }
         }).bind(this))
     }
   }
@@ -134,6 +132,10 @@ class ReviewForm extends React.Component {
             </form>
 
           </section>
+          <aside>
+            <h2>Reviews for {restaurant.name }</h2>
+            <ReviewContainer restaurantId={ restaurant.id } className="review-show" />
+          </aside>
         </div>
       )
     } else {
@@ -143,8 +145,5 @@ class ReviewForm extends React.Component {
     }
   }
 }
-// <aside>
-//   <ReviewIndex />
-// </aside>
 
 export default ReviewForm;

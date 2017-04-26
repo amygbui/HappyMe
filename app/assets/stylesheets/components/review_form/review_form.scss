@@ -1,7 +1,6 @@
 .review-form {
   width: 900px;
   display: flex;
-  flex-direction: column;
   margin: auto;
   margin-top: 20px;
 }
@@ -105,4 +104,12 @@
 
 #star:hover {
   cursor: pointer;
+}
+
+.review-form aside {
+  margin-left: 15px;
+}
+
+.review-form aside h2 {
+  text-align: center;
 }
