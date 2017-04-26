@@ -9,10 +9,13 @@ class RestaurantMap extends React.Component {
     // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
+  // lat: 40.743083,
+  // lng: -73.999881,
+
   componentDidMount() {
     const mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 },
-      zoom: 13
+      center: { lat: 40.743083, lng: -73.999881 },
+      zoom: 10
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
