@@ -13,7 +13,7 @@ import ReviewFormContainer from './review/form/review_form_container';
 const Root = ({ store }) => {
   const redirectUnlessLoggedIn = (nextState, replace) => {
     if (!store.getState().session.currentUser) {
-      replace("/welcome")
+      replace("/login")
     }
   }
 
@@ -44,9 +44,11 @@ const Root = ({ store }) => {
             />
           <Route path="/restaurants/:restaurantId/review/new"
                  component={ ReviewFormContainer }
+                 onEnter={ redirectUnlessLoggedIn }
             />
           <Route path="/restaurants/:restaurantId/review/edit/:reviewId"
                  component={ ReviewFormContainer }
+                 onEnter={ redirectUnlessLoggedIn }
             />
         </Route>
       </Router>
