@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 import SearchContainer from '../search/search_container';
 
@@ -7,11 +7,22 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
+    this.makeSearch = this.makeSearch.bind(this);
   }
 
   logout(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  makeSearch(e) {
+    e.preventDefault();
+    this.props.fetchRestaurants(e.target.getAttribute("value"), this.props.bounds)
+      .then(() => {
+        if (location.hash !== "#/search") {
+          return hashHistory.push("/search")
+        }
+      });
   }
 
   render() {
@@ -45,19 +56,19 @@ class Splash extends React.Component {
             <h1>HappyMe</h1>
             <SearchContainer />
             <nav>
-              <Link to='/'>
+              <Link value="beer" onClick={ this.makeSearch }>
                 <i className="fa fa-beer" aria-hidden="true"></i>
                 Beers
               </Link>
-              <Link to='/'>
+              <Link value="cocktail" onClick={ this.makeSearch }>
                 <i className="fa fa-glass" aria-hidden="true"></i>
                 Cocktails
               </Link>
-              <Link to='/'>
+              <Link value="oyster" onClick={ this.makeSearch }>
                 <i className="fa fa-heart" aria-hidden="true"></i>
                 Oysters
               </Link>
-              <Link to='/'>
+              <Link value="all" onClick={ this.makeSearch }>
                 <i className="fa fa-cutlery" aria-hidden="true"></i>
                 Food
               </Link>
@@ -78,19 +89,19 @@ class Splash extends React.Component {
           <article className="categories">
             <h2>Browse Restaurants by Category</h2>
             <p>
-              <Link to="/search">
+              <Link value="beer" onClick={ this.makeSearch }>
                 <img src={ window.images.beer } />
                 Beer
               </Link>
-              <Link to="/search">
+              <Link value="cocktail" onClick={ this.makeSearch }>
                 <img src={ window.images.cocktails } />
                 Cocktails
               </Link>
-              <Link to="/search">
+              <Link value="oyster" onClick={ this.makeSearch }>
                 <img src={ window.images.oysters } />
                 Oysters
               </Link>
-              <Link to="/search">
+              <Link value="all" onClick={ this.makeSearch }>
                 <img src={ window.images.food } />
                 Food
               </Link>
