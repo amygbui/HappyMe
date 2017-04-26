@@ -19,7 +19,7 @@ class Search extends React.Component {
 
     if (this.state.location.length > 0) {
       this.props.fetchBounds(this.state.location)
-        .then(this.props.fetchRestaurants(this.state.query, this.props.bounds))
+        .then(() => this.props.fetchRestaurants(this.state.query, this.props.bounds))
         .then(() => {
           if (location.hash !== "#/search") {
             return hashHistory.push("/search")
