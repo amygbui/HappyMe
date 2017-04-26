@@ -67,8 +67,8 @@ class ReviewForm extends React.Component {
     const rating = this.state.rating;
     const stars = [];
 
-    for (let i = 0; i < 5; i++) {
-      if (i <= rating & rating != 0) {
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
         stars.push(
           <li key={ i }>
             <img src={ window.images.gold_star }
