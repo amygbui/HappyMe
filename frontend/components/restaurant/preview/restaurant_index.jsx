@@ -32,12 +32,11 @@ class RestaurantIndex extends React.Component {
           </ul>
         </div>
         <aside>
-          <RestaurantMapContainer fetchRestaurants={ this.props.fetchRestaurants } />
+          <RestaurantMapContainer />
         </aside>
       </div>
     );
   }
 }
-// <RestaurantMapContainer />
 
 export default RestaurantIndex;

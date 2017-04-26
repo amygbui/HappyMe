@@ -5,7 +5,6 @@ import MarkerManager from '../../util/marker_manager';
 class RestaurantMap extends React.Component {
   constructor(props) {
     super(props)
-    // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
@@ -21,7 +20,7 @@ class RestaurantMap extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.restaurants != nextProps.restaurants) {
-      this.MarkerManager.updateMarkers(Object.values(this.props.restaurants));
+      this.MarkerManager.updateMarkers(Object.values(nextProps.restaurants));
     }
   }
 
