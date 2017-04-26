@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
 
     let id;
     let review = "";
-    let rating = "";
+    let rating = 0;
     const editReview = props.reviews[props.params.reviewId]
     if (editReview) {
       id = editReview.id
@@ -51,7 +51,7 @@ class ReviewForm extends React.Component {
 
   submitForm(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
+    this.props.processForm(this.state);
   }
 
   update(e) {
@@ -59,17 +59,33 @@ class ReviewForm extends React.Component {
   }
 
   highlightStar(e) {
-    this.setState({ rating: e.target.getAttribute("value") })
+    this.setState({ rating: e.target.getAttribute("value") });
   }
 
   stars() {
+    const rating = this.state.rating;
+    const stars = [];
 
+    for (let i = 0; i < 5; i++) {
+      if (i <= rating & rating != 0) {
+        stars.push(
+          <li key={ i }>
+            <img src={ window.images.gold_star }
+                 value={ i } onClick={ this.highlightStar } />
+          </li>);
+      } else {
+        stars.push(
+          <li key={ i }>
+            <img src={ window.images.silver_star }
+                 value={ i } onClick={ this.highlightStar } />
+          </li>);
+      }
+    }
+
+    return stars;
   }
 
   render() {
-    // <Restaurant key={ restaurant.id }
-    //   restaurant={ restaurant }
-    //   fetchRestaurant={ this.props.fetchRestaurant } />
     const restaurant = this.props.restaurant;
 
     if (restaurant) {
@@ -96,26 +112,9 @@ class ReviewForm extends React.Component {
             <form>
               <section>
                 <figure>
-                  <img id="star"
-                       value={ 1 }
-                       onClick={ this.highlightStar }
-                       src={ window.images.silver_star } />
-                  <img id="star"
-                       value={ 2 }
-                       onClick={ this.highlightStar }
-                       src={ window.images.silver_star } />
-                  <img id="star"
-                       value={ 3 }
-                       onClick={ this.highlightStar }
-                       src={ window.images.silver_star } />
-                  <img id="star"
-                       value={ 4 }
-                       onClick={ this.highlightStar }
-                       src={ window.images.silver_star } />
-                  <img id="star"
-                       value={ 5 }
-                       onClick={ this.highlightStar }
-                       src={ window.images.silver_star } />
+                  <ul className="stars">
+                    { this.stars() }
+                  </ul>
                   Select your rating.
                 </figure>
                 <textarea

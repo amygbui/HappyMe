@@ -68,10 +68,6 @@
   margin: 10px;
 }
 
-.form-input figure img:last-of-type {
-  margin-right: 20px;
-}
-
 .form-input textarea {
   background: transparent;
   border: none;
@@ -102,8 +98,10 @@
   font-size: 12px;
 }
 
-#star:hover {
+.stars {
+  display: flex;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .review-form aside {
@@ -113,11 +111,6 @@
 .review-form aside h2 {
   text-align: center;
 }
-
-// .review-form .review, .review-form .user {
-//   margin: 0;
-//   padding: 0;
-// }
 
 .review-form .user img {
   width: 40px;
