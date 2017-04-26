@@ -2,11 +2,12 @@ export default class MarkerManager {
   constructor(map) {
     this.map = map;
     this.markers = {};
-    this.createMarkerFromRestaurant = this.createMarkerFromRestaurant.bind(this);
-    this.updateMarkers = this.updateMarkers.bind(this);
+    // this.createMarkerFromRestaurant = this.createMarkerFromRestaurant.bind(this);
+    // this.updateMarkers = this.updateMarkers.bind(this);
   }
 
   updateMarkers(restaurants) {
+    // console.log('time to update');
     restaurants.map(restaurant => this.createMarkerFromRestaurant(restaurant));
   }
 
