@@ -113,8 +113,9 @@
 }
 
 .review-form .user img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
 }
 
 
@@ -123,7 +124,7 @@
 }
 
 .review-form nav {
-  width: 65px;
+  width: 70px;
 }
 
 .review-form .review {
@@ -143,5 +144,10 @@
 .review-form aside a {
   font-size: 13px;
   display: block;
-  width: 65px;
+  width: 70px;
+}
+
+.review-form #edit-review {
+  font-size: 10px;
+  padding: 2px;
 }

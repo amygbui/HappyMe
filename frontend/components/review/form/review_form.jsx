@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 import Restaurant from '../../restaurant/preview/restaurant';
 import ReviewContainer from '../review_container';
@@ -51,7 +51,8 @@ class ReviewForm extends React.Component {
 
   submitForm(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.processForm(this.state)
+      .then(() => hashHistory.push(`/restaurants/${this.props.params.restaurantId}`));
   }
 
   update(e) {
