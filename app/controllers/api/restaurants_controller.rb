@@ -1,7 +1,6 @@
 class Api::RestaurantsController < ApplicationController
   def index
     if params[:query]
-      debugger
       @restaurants = Restaurant.in_bounds(params[:bounds])
                                .search_restaurants(params[:query])
     else
