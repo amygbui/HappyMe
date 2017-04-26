@@ -1,8 +1,8 @@
-export const fetchRestaurants = query => {
+export const fetchRestaurants = (query, bounds) => {
   return $.ajax({
     method: 'GET',
     url: 'api/restaurants',
-    data: { query }
+    data: { query, bounds }
   });
 };
 

@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRestaurants: query => dispatch(fetchRestaurants(query)),
+  fetchRestaurants: (query, bounds) => dispatch(fetchRestaurants(query, bounds)),
   fetchRestaurant: id => dispatch(fetchRestaurant(id))
 });
 
