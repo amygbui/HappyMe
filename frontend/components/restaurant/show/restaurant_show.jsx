@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import ReviewContainer from '../../review/review_container';
 import Rating from '../../rating/rating';
+import RestaurantMap from '../../map/restaurant_map';
 
 class RestaurantShow extends React.Component {
   constructor(props) {
@@ -72,8 +73,8 @@ class RestaurantShow extends React.Component {
             Restaurant type here<br />
 
             <article className="address">
-              <div className="show-map">
-                Map goes here
+              <div>
+                <RestaurantMap />
               </div>
 
               <aside>

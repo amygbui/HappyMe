@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Restaurant from './restaurant'
+import Restaurant from './restaurant';
+import RestaurantMapContainer from '../../map/restaurant_map_container';
+import RestaurantMap from '../../map/restaurant_map';
 
 class RestaurantIndex extends React.Component {
   render() {
@@ -22,7 +24,6 @@ class RestaurantIndex extends React.Component {
       )
     }
 
-
     return (
       <div className="restaurant-search">
         <div>
@@ -31,13 +32,12 @@ class RestaurantIndex extends React.Component {
           </ul>
         </div>
         <aside>
-          <div className="search-map">
-            Map goes here
-          </div>
+          <RestaurantMapContainer fetchRestaurants={ this.props.fetchRestaurants } />
         </aside>
       </div>
     );
   }
 }
+// <RestaurantMapContainer />
 
 export default RestaurantIndex;
