@@ -72,7 +72,7 @@ class Greeting extends React.Component {
                 <i className="fa fa-heart" aria-hidden="true"></i>
                 Oysters
               </Link>
-              <Link value="all" onClick={ this.makeSearch }>
+              <Link value="food pizza fries" onClick={ this.makeSearch }>
                 <i className="fa fa-cutlery" aria-hidden="true"></i>
                 Food
               </Link>

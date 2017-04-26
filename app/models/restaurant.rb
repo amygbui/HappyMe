@@ -6,7 +6,9 @@ class Restaurant < ApplicationRecord
                   #   reviews: [:review]
                   #   hh_types: [:type]
                   # },
-                  using: { tsearch: { prefix: true, dictionary: "english" } }
+                  using: { tsearch: { prefix: true,
+                                      any_word: true,
+                                      dictionary: "english" } }
 
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
