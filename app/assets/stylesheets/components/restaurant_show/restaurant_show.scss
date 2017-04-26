@@ -1,12 +1,16 @@
 .restaurant-show {
-  width: 900px;
   margin: auto;
-  padding-top: 30px
-  // justify-content: space-around;
 }
 .business-details {
+  padding: 30px 0 20px 0;
+  background: #efefef;
+}
+
+.business-details p {
   display: flex;
   justify-content: space-between;
+  width: 900px;
+  margin: auto;
 }
 
 .business-details h2 {
@@ -92,5 +96,6 @@
   z-index: 2;
   width: 216px;
   height: 216px;
-  box-shadow: 0 5px 10px #999;
+  // box-shadow: 0 5px 10px #999;
+  box-shadow: 0 0 30px #666;
 }

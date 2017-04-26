@@ -67,10 +67,11 @@ class RestaurantShow extends React.Component {
     return (
       <div className="restaurant-show">
         <main className="business-details">
-          <section>
-            <h2>{ name }</h2>
-            <Rating rating={ average_rating } />
-            Restaurant type here<br />
+          <p>
+            <section>
+              <h2>{ name }</h2>
+              <Rating rating={ average_rating } />
+              Restaurant type here<br />
 
             <article className="address">
               <div>
@@ -82,7 +83,7 @@ class RestaurantShow extends React.Component {
                   <i className="fa fa-map-marker" aria-hidden="true"></i>
                   <div>
                     { address }<br />
-                    { city }, { state } { zip }<br />
+                  { city }, { state } { zip }<br />
                   </div>
                 </div>
 
@@ -104,27 +105,30 @@ class RestaurantShow extends React.Component {
 
             <section className="photo-highlights">
               <img className={ this.state.img1 }
-                   value={ "img1" }
-                   onMouseEnter={ this.switchHover }
-                   onMouseLeave={ this.resetHover }
-                   src={ window.images.oysters1 } />
+                value={ "img1" }
+                onMouseEnter={ this.switchHover }
+                onMouseLeave={ this.resetHover }
+                src={ window.images.oysters1 } />
               <img className={ this.state.img2 }
-                   value={ "img2" }
-                   onMouseEnter={ this.switchHover }
-                   onMouseLeave={ this.resetHover }
-                   src={ window.images.oysters2 } />
+                value={ "img2" }
+                onMouseEnter={ this.switchHover }
+                onMouseLeave={ this.resetHover }
+                src={ window.images.oysters2 } />
               <img className={ this.state.img3 }
-                   value={ "img3" }
-                   onMouseEnter={ this.switchHover }
-                   onMouseLeave={ this.resetHover }
-                   src={ window.images.oysters3 } />
+                value={ "img3" }
+                onMouseEnter={ this.switchHover }
+                onMouseLeave={ this.resetHover }
+                src={ window.images.oysters3 } />
             </section>
           </div>
+          </p>
         </main>
 
         <section className="reviews">
-          <h2><strong>Recommended Reviews</strong> for { name }</h2>
-          <ReviewContainer restaurantId={ id } />
+          <article>
+            <h2><strong>Recommended Reviews</strong> for { name }</h2>
+            <ReviewContainer restaurantId={ id } />
+          </article>
         </section>
       </div>
     )

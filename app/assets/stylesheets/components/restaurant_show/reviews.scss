@@ -1,6 +1,12 @@
 .reviews {
+  display: flex;
+  margin: auto;
+  width: 900px;
+}
+
+.reviews article {
   border-right: 1px solid #ccc;
-  width: 600px;
+  width: 550px;
   margin-top: 30px;
 }
 
