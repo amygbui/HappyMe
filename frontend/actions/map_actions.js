@@ -10,6 +10,6 @@ export const receiveBounds = bounds => ({
 export const fetchBounds = address => dispatch => (
   MapApiUtil.fetchBounds(address)
     .then(cityData => {
-      dispatch(receiveBounds(cityData[0].geometry.bounds))
+      dispatch(receiveBounds(cityData.results[0].geometry.bounds))
     });
 )

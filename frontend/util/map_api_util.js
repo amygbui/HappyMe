@@ -8,3 +8,4 @@ export const fetchBounds = address => {
 
 // .then(cityData => cityData[0].geometry.bounds)
 // bounds.southwest & bounds.northwest
+// .then(data => console.log(data.results[0].geometry.bounds))

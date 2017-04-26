@@ -13,7 +13,7 @@ export const receiveRestaurant = restaurant => ({
   restaurant
 });
 
-export const fetchRestaurants = query => dispatch => (
+export const fetchRestaurants = (query, bounds) => dispatch => (
   RestaurantApiUtil.fetchRestaurants(query)
     .then(restaurants => dispatch(receiveRestaurants(restaurants)))
 );
