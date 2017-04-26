@@ -113,3 +113,42 @@
 .review-form aside h2 {
   text-align: center;
 }
+
+// .review-form .review, .review-form .user {
+//   margin: 0;
+//   padding: 0;
+// }
+
+.review-form .user img {
+  width: 40px;
+  height: 40px;
+}
+
+
+.review-form .user {
+  margin: 0;
+}
+
+.review-form nav {
+  width: 65px;
+}
+
+.review-form .review {
+  border: none;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.review-form #review {
+  margin: 0;
+  width: 175px;
+  font-size: 12px;
+}
+
+.review-form aside a {
+  font-size: 13px;
+  display: block;
+  width: 65px;
+}
