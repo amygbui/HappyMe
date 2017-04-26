@@ -8,17 +8,8 @@ class RestaurantMap extends React.Component {
   }
 
   componentDidMount() {
-    const { northeast, southwest } = this.props.bounds
-    let lat = (northeast.lat + southwest.lat) / 2.0;
-    let lng = (northeast.lng + southwest.lng) / 2.0;
-
-    if (Object.values(this.props.restaurants) > 0) {
-      lat = Object.values(this.props.restaurants)[0].lat;
-      lng = Object.values(this.props.restaurants)[0].lng;
-    }
-
     const mapOptions = {
-      center: { lat, lng },
+      center: { lat: 40.743817, lng: -73.994521 },
       zoom: 11
     };
 
