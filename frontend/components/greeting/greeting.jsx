@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 import SearchContainer from '../search/search_container';
 
@@ -13,11 +13,11 @@ class Greeting extends React.Component {
     this.hideDetails = this.hideDetails.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.currentUser) {
-      this.props.fetchUser(this.props.currentUser.id)
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.currentUser) {
+  //     this.props.fetchUser(this.props.currentUser.id)
+  //   }
+  // }
 
   logout(e) {
     e.preventDefault();

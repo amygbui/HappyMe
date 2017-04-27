@@ -31,27 +31,23 @@ const Root = ({ store }) => {
         <Route path="/welcome" component={ App }>
           <Route path="/login"
                  component={ SessionFormContainer }
-                 onEnter={ redirectIfLoggedIn }
-            />
+                 onEnter={ redirectIfLoggedIn } />
           <Route path="/signup"
                  component={ SessionFormContainer }
-                 onEnter={ redirectIfLoggedIn }
-            />
+                 onEnter={ redirectIfLoggedIn } />
           <Route path="/search"
-                component={ RestaurantSearchContainer }
-            />
+                component={ RestaurantSearchContainer } />
           <Route path="/restaurants/:restaurantId"
-                 component={ RestaurantShowContainer }
-            />
+                 component={ RestaurantShowContainer } />
           <Route path="/restaurants/:restaurantId/review/new"
                  component={ ReviewFormContainer }
-                 onEnter={ redirectUnlessLoggedIn }
-            />
+                 onEnter={ redirectUnlessLoggedIn } />
           <Route path="/restaurants/:restaurantId/review/edit/:reviewId"
                  component={ ReviewFormContainer }
-                 onEnter={ redirectUnlessLoggedIn }
-            />
-          <Route path="/users/:userId" component={ UserProfileContainer }/>
+                 onEnter={ redirectUnlessLoggedIn } />
+          <Route path="/users/:userId"
+                 component={ UserProfileContainer }/>
+          <Route path="/users/:userId/upload-profile-pic" />
         </Route>
       </Router>
     </Provider>

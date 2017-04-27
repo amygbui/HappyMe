@@ -13,11 +13,11 @@ class Splash extends React.Component {
     this.hideDetails = this.hideDetails.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.currentUser) {
-      this.props.fetchUser(this.props.currentUser.id)
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.currentUser) {
+  //     this.props.fetchUser(this.props.currentUser.id)
+  //   }
+  // }
 
   logout(e) {
     e.preventDefault();
