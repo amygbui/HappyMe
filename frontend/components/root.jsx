@@ -49,7 +49,8 @@ const Root = ({ store }) => {
           <Route path="/users/:userId"
                  component={ UserProfileContainer } />
           <Route path="/users/:userId/upload-profile-pic"
-                 component={ AvatarUploadFormContainer} />
+                 component={ AvatarUploadFormContainer}
+                 onEnter={ redirectUnlessLoggedIn } />
         </Route>
       </Router>
     </Provider>

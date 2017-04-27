@@ -16,7 +16,7 @@ class Restaurant extends React.Component {
         <section className="preview-info">
           <img src={ image_url} />
 
-          <div>
+          <div className="name-rating">
             <strong>
               <Link to={`/restaurants/${id}`}>{ name }</Link>
             </strong>

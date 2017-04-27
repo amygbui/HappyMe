@@ -69,7 +69,7 @@ class UserProfile extends React.Component {
         <li>
           <i className="fa fa-picture-o" aria-hidden="true"></i>
           <Link to={ `/users/${id}/upload-profile-pic` }>
-            Change Profile Photo
+            Change Profile Picture
           </Link>
         </li>
       )
