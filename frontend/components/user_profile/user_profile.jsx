@@ -61,7 +61,7 @@ class UserProfile extends React.Component {
       addFriend = (
         <li>
           <i className="fa fa-user-plus" aria-hidden="true"></i>
-          Add Friend
+          <Link>Add Friend</Link>
         </li>
       )
     } else {
@@ -104,11 +104,11 @@ class UserProfile extends React.Component {
               { changeProfilePic }
               <li>
                 <i className="fa fa-camera-retro" aria-hidden="true"></i>
-                Add Photos
+                <Link>Add Photos</Link>
               </li>
               <li>
                 <i className="fa fa-users" aria-hidden="true"></i>
-                Find Friends
+                <Link>Find Friends</Link>
               </li>
             </ul>
           </section>
