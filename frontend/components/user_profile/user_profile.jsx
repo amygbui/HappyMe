@@ -54,6 +54,16 @@ class UserProfile extends React.Component {
       )
     })
 
+    let addFriend = (<li></li>)
+    if (!this.props.currentUser || this.props.currentUser.id !== parseInt(this.props.params.userId)) {
+      addFriend = (
+        <li>
+          <i className="fa fa-user-plus" aria-hidden="true"></i>
+          Add Friend
+        </li>
+      )
+    }
+
     return(
       <div>
         <main className="userHeader">
@@ -79,10 +89,8 @@ class UserProfile extends React.Component {
               </div>
             </article>
             <ul className="improve-stats">
-              <li>
-                <i className="fa fa-user-plus" aria-hidden="true"></i>
-                Add Friend
-              </li>
+              { addFriend}
+
               <li>
                 <i className="fa fa-camera-retro" aria-hidden="true"></i>
                 Add Photos
