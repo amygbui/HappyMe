@@ -17,6 +17,7 @@
 
 .pp-upload-form form {
   margin: auto;
+  // width: 600px;
 }
 
 .pp-upload-form button {
@@ -25,4 +26,15 @@
   padding: 10px 20px;
   border-radius: 3px;
   margin-top: 30px;
+}
+
+.pp-upload-form section {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  width: 600px;
+  height: auto;
+}
+
+.pp-upload-form input {
+  margin: auto;
 }

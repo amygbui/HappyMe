@@ -48,8 +48,10 @@ class AvatarUploadForm extends React.Component {
       <div className="pp-upload-form">
         <h2>Add a new profile picture</h2>
         <form onSubmit={ this.uploadPic }>
-          <input type="file" onChange={ this.updateFile} />
-          <img src={ this.state.imageUrl } />
+          <section>
+            <input type="file" onChange={ this.updateFile} />
+            <img src={ this.state.imageUrl } />
+          </section>
           <button>Upload Photo</button>
         </form>
       </div>
