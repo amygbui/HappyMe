@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import Rating from '../rating/rating';
 
@@ -25,10 +26,30 @@ class UserProfile extends React.Component {
     const totalReviews = Object.keys(reviews).length
 
     const formattedReviews = reviews.map(review => {
+      const { id, rating, date, restaurant } = review;
+
       return(
         <li key={ review.id } className="single-review">
-          <Rating rating={ review.rating } />
-          { review.review }
+          <article className="reviewed-restaurant">
+            <img src={ restaurant.image_url } />
+            <div>
+              <Link to={`/restaurants/${restaurant.id}`}>
+                { restaurant.name }
+              </Link> <br />
+
+              <p>
+                { restaurant.address } <br />
+                { restaurant.city }, { restaurant.state } { restaurant.zip}
+              </p>
+            </div>
+          </article>
+
+          <section className="user-review">
+            <article className="user-rating">
+              <Rating rating={ rating } /> { date }
+              </article>
+              { review.review }
+          </section>
         </li>
       )
     })

@@ -1,12 +1,12 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.includes(:reviewer)
+    @reviews = Review.includes(:reviewer).includes(:restaurant)
                      .where("restaurant_id = ?", params[:restaurant_id])
     render :index
   end
 
   def show
-    @review = Review.find(params[:id])
+    @review = Review..includes(:restaurant).find(params[:id])
   end
 
   def create

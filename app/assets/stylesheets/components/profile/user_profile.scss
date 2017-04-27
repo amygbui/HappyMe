@@ -2,6 +2,8 @@
   background: #f5f5f5;
   border-bottom: 1px solid #e6e6e6;
   padding: 30px 0;
+  background-image: url(https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_user_details/3a3ed7e5327e/assets/img/stars-static.png);
+  background-position: bottom;
 }
 
 .userHeader .fa {
@@ -68,4 +70,39 @@
   font-weight: normal;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
+}
+
+.reviewed-restaurant {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+
+.reviewed-restaurant img {
+  width: 60px;
+  height: 60px;
+}
+
+.reviewed-restaurant a {
+  font-weight: bold;
+  color: #0073bb;
+}
+
+.user-review {
+  margin: 15px;
+  margin-bottom: 10px;
+}
+
+.user-rating {
+  display: flex;
+  align-items: center;
+}
+
+.user-rating .rating {
+  margin-right: 10px;
+}
+
+.user-rating .rating img {
+  height: 25px;
+  width: 25px;
 }
