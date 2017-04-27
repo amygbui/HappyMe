@@ -26,7 +26,7 @@ class Greeting extends React.Component {
 
   makeSearch(e) {
     e.preventDefault();
-    this.props.fetchRestaurants(e.target.getAttribute("value"), this.props.bounds)
+    this.props.fetchRestaurants(e.currentTarget.getAttribute("value"), this.props.bounds)
       .then(() => {
         if (location.hash !== "#/search") {
           return hashHistory.push("/search")

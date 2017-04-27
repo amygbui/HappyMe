@@ -56,11 +56,11 @@ class ReviewForm extends React.Component {
   }
 
   update(e) {
-    this.setState({ review: e.target.value });
+    this.setState({ review: e.currentTarget.value });
   }
 
   highlightStar(e) {
-    this.setState({ rating: e.target.getAttribute("value") });
+    this.setState({ rating: e.currentTarget.getAttribute("value") });
   }
 
   stars() {

@@ -11,7 +11,7 @@ class Search extends React.Component {
   }
 
   update(e) {
-    this.setState({ query: e.target.value })
+    this.setState({ query: e.currentTarget.value })
   }
 
   handleSubmit(e) {
@@ -36,7 +36,7 @@ class Search extends React.Component {
   }
 
   setBounds(e) {
-    this.setState({ location: e.target.value })
+    this.setState({ location: e.currentTarget.value })
   }
 
   render() {
