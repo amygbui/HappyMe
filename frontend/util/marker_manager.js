@@ -2,10 +2,11 @@ export default class MarkerManager {
   constructor(map) {
     this.map = map;
     this.markers = {};
+    this.deleteMarkers = this.deleteMarkers.bind(this);
   }
 
   updateMarkers(restaurants) {
-    this.markers = {};
+    this.deleteMarkers();
     restaurants.map(restaurant => this.createMarkerFromRestaurant(restaurant));
 
     const markers = Object.values(this.markers);
@@ -27,5 +28,13 @@ export default class MarkerManager {
 
     marker.setMap(this.map);
     this.markers[restaurant.id] = marker;
+  }
+
+  deleteMarkers() {
+    const markers = Object.values(this.markers)
+    for (let i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    this.markers = {};
   }
 }
