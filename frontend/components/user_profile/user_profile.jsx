@@ -54,7 +54,7 @@ class UserProfile extends React.Component {
       )
     })
 
-    let addFriend = (<li></li>)
+    let addFriend
     if (!this.props.currentUser || this.props.currentUser.id !== parseInt(this.props.params.userId)) {
       addFriend = (
         <li>
