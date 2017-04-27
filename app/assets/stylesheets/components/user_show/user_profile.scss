@@ -1,0 +1,42 @@
+.userHeader {
+  background: #f5f5f5;
+  border-bottom: 1px solid #e6e6e6;
+  padding-top: 30px;
+}
+
+.userHeader .fa {
+  margin-right: 5px;
+}
+
+.userStats {
+  width: 900px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.userStats article {
+  display: flex;
+  align-items: center;
+  width: 700px;
+}
+
+.userStats img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+.userStats h2 {
+  font-size: 30px;
+}
+
+.userStats ul {
+  border-left: 1px solid #ddd;
+  padding: 10px 0 0 20px;
+}
+
+.userStats li {
+  margin-bottom: 10px;
+}
