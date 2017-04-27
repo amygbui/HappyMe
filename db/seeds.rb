@@ -11,6 +11,7 @@ Restaurant.destroy_all
 Review.destroy_all
 
 a = User.create(name: "Amy", username: "amy", password: "password")
+a.image_url = "http://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/001/original/fullsizeoutput_1b8.jpeg?1493319780"
 v = User.create(name: "Vince", username: "vince", password: "password")
 s = User.create(name: "Ashley", username: "ashley", password: "password")
 j = User.create(name: "Joseph", username: "joe", password: "password")
