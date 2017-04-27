@@ -43,7 +43,7 @@ class RestaurantShow extends React.Component {
 
   render () {
     if (this.props.restaurant === undefined) {
-      return <div>Loading...</div>
+      return <div className="loader">Loading...</div>
     }
 
     const {

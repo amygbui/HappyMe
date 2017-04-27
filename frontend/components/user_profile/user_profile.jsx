@@ -20,8 +20,9 @@ class UserProfile extends React.Component {
 
   render() {
     if (!this.props.user) {
-      return(<div>Loading...</div>)
+      return(<div className="loader">Loading...</div>)
     }
+
     const { id, name, image_url, reviews } = this.props.user
     const totalReviews = Object.keys(reviews).length
 
@@ -54,12 +55,22 @@ class UserProfile extends React.Component {
       )
     })
 
-    let addFriend
+    let addFriend;
+    let changeProfilePic;
     if (!this.props.currentUser || this.props.currentUser.id !== parseInt(this.props.params.userId)) {
       addFriend = (
         <li>
           <i className="fa fa-user-plus" aria-hidden="true"></i>
           Add Friend
+        </li>
+      )
+    } else {
+      changeProfilePic = (
+        <li>
+          <i className="fa fa-picture-o" aria-hidden="true"></i>
+          <Link to={ `/users/${id}/upload-profile-pic` }>
+            Change Profile Photo
+          </Link>
         </li>
       )
     }
@@ -90,12 +101,7 @@ class UserProfile extends React.Component {
             </article>
             <ul className="improve-stats">
               { addFriend}
-              <li>
-                <i className="fa fa-picture-o" aria-hidden="true"></i>
-                <Link to={ `/users/${id}/upload-profile-pic` }>
-                  Change Profile Photo
-                </Link>
-              </li>
+              { changeProfilePic }
               <li>
                 <i className="fa fa-camera-retro" aria-hidden="true"></i>
                 Add Photos

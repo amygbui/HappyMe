@@ -140,7 +140,7 @@ class ReviewForm extends React.Component {
       )
     } else {
       return (
-        <div>Loading...</div>
+        <div className="loader">Loading...</div>
       )
     }
   }
