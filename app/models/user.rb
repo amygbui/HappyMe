@@ -15,9 +15,9 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id
 
-  has_many :reviewed_businesses,
+  has_many :reviewed_restaurants,
     through: :reviews,
-    source: :business
+    source: :restaurant
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)

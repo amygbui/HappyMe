@@ -12,7 +12,6 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.includes(:reviews).find(params[:id])
-    # @user = User.find(params[:id])
     render :show
   end
 
