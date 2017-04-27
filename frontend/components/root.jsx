@@ -50,6 +50,7 @@ const Root = ({ store }) => {
                  component={ ReviewFormContainer }
                  onEnter={ redirectUnlessLoggedIn }
             />
+          <Route path="/users/:userId" />
         </Route>
       </Router>
     </Provider>

@@ -10,9 +10,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # def show
-  #   @user = User.fin
-  # end
+  def show
+    @user = User.includes(:reviews).find(params[:id])
+    render :show
+  end
 
   private
   def user_params
