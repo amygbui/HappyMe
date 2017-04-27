@@ -9,7 +9,7 @@ import SessionFormContainer from './session/session_form_container';
 import RestaurantSearchContainer from './restaurant/preview/restaurant_search_container';
 import RestaurantShowContainer from './restaurant/show/restaurant_show_container';
 import ReviewFormContainer from './review/form/review_form_container';
-import UserProfile from './user_profile/user_profile';
+import UserProfileContainer from './user_profile/user_profile_container';
 
 const Root = ({ store }) => {
   const redirectUnlessLoggedIn = (nextState, replace) => {
@@ -51,7 +51,7 @@ const Root = ({ store }) => {
                  component={ ReviewFormContainer }
                  onEnter={ redirectUnlessLoggedIn }
             />
-          <Route path="/users/:userId" component={ UserProfile }/>
+          <Route path="/users/:userId" component={ UserProfileContainer }/>
         </Route>
       </Router>
     </Provider>
