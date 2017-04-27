@@ -10,10 +10,10 @@ User.destroy_all
 Restaurant.destroy_all
 Review.destroy_all
 
-a = User.create(name: "Amy", username: "amy", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/001/original/a.jpg")
-v = User.create(name: "Vince", username: "vince", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/002/original/v.jpeg")
-s = User.create(name: "Ashley", username: "ashley", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/003/original/s.jpg")
-j = User.create(name: "Joseph", username: "joe", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/004/original/j.jpg")
+a = User.create(name: "Amy", username: "amy", password: "password")#, avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/001/original/a.jpg")
+v = User.create(name: "Vince", username: "vince", password: "password")#, avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/002/original/v.jpeg")
+s = User.create(name: "Ashley", username: "ashley", password: "password")#, avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/003/original/s.jpg")
+j = User.create(name: "Joseph", username: "joe", password: "password")#, avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/004/original/j.jpg")
 g = User.create(name: "Guest", username: "guest", password: "password")
 
 r1 = Restaurant.create(
@@ -25,10 +25,10 @@ r1 = Restaurant.create(
   phone_number: "(646) 370-3494",
   lat: 40.743083,
   lng: -73.999881,
-  description: "Cheap $1 oysters from 5-8pm, M-F"
+  description: "Cheap $1 oysters from 5-8pm, M-F",
+  image: "https://s3-media1.fl.yelpcdn.com/bphoto/s5JVd0NNZoUWCk_sXCmbgw/o.jpg"
 )
 
-r1.image = "https://s3-media1.fl.yelpcdn.com/bphoto/s5JVd0NNZoUWCk_sXCmbgw/o.jpg"
 
 r2 = Restaurant.create(
   name: "Bread and Tulips",
@@ -39,10 +39,9 @@ r2 = Restaurant.create(
   phone_number: "(212) 532-9100",
   lat: 40.742355,
   lng: -73.984697,
-  description: "$5 beer, $7 pizza and wine"
+  description: "$5 beer, $7 pizza and wine",
+  image: "https://s3-media1.fl.yelpcdn.com/bphoto/9vgkeiPOc5KaTqiM6uqvsw/o.jpg"
 )
-
-r2.image = "https://s3-media1.fl.yelpcdn.com/bphoto/9vgkeiPOc5KaTqiM6uqvsw/o.jpg"
 
 r3 = Restaurant.create(
   name: "The Cellar",
@@ -53,10 +52,10 @@ r3 = Restaurant.create(
   phone_number: "(212) 466-3340",
   lat: 40.739143,
   lng: -73.989677,
-  description: "Happy hour every day! Cocktails, beer, wine, food, we have it all!"
+  description: "Happy hour every day! Cocktails, beer, wine, food, we have it all!",
+  image: "https://s3-media4.fl.yelpcdn.com/bphoto/37fWF-eIVv_wnLOtxG4XiQ/o.jpg"
 )
 
-r3.image = "https://s3-media4.fl.yelpcdn.com/bphoto/37fWF-eIVv_wnLOtxG4XiQ/o.jpg"
 
 r4 = Restaurant.create(
   name: "Amelie",
@@ -67,10 +66,9 @@ r4 = Restaurant.create(
   phone_number: "(212) 533-2962",
   lat: 40.743083,
   lng: -73.999881,
-  description: "$12 wine flight"
+  description: "$12 wine flight",
+  image: "https://s3-media1.fl.yelpcdn.com/bphoto/cSDgVuPMnJgMLTrTNSEXug/o.jpg"
 )
-
-r4.image = "https://s3-media1.fl.yelpcdn.com/bphoto/cSDgVuPMnJgMLTrTNSEXug/o.jpg"
 
 r5 = Restaurant.create(
   name: "La Contenta",
@@ -81,10 +79,9 @@ r5 = Restaurant.create(
   phone_number: "(212) 432-4180",
   lat: 40.718937,
   lng: -73.986971,
-  description: "$8 drinks and food"
+  description: "$8 drinks and food",
+  image: "https://s3-media2.fl.yelpcdn.com/bphoto/FwZAyPgdKdPGQ8aAGKh3-w/o.jpg"
 )
-
-r5.image = "https://s3-media2.fl.yelpcdn.com/bphoto/FwZAyPgdKdPGQ8aAGKh3-w/o.jpg"
 
 r6 = Restaurant.create(
   name: "Red House",
@@ -95,10 +92,9 @@ r6 = Restaurant.create(
   phone_number: "(617) 576-0605",
   lat: 42.372584,
   lng: -71.121202,
-  description: "2 for $1 oysters and $5 shrimp cocktail, noon to 5pm"
+  description: "2 for $1 oysters and $5 shrimp cocktail, noon to 5pm",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17265385_396807430688502_6856584717316128768_n.jpg"
 )
-
-r6.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17265385_396807430688502_6856584717316128768_n.jpg"
 
 r7 = Restaurant.create(
   name: "Tropisueno",
@@ -109,10 +105,9 @@ r7 = Restaurant.create(
   phone_number: "(415) 243-0299",
   lat: 37.785603,
   lng: -122.403849,
-  description: "Great margaritas and amazing Mexican food"
+  description: "Great margaritas and amazing Mexican food",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/13584152_1624627431160851_549059540_n.jpg"
 )
-
-r7.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/13584152_1624627431160851_549059540_n.jpg"
 
 r8 = Restaurant.create(
   name: "Grendel’s Den",
@@ -124,10 +119,9 @@ r8 = Restaurant.create(
   lat: 42.372723,
   lng: -71.120840,
   # hours: "Every night 5pm-7:30pm"
-  description: "All food 50% off"
+  description: "All food 50% off",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17587256_228695394270749_5912825921001226240_n.jpg"
 )
-
-r8.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17587256_228695394270749_5912825921001226240_n.jpg"
 
 r9 = Restaurant.create(
   name: "Nine Tastes Thai Cuisine",
@@ -139,10 +133,9 @@ r9 = Restaurant.create(
   lat: 42.372315,
   lng: -71.120419,
   # Hours: "M-W 5pm - 6:30pm"
-  description: "Half off chicken satay and spring rolls"
+  description: "Half off chicken satay and spring rolls",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17931917_279164025868632_881906925040566272_n.jpg"
 )
-
-r9.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17931917_279164025868632_881906925040566272_n.jpg"
 
 r10 = Restaurant.create(
   name: "Russell House Tavern",
@@ -154,10 +147,10 @@ r10 = Restaurant.create(
   lat: 42.373298,
   lng: -71.119335,
   # Hours: "Every day after 11pm"
-  description: "$1 oysters"
+  description: "$1 oysters",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17438037_174235729756520_7376756689095098368_n.jpg"
 )
 
-r10.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17438037_174235729756520_7376756689095098368_n.jpg"
 
 r11 = Restaurant.create(
   name: "Shorty’s",
@@ -169,10 +162,10 @@ r11 = Restaurant.create(
   lat: 40.743916,
   lng: -73.986166,
   # Hours: "4-7p"
-  description: "$4 fries, beers, and $5 shots"
+  description: "$4 fries, beers, and $5 shots",
+  image: "https://s3-media2.fl.yelpcdn.com/bphoto/XzCLEjcEdihVoX3jBFGmDw/o.jpg"
 )
 
-r11.image = "https://s3-media2.fl.yelpcdn.com/bphoto/XzCLEjcEdihVoX3jBFGmDw/o.jpg"
 
 r12 = Restaurant.create(
   name: "Fresh Salt",
@@ -184,10 +177,10 @@ r12 = Restaurant.create(
   lat: 40.707314,
   lng: -74.002524,
   # Hours: "Every day from 4-8p"
-  description: "$5 beers, $5 well drinks, and $6 house wines"
+  description: "$5 beers, $5 well drinks, and $6 house wines",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17438356_290959817992233_4526387199129681920_n.jpg"
 )
 
-r12.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17438356_290959817992233_4526387199129681920_n.jpg"
 
 r13 = Restaurant.create(
   name: "Bubby’s",
@@ -199,10 +192,10 @@ r13 = Restaurant.create(
   lat: 40.720762,
   lng: -74.008441,
   # Hours: "M-F 4-7p"
-  description: "All drinks just $7"
+  description: "All drinks just $7",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17077266_224781064657350_2576181706956472320_n.jpg"
 )
 
-r13.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17077266_224781064657350_2576181706956472320_n.jpg"
 
 r14 = Restaurant.create(
   name: "Bonnie Vee",
@@ -214,10 +207,10 @@ r14 = Restaurant.create(
   lat: 40.722561,
   lng: -73.992154,
   # Hours: "M-F 4-7p"
-  description: "$10 for frozen margaritas, cocktails, and grilled cheese"
+  description: "$10 for frozen margaritas, cocktails, and grilled cheese",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17493885_239345539805007_6875673300031242240_n.jpg"
 )
 
-r14.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17493885_239345539805007_6875673300031242240_n.jpg"
 
 r15 = Restaurant.create(
   name: "The Folly",
@@ -229,10 +222,10 @@ r15 = Restaurant.create(
   lat: 40.727482,
   lng: -73.999964,
   # Hours: "M-F 4-7p"
-  description: "$10 for frozen margaritas, cocktails, and grilled cheese"
+  description: "$10 for frozen margaritas, cocktails, and grilled cheese",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17818348_379901972409553_6006843291981578240_n.jpg"
 )
 
-r15.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17818348_379901972409553_6006843291981578240_n.jpg"
 
 r16 = Restaurant.create(
   name: "Freud",
@@ -244,10 +237,10 @@ r16 = Restaurant.create(
   lat: 40.727917,
   lng: -73.999556,
   # Hours: "M-F 4-7p"
-  description: "$6 beer, $8 wine, $9 cocktails"
+  description: "$6 beer, $8 wine, $9 cocktails",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/18012158_1306345782746516_6832847768805965824_n.jpg"
 )
 
-r16.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/18012158_1306345782746516_6832847768805965824_n.jpg"
 
 r17 = Restaurant.create(
   name: "Cienfuegos",
@@ -259,10 +252,10 @@ r17 = Restaurant.create(
   lat: 40.725879,
   lng: -73.984097,
   # Hours: "Every day 5-7pm, but Sundays - all night!"
-  description: "Half priced punch bowls, and $7 cocktails!"
+  description: "Half priced punch bowls, and $7 cocktails!",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17881954_1828739227447128_6825094377879109632_n.jpg"
 )
 
-r17.image = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17881954_1828739227447128_6825094377879109632_n.jpg"
 
 review1 = Review.create(
   rating: 3,

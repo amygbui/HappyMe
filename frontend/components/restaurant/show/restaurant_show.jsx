@@ -113,7 +113,7 @@ class RestaurantShow extends React.Component {
                   value={ "img2" }
                   onMouseEnter={ this.switchHover }
                   onMouseLeave={ this.resetHover }
-                  src={ window.images.oysters2 } />
+                  src={ image_url } />
                 <img className={ this.state.img3 }
                   value={ "img3" }
                   onMouseEnter={ this.switchHover }
