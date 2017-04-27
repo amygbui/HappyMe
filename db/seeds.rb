@@ -11,9 +11,9 @@ Restaurant.destroy_all
 Review.destroy_all
 
 a = User.create(name: "Amy", username: "amy", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/001/original/a.jpg")
-v = User.create(name: "Vince", username: "vince", password: "password"), avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/002/original/v.jpeg")
-s = User.create(name: "Ashley", username: "ashley", password: "password"), avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/003/original/s.jpg")
-j = User.create(name: "Joseph", username: "joe", password: "password"), avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/004/original/j.jpg")
+v = User.create(name: "Vince", username: "vince", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/002/original/v.jpeg")
+s = User.create(name: "Ashley", username: "ashley", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/003/original/s.jpg")
+j = User.create(name: "Joseph", username: "joe", password: "password", avatar: "https://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/004/original/j.jpg")
 g = User.create(name: "Guest", username: "guest", password: "password")
 
 r1 = Restaurant.create(
