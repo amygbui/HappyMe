@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Restaurant extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+import Rating from '../../rating/rating';
 
+class Restaurant extends React.Component {
   render () {
     const {
       id, name, address, city, state, zip,
-      phone_number, description, image_url
+      phone_number, description, image_url,
+      average_rating
     } = this.props.restaurant;
 
     return (
@@ -21,10 +20,7 @@ class Restaurant extends React.Component {
             <strong>
               <Link to={`/restaurants/${id}`}>{ name }</Link>
             </strong>
-            <br />
-            Rating will go here!
-            <br />
-            Restaurant types here!
+            <Rating rating={ average_rating } />
           </div>
 
           <div id="preview-address">

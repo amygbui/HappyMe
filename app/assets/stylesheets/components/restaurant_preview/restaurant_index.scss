@@ -3,6 +3,7 @@
   flex-direction: column;
   font-weight: normal;
   margin-top: 40px;
+  width: 450px;
 }
 
 .restaurant-preview:first-child {
@@ -11,7 +12,7 @@
 
 .restaurant-preview {
   border-bottom: 1px solid #079E99;
-  padding: 15px 0;
+  padding: 15px 0 25px 0;
 }
 
 .restaurant-preview p {
@@ -42,4 +43,17 @@
 
 .preview-info #preview-address {
   margin-left: 20px;
+}
+
+.preview-info .rating {
+  display: flex;
+}
+
+.preview-info .rating img {
+  width: 25px;
+  height: 25px;
+}
+
+.preview-info > div {
+  margin-top: 10px;
 }
