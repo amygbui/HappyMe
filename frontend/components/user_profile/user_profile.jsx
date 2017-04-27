@@ -13,8 +13,8 @@ class UserProfile extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const userIds = Object.keys(this.props.users);
-    if (!userIds.includes(this.props.params.userId)) {
-      this.props.fetchUser(this.props.params.userId)
+    if (!userIds.includes(nextProps.params.userId)) {
+      this.props.fetchUser(nextProps.params.userId)
     };
   }
 
@@ -22,7 +22,7 @@ class UserProfile extends React.Component {
     if (!this.props.user) {
       return(<div>Loading...</div>)
     }
-    const { name, image_url, reviews } = this.props.user
+    const { id, name, image_url, reviews } = this.props.user
     const totalReviews = Object.keys(reviews).length
 
     const formattedReviews = reviews.map(review => {
@@ -90,7 +90,12 @@ class UserProfile extends React.Component {
             </article>
             <ul className="improve-stats">
               { addFriend}
-
+              <li>
+                <i className="fa fa-picture-o" aria-hidden="true"></i>
+                <Link to={ `/users/${id}/upload-profile-pic` }>
+                  Change Profile Photo
+                </Link>
+              </li>
               <li>
                 <i className="fa fa-camera-retro" aria-hidden="true"></i>
                 Add Photos
