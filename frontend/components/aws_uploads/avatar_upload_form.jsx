@@ -34,7 +34,7 @@ class AvatarUploadForm extends React.Component {
   }
 
   goBack() {
-    hashHistory.push(`/users/${this.props.params.userId}`)
+    return hashHistory.push(`/users/${this.props.params.userId}`)
   }
 
   render() {

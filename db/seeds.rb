@@ -11,9 +11,10 @@ Restaurant.destroy_all
 Review.destroy_all
 
 a = User.create(name: "Amy", username: "amy", password: "password")
-a.image_url = "http://s3-us-west-1.amazonaws.com/happyme-dev/users/avatars/000/000/001/original/fullsizeoutput_1b8.jpeg?1493319780"
+a.image_url = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17881598_752438604931861_4445745305496846336_n.jpg"
 v = User.create(name: "Vince", username: "vince", password: "password")
 s = User.create(name: "Ashley", username: "ashley", password: "password")
+s.image_url = "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/12930994_464432107089068_383670692_n.jpg"
 j = User.create(name: "Joseph", username: "joe", password: "password")
 g = User.create(name: "Guest", username: "guest", password: "password")
 
