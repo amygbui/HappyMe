@@ -14,6 +14,7 @@ class Restaurant < ApplicationRecord
             :phone_number, :description, presence: true
 
   has_attached_file :image, default_url: "restaurant_avatar.ico"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :reviews,
     class_name: 'Review',
