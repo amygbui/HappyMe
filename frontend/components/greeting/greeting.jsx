@@ -78,7 +78,7 @@ class Greeting extends React.Component {
           <Link to='/signup'>Sign Up</Link>
         </nav>
       );
-      login = (<li><Link className="login-button" to='/login'>Log In</Link></li>)
+      login = (<Link className="login-button" to='/login'>Log In</Link>)
     }
 
     return(
