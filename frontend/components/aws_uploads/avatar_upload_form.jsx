@@ -39,9 +39,7 @@ class AvatarUploadForm extends React.Component {
 
   render() {
     if (this.props.currentUser.id !== parseInt(this.props.params.userId)) {
-      return(
-        <div>Sorry, you can't upload photos for someone else!</div>
-      )
+      return(<div>Sorry, you can't upload photos for someone else!</div>)
     }
 
     return(

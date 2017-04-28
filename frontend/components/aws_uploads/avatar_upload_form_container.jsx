@@ -7,8 +7,4 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
-const mapDispatchToProps = dispatch => ({
-  updateUser: (user, callback) => dispatch(updateUser(user, callback))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AvatarUploadForm);
+export default connect(mapStateToProps, null)(AvatarUploadForm);

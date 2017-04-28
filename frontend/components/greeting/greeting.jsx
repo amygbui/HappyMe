@@ -78,7 +78,7 @@ class Greeting extends React.Component {
           <Link to='/signup'>Sign Up</Link>
         </nav>
       );
-      login = (<Link to='/login'>Log In</Link>)
+      login = (<li><Link className="login-button" to='/login'>Log In</Link></li>)
     }
 
     return(
@@ -91,24 +91,32 @@ class Greeting extends React.Component {
 
         <section>
           <article className="nav">
-            <nav>
-              <Link value="beer" onClick={ this.makeSearch }>
-                <i className="fa fa-beer" aria-hidden="true"></i>
-                Beers
-              </Link>
-              <Link value="cocktail" onClick={ this.makeSearch }>
-                <i className="fa fa-glass" aria-hidden="true"></i>
-                Cocktails
-              </Link>
-              <Link value="oyster" onClick={ this.makeSearch }>
-                <i className="fa fa-heart" aria-hidden="true"></i>
-                Oysters
-              </Link>
-              <Link value="food pizza fries" onClick={ this.makeSearch }>
-                <i className="fa fa-cutlery" aria-hidden="true"></i>
-                Food
-              </Link>
-            </nav>
+            <ul>
+              <li>
+                <Link value="beer" onClick={ this.makeSearch }>
+                  <i className="fa fa-beer" aria-hidden="true"></i>
+                  Beers
+                </Link>
+              </li>
+              <li>
+                <Link value="cocktail" onClick={ this.makeSearch }>
+                  <i className="fa fa-glass" aria-hidden="true"></i>
+                  Cocktails
+                </Link>
+              </li>
+              <li>
+                <Link value="oyster" onClick={ this.makeSearch }>
+                  <i className="fa fa-heart" aria-hidden="true"></i>
+                  Oysters
+                </Link>
+              </li>
+              <li>
+                <Link value="food pizza fries" onClick={ this.makeSearch }>
+                  <i className="fa fa-cutlery" aria-hidden="true"></i>
+                  Food
+                </Link>
+              </li>
+            </ul>
             { login }
           </article>
         </section>

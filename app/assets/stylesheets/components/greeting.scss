@@ -70,12 +70,29 @@
   margin: auto;
 }
 
-.nav:last-child {
-  padding-right: 15px;
+.nav ul {
+  display: flex;
 }
 
-.nav nav a {
+.nav .fa {
+  background: transparent;
+}
+
+.nav li:hover {
+  background: #06a29d;
+}
+
+.nav ul a {
   margin-right: 20px;
+}
+
+.login-button {
+  display: block;
+  padding: 10.5px;
+}
+
+.login-button:hover {
+  background: #06a29d;
 }
 
 #user-dropdown-btn {
