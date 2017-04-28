@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Restaurant from './restaurant';
+import RestaurantPreview from './restaurant';
 import RestaurantMapContainer from '../../map/restaurant_map_container';
 import RestaurantMap from '../../map/restaurant_map';
 
@@ -11,7 +11,7 @@ class RestaurantIndex extends React.Component {
 
     if (restaurants.length > 0) {
       matchedRestaurants = restaurants.map(restaurant => (
-        <Restaurant
+        <RestaurantPreview
           key={ restaurant.id }
           restaurant={ restaurant }
           fetchRestaurant={ this.props.fetchRestaurant }/>

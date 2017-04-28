@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import Rating from '../../rating/rating';
 
-class Restaurant extends React.Component {
+class RestaurantPreview extends React.Component {
   render () {
     const {
       id, name, address, city, state, zip,
@@ -42,4 +42,4 @@ class Restaurant extends React.Component {
   }
 };
 
-export default Restaurant;
+export default RestaurantPreview;
