@@ -77,7 +77,7 @@
   border: 1px solid #06a29d;
   padding: 10px 15px;
   text-align: center;
-  align-items: center;
+  vertical-align: baseline;
   width: 190px;
 }
 
@@ -89,6 +89,26 @@
 .add-review:hover {
   background: #13C9C2;
   border: 1px solid #07BAB4;
+}
+
+.add-photo {
+  background: #f7f7f7;
+  padding: 8px 10px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 0.5px 1px #aaa;
+
+  font-size: 13px;
+  color: #666;
+}
+
+.add-photo:hover {
+  background: #fcfcfc;
+}
+
+.add-photo .fa {
+  margin-right: 5px;
 }
 
 .photo-highlights {

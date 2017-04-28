@@ -97,12 +97,21 @@ class RestaurantShow extends React.Component {
           </section>
 
             <div className="business-right">
-              <Link to={`/restaurants/${id}/review/${formType}`}>
-                <button className="add-review" to="/review">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  { reviewButton }
-                </button>
-              </Link>
+              <section>
+                <Link to={`/restaurants/${id}/review/${formType}`}>
+                  <button className="add-review" to="/review">
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    { reviewButton }
+                  </button>
+                </Link>
+
+                <Link to={`/restaurants/${id}/add-photo`}>
+                  <button className="add-photo">
+                    <i className="fa fa-camera-retro" aria-hidden="true"></i>
+                    Add Photo
+                  </button>
+                </Link>
+              </section>
 
               <section className="photo-highlights">
                 <img className={ this.state.img1 }

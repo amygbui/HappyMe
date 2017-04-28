@@ -40,6 +40,7 @@ const Root = ({ store }) => {
                 component={ RestaurantSearchContainer } />
           <Route path="/restaurants/:restaurantId"
                  component={ RestaurantShowContainer } />
+          <Route path="/restaurants/:restaurantId/add-photo" />
           <Route path="/restaurants/:restaurantId/review/new"
                  component={ ReviewFormContainer }
                  onEnter={ redirectUnlessLoggedIn } />
