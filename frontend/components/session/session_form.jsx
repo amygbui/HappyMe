@@ -15,7 +15,6 @@ class SessionForm extends React.Component {
     this.setState = { name: "", username: "", password: "" };
     this.props.clearErrors();
   }
-  // do I actually need this????
 
   componentWillReceiveProps(newProps) {
     if (this.props.formType !== newProps.formType) {

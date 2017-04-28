@@ -25,10 +25,6 @@ class Restaurant < ApplicationRecord
     through: :reviews,
     source: :reviewer
 
-  # has_many :hh_types
-  # has_many :prices, through: :reviews, source: :price (get average price from this?)
-  # has_many :photos
-
   def self.in_bounds(bounds)
     Restaurant.where("lat > ?", bounds[:southwest][:lat])
               .where("lat < ?", bounds[:northeast][:lat])
@@ -38,10 +34,6 @@ class Restaurant < ApplicationRecord
 
   def average_rating
     ((reviews.average(:rating).to_s.to_f) * 2).round / 2.0
-    # return 0 if self.reviews.length == 0
-    # rating_sum = self.reviews.inject(0) { |sum, review| sum + review.rating }
-    # total_reviews = self.reviews.length
-    # ((rating_sum.to_f / total_reviews) * 2).round / 2.0
   end
 
   def all_reviewers

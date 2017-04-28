@@ -4,8 +4,3 @@ export const fetchBounds = address => {
     url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCTLQ74n9S3-LPFLOv4qOmDETItohlTj0g`
   });
 };
-
-
-// .then(cityData => cityData[0].geometry.bounds)
-// bounds.southwest & bounds.northwest
-// .then(data => console.log(data.results[0].geometry.bounds))
