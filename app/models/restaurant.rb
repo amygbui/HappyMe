@@ -8,7 +8,8 @@ class Restaurant < ApplicationRecord
                   # },
                   using: { tsearch: { prefix: true,
                                       any_word: true,
-                                      dictionary: "english" } }
+                                      dictionary: "english" },
+                           trigram: {} }
 
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
