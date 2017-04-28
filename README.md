@@ -46,7 +46,7 @@ const reviews = Object.values(this.props.reviews).map(review => {
 });
 ```
 
-Review render:
+<!-- Review render:
 ```javascript
 <article className="review">
   <div className="user">
@@ -66,10 +66,12 @@ Review render:
     { review }
   </div>
 </article>
-```
+``` -->
 
 ### User Profile Page
+As great as it is for users to be able to search for happy hour locations and see what the general concensus of that place is, sometimes they would prefer to go off of their own personal reviews rather than others'.
 
+The user's profile page aggregates all of the reviews they've ever made of happy hour locations, so they can quickly find that one place that they went to that serves the best fries or cocktail, but can't remember the name of. The user's profile page also allows them to change their profile picture, as well as see their activity stats.
 
 
 ## Future Directions for the Project
