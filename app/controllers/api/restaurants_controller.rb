@@ -29,7 +29,6 @@ class Api::RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-
     if @restaurant.update(restaurant_params)
       render :show
     else
@@ -43,6 +42,7 @@ class Api::RestaurantsController < ApplicationController
     params.require(:restaurant).permit(
       :name, :address, :city, :state, :zip,
       :lat, :lng, :phone_number, :description,
+      :image
     )
   end
 end

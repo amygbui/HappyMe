@@ -21,10 +21,16 @@ export const createRestaurant = restaurant => {
   });
 };
 
-export const updateRestaurant = restaurant => {
+export const updateRestaurant = (restaurantId, formData, callback) => {
   return $.ajax({
-    method: 'GET',
-    url: `api/restaurants/${restaurant.id}`,
-    data: { restaurant }
+    method: 'PATCH',
+    url: `api/restaurants/${restaurantId}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+    success: function(formData) {
+      callback(formData);
+    }
   });
 };

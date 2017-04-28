@@ -11,6 +11,7 @@ import RestaurantShowContainer from './restaurant/show/restaurant_show_container
 import ReviewFormContainer from './review/form/review_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import AvatarUploadFormContainer from './aws_uploads/avatar_upload_form_container';
+import RestaurantUploadFormContainer from './aws_uploads/restaurant_upload_form_container';
 
 const Root = ({ store }) => {
   const redirectUnlessLoggedIn = (nextState, replace) => {
@@ -40,7 +41,8 @@ const Root = ({ store }) => {
                 component={ RestaurantSearchContainer } />
           <Route path="/restaurants/:restaurantId"
                  component={ RestaurantShowContainer } />
-          <Route path="/restaurants/:restaurantId/add-photo" />
+          <Route path="/restaurants/:restaurantId/add-photo"
+                 component={ RestaurantUploadFormContainer} />
           <Route path="/restaurants/:restaurantId/review/new"
                  component={ ReviewFormContainer }
                  onEnter={ redirectUnlessLoggedIn } />
