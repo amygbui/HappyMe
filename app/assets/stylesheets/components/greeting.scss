@@ -13,7 +13,6 @@
 }
 
 .header-fixed h1 {
-  margin-right: 60px;
   font-size: 30px;
   text-shadow:
     1.25px 1.25px 0 #000,
@@ -25,8 +24,7 @@
 
 .header-fixed form {
   flex-direction: row;
-  width: 500px;
-  margin-right: 60px;
+  width: 593px;
 }
 
 .header-fixed form input {
@@ -36,11 +34,11 @@
 }
 
 .header-fixed form input[type="search"] {
-  width: 275px;
+  width: 350px;
 }
 
 .header-fixed form input[type="text"] {
-  width: 175px;
+  width: 200px;
 }
 
 .header button {
