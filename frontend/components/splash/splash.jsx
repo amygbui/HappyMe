@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
 import SearchContainer from '../search/search_container';
+import RestaurantSnippet from '../restaurant/restaurant_snippet';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -13,11 +14,9 @@ class Splash extends React.Component {
     this.hideDetails = this.hideDetails.bind(this);
   }
 
-  // componentDidMount() {
-  //   if (this.props.currentUser) {
-  //     this.props.fetchUser(this.props.currentUser.id)
-  //   }
-  // }
+  componentDidMount() {
+    this.props.fetchRestaurants("GetTheNewestPlaces", this.props.bounds)
+  }
 
   logout(e) {
     e.preventDefault();
@@ -79,6 +78,14 @@ class Splash extends React.Component {
       );
     }
 
+    const restaurants = Object.values(this.props.restaurants);
+    let restaurantSnippets;
+    if (restaurants.length > 0) {
+      restaurantSnippets = restaurants.map(restaurant => (
+        <RestaurantSnippet key={ restaurant.id } restaurant={ restaurant } />
+      ))
+    }
+
     return(
       <div>
         <header className="splash">
@@ -113,8 +120,8 @@ class Splash extends React.Component {
         <section className="content">
           <article className="highlights">
             <h2>Hot & Popping Restaurants</h2>
-            <div className="restaurant-highlights">
-
+            <div className="restaurant-snippets">
+              { restaurantSnippets }
             </div>
           </article>
 

@@ -238,7 +238,7 @@ r16 = Restaurant.create(
   lng: -73.999556,
   # Hours: "M-F 4-7p"
   description: "$6 beer, $8 wine, $9 cocktails",
-  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/18012158_1306345782746516_6832847768805965824_n.jpg"
+  image: "http://oi63.tinypic.com/2l9g6b.jpg"
 )
 
 

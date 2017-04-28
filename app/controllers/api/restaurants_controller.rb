@@ -1,6 +1,8 @@
 class Api::RestaurantsController < ApplicationController
   def index
-    if params[:query]
+    if params[:query] == "GetTheNewestPlaces"
+      @restaurants = Restaurant.order('created_at DESC').limit(3)
+    elsif params[:query]
       @restaurants = Restaurant.in_bounds(params[:bounds])
                                .search_restaurants(params[:query])
     else

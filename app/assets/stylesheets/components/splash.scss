@@ -128,18 +128,46 @@
   text-align: center;
   color: #07BAB4;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
-.highlights {
+.restaurant-snippets {
   width: 900px;
+  display: flex;
+  justify-content: space-between;
   margin: auto;
-  padding: 50px;
+  padding: 30px 0 50px 0;
+}
+
+.snippet {
+  display: flex;
+  flex-direction: column;
+}
+
+.snippet h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #07BAB4;
+}
+
+.snippet .rating img {
+  width: 30px;
+  height: 30px;
+}
+
+.snippet img {
+  border: 250px;
+  height: 250px;
+  border-radius: 3px;
+}
+
+.snippet .rating {
+  justify-content: center;
 }
 
 .categories {
   background: #eee;
-  padding: 40px;
+  padding-bottom: 50px;
 }
 
 .categories p {
@@ -171,4 +199,8 @@
   height: 80px;
   width: auto;
   margin: auto;
+}
+
+.categories h2 {
+  padding: 50px 0 30px 0;
 }

@@ -7,7 +7,8 @@ import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  bounds: state.bounds
+  bounds: state.bounds,
+  restaurants: state.restaurants
 });
 
 const mapDispatchToProps = dispatch => ({
