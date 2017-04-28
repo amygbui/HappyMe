@@ -70,9 +70,10 @@ class RestaurantShow extends React.Component {
           <div className="p">
             <section>
               <h2>{ name }</h2>
-              <Rating rating={ average_rating } />
-              Restaurant type here<br />
-
+              <div id="rating-reviews">
+                <Rating rating={ average_rating } />
+                <span>{ all_reviewers.length } reviews</span>
+              </div>
             <article className="address">
               <div>
                 <RestaurantMapContainer />
@@ -118,7 +119,7 @@ class RestaurantShow extends React.Component {
                   value={ "img3" }
                   onMouseEnter={ this.switchHover }
                   onMouseLeave={ this.resetHover }
-                  src={ window.images.oysters3 } />
+                  src="https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17932707_1751729501805103_386157752214355968_n.jpg" />
               </section>
             </div>
           </div>

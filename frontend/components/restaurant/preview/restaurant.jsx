@@ -8,7 +8,7 @@ class Restaurant extends React.Component {
     const {
       id, name, address, city, state, zip,
       phone_number, description, image_url,
-      average_rating
+      average_rating, all_reviewers
     } = this.props.restaurant;
 
     return (
@@ -21,6 +21,10 @@ class Restaurant extends React.Component {
               <Link to={`/restaurants/${id}`}>{ name }</Link>
             </strong>
             <Rating rating={ average_rating } />
+            <span>
+              <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+              { all_reviewers.length } reviews
+            </span>
           </div>
 
           <div id="preview-address">

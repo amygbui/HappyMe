@@ -1,6 +1,7 @@
 .header {
   background: #13C9C2;
   color: white;
+  box-shadow: inset 0 0 10px #07BAB4;
 }
 
 .header-fixed {
@@ -42,8 +43,11 @@
   width: 175px;
 }
 
-.header .fa {
+.header button {
   background: #07BAB4;
+}
+
+.header .fa {
   padding: 11.5px 15px;
   border-radius: 4px;
 }
@@ -58,12 +62,14 @@
   font-size: 16px;
 }
 
-.session-link:hover, .nav li:hover, .login-button:hover {
+.session-link:hover, .nav li:hover,
+.login-button:hover, .header button:hover {
   background: #06a29d;
 }
 
 .header section {
   background: #07BAB4;
+  box-shadow: inset 0 0 1px #06a29d;
 }
 
 .nav {
@@ -89,6 +95,7 @@
 .login-button {
   display: block;
   padding: 10.5px;
+  margin-right: 25px;
 }
 
 #user-dropdown-btn {
