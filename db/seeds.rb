@@ -558,8 +558,8 @@ review43 = Review.create(
   author_id: v.id
 )
 review44 = Review.create(
-  rating: 3,
-  review: "Mediocre oysters at best, but great ambiance",
+  rating: 5,
+  review: "Beautiful drinks and delicious cocktails!",
   restaurant_id: r15.id,
   author_id: a.id
 )
