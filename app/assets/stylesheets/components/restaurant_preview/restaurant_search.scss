@@ -1,9 +1,12 @@
-// will eventually style restaurant index along with map
 .restaurant-search {
   display: flex;
   justify-content: space-around;
   width: 900px;
   margin: auto;
+}
+
+.restaurant-search > div {
+  margin-bottom: 40px;
 }
 
 .restaurant-search aside {

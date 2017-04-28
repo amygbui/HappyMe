@@ -27,7 +27,7 @@ class Restaurant extends React.Component {
             </span>
           </div>
 
-          <div id="preview-address">
+          <div>
             { address }
             <br />
             { city }, { state } { zip }
