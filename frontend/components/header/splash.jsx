@@ -3,24 +3,16 @@ import { Link, hashHistory } from 'react-router';
 
 import SearchContainer from '../search/search_container';
 import RestaurantSnippet from '../restaurant/restaurant_snippet';
+import Dropdown from './dropdown';
 
 class Splash extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dropdown: "dropdown-details hidden" }
-    this.logout = this.logout.bind(this);
     this.makeSearch = this.makeSearch.bind(this);
-    this.showDetails = this.showDetails.bind(this);
-    this.hideDetails = this.hideDetails.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchRestaurants("GetTheNewestPlaces", this.props.bounds)
-  }
-
-  logout(e) {
-    e.preventDefault();
-    this.props.logout();
   }
 
   makeSearch(e) {
@@ -33,42 +25,16 @@ class Splash extends React.Component {
       });
   }
 
-  showDetails(e) {
-    this.setState({ dropdown: "dropdown-details" })
-  }
-
-  hideDetails(e) {
-    this.setState({ dropdown: "dropdown-details hidden" })
-  }
-
   render() {
-    let header;
+    let dropdown;
     let currentUser = this.props.currentUser
 
     if (currentUser) {
-      header = (
+      dropdown = (
         <div className="splash-session">
-          <section id="user-dropdown-btn">
-            <button onMouseEnter={ this.showDetails }
-              onMouseLeave={ this.hideDetails }>
-              <img src={ currentUser.image_url }
-                alt={`Hello ${currentUser}`} />
-
-              <ul className={ this.state.dropdown }>
-                <span>Hello, { currentUser.name }</span>
-                <li>
-                  <i className="fa fa-user" aria-hidden="true"></i>
-                  <Link to={ `users/${currentUser.id}` }>View Profile</Link>
-                </li>
-                <li>
-                  <i className="fa fa-sign-out" aria-hidden="true"></i>
-                  <Link onClick={ this.logout }>Log Out</Link>
-                </li>
-              </ul>
-            </button>
-          </section>
+          <Dropdown />
         </div>
-      );
+      )
     } else {
       header = (
         <nav className="splash-session">
@@ -114,7 +80,7 @@ class Splash extends React.Component {
             </nav>
           </main>
 
-          { header }
+          { dropdown }
         </header>
 
         <section className="content">

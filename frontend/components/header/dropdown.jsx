@@ -3,7 +3,8 @@ import { Link } from 'react-router';
 
 class Dropdown extends React.Component {
   constructor(props) {
-    this.state = { dropdown: "dropdown-details hidden" }
+    super(props);
+    this.state = { dropdown: "dropdown-details hidden" };
     this.logout = this.logout.bind(this);
     this.showDetails = this.showDetails.bind(this);
     this.hideDetails = this.hideDetails.bind(this);
@@ -22,9 +23,11 @@ class Dropdown extends React.Component {
     this.setState({ dropdown: "hidden" })
   }
 
+  // <div className="splash-session">
+
   render() {
     return (
-      <div className="splash-session">
+      <div>
         <section id="user-dropdown-btn">
           <button onMouseEnter={ this.showDetails }
             onMouseLeave={ this.hideDetails }>
