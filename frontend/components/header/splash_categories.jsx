@@ -1,7 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 class SplashCategories extends React.Component {
+  constructor(props) {
+    super(props);
+    this.makeSearch = this.makeSearch.bind(this);
+  }
+
+  makeSearch(e) {
+    e.preventDefault();
+    this.props.fetchRestaurants(e.currentTarget.getAttribute("value"), this.props.bounds)
+      .then(() => {
+        if (location.hash !== "#/search") {
+          return hashHistory.push("/search")
+        }
+      });
+  }
+
   render() {
     return (
       <article className="categories">
