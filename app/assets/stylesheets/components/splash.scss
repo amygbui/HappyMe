@@ -64,11 +64,13 @@
   padding: 0 10px;
 }
 
-.splash main nav {
+.splash main nav ul {
   display: flex;
-  justify-content: space-around;
-  width: 40%;
-  margin-top: 1.5%
+  margin-top: 15px;
+}
+
+.splash main nav li {
+  margin-right: 35px;
 }
 
 .splash-session {

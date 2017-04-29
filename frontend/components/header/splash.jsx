@@ -5,25 +5,11 @@ import SearchContainer from '../search/search_container';
 import RestaurantSnippet from '../restaurant/restaurant_snippet';
 import Dropdown from './dropdown';
 import SplashCategories from './splash_categories';
+import NavLinks from './nav_links';
 
 class Splash extends React.Component {
-  constructor(props) {
-    super(props);
-    this.makeSearch = this.makeSearch.bind(this);
-  }
-
   componentDidMount() {
     this.props.fetchRestaurants("GetTheNewestPlaces", this.props.bounds)
-  }
-
-  makeSearch(e) {
-    e.preventDefault();
-    this.props.fetchRestaurants(e.currentTarget.getAttribute("value"), this.props.bounds)
-      .then(() => {
-        if (location.hash !== "#/search") {
-          return hashHistory.push("/search")
-        }
-      });
   }
 
   render() {
@@ -62,23 +48,9 @@ class Splash extends React.Component {
             <h1>HappyMe</h1>
             <SearchContainer />
             <nav>
-              <Link value="beer" onClick={ this.makeSearch }>
-                <i className="fa fa-beer" aria-hidden="true"></i>
-                Beers
-              </Link>
-              <Link value="cocktail" onClick={ this.makeSearch }>
-                <i className="fa fa-glass" aria-hidden="true"></i>
-                Cocktails
-              </Link>
-              <Link value="oyster" onClick={ this.makeSearch }>
-                <i className="fa fa-heart" aria-hidden="true"></i>
-                Oysters
-              </Link>
-              <Link value="food pizza fries" onClick={ this.makeSearch }>
-                <i className="fa fa-cutlery" aria-hidden="true"></i>
-                Food
-              </Link>
-            </nav>
+              <NavLinks bounds={ this.props.bounds }
+                        fetchRestaurants = { this.props.fetchRestaurants }/>
+              </nav>
           </main>
 
           { dropdown }
@@ -92,7 +64,8 @@ class Splash extends React.Component {
             </div>
           </article>
 
-          <SplashCategories />
+          <SplashCategories bounds={ this.props.bounds }
+                            fetchRestaurants={ this.props.fetchRestaurants }/>
         </section>
     </div>
     )

@@ -3,21 +3,11 @@ import { Link, hashHistory } from 'react-router';
 
 import SearchContainer from '../search/search_container';
 import Dropdown from './dropdown';
+import NavLinks from './nav_links';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.makeSearch = this.makeSearch.bind(this);
-  }
-
-  makeSearch(e) {
-    e.preventDefault();
-    this.props.fetchRestaurants(e.currentTarget.getAttribute("value"), this.props.bounds)
-      .then(() => {
-        if (location.hash !== "#/search") {
-          return hashHistory.push("/search")
-        }
-      });
   }
 
   render() {
@@ -46,32 +36,8 @@ class Greeting extends React.Component {
 
         <section>
           <article className="nav">
-            <ul>
-              <li>
-                <Link value="beer" onClick={ this.makeSearch }>
-                  <i className="fa fa-beer" aria-hidden="true"></i>
-                  Beers
-                </Link>
-              </li>
-              <li>
-                <Link value="cocktail" onClick={ this.makeSearch }>
-                  <i className="fa fa-glass" aria-hidden="true"></i>
-                  Cocktails
-                </Link>
-              </li>
-              <li>
-                <Link value="oyster" onClick={ this.makeSearch }>
-                  <i className="fa fa-heart" aria-hidden="true"></i>
-                  Oysters
-                </Link>
-              </li>
-              <li>
-                <Link value="food pizza fries" onClick={ this.makeSearch }>
-                  <i className="fa fa-cutlery" aria-hidden="true"></i>
-                  Food
-                </Link>
-              </li>
-            </ul>
+            <NavLinks bounds={ this.props.bounds }
+                      fetchRestaurants={ this.props.fetchRestaurants} />
             { login }
           </article>
         </section>
