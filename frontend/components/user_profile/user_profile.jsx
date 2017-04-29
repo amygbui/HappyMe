@@ -75,8 +75,9 @@ class UserProfile extends React.Component {
                 </ul>
               </div>
             </article>
+            
             <ul className="improve-stats">
-              { addFriend}
+              { addFriend }
               { changeProfilePic }
               <li>
                 <i className="fa fa-camera-retro" aria-hidden="true"></i>

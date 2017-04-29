@@ -35,12 +35,7 @@ class SessionForm extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-
-    const demoUser = {
-      username: "guest",
-      password: "password"
-    }
-
+    const demoUser = { username: "guest", password: "password" }
     this.props.guestDemo(demoUser).then(() => this.redirect());
   }
 
@@ -60,13 +55,9 @@ class SessionForm extends React.Component {
     const all_errors = this.props.errors
     const errors = Object.keys(this.props.errors).map(id => {
       if (id === "base") {
-        return (
-          <li key={ id }>{ all_errors[id] }</li>
-        )
+        return (<li key={ id }>{ all_errors[id] }</li>)
       }
-      return (
-        <li key={ id }>{id} {all_errors[id]}</li>
-      )
+      return (<li key={ id }>{id} {all_errors[id]}</li>)
     });
 
     let extraFields;
