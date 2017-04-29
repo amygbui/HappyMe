@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import Rating from 'react-rating';
 
 import Restaurant from '../../restaurant/preview/restaurant';
 import ReviewContainer from '../review_container';
@@ -12,6 +13,7 @@ class ReviewForm extends React.Component {
     let review = "";
     let rating = 0;
     const editReview = props.reviews[props.params.reviewId]
+
     if (editReview) {
       id = editReview.id
       review = editReview.review;
@@ -22,19 +24,19 @@ class ReviewForm extends React.Component {
                    restaurant_id: props.params.restaurantId }
 
     this.submitForm = this.submitForm.bind(this);
-    this.highlightStar = this.highlightStar.bind(this);
+    this.updateRating = this.updateRating.bind(this);
     this.update = this.update.bind(this);
   }
 
   componentDidMount() {
     const restaurantId = parseInt(this.props.params.restaurantId);
     const reviewId = parseInt(this.props.params.reviewId);
-
     if (!this.props.restaurant) {
       this.props.fetchRestaurant(restaurantId);
       this.props.fetchReviews(restaurantId)
         .then((reviews => {
           if (reviews.reviews[reviewId]) {
+            console.log(reviews.reviews[reviewId]);
             const { rating, review } = reviews.reviews[reviewId];
             this.setState({ rating, review, id: reviewId })
           }
@@ -59,32 +61,32 @@ class ReviewForm extends React.Component {
     this.setState({ review: e.currentTarget.value });
   }
 
-  highlightStar(e) {
-    this.setState({ rating: e.currentTarget.getAttribute("value") });
+  updateRating(rate) {
+    this.setState({ rating: rate });
   }
 
-  stars() {
-    const rating = this.state.rating;
-    const stars = [];
-
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push(
-          <li key={ i }>
-            <img src={ window.images.gold_star }
-                 value={ i } onClick={ this.highlightStar } />
-          </li>);
-      } else {
-        stars.push(
-          <li key={ i }>
-            <img src={ window.images.silver_star }
-                 value={ i } onClick={ this.highlightStar } />
-          </li>);
-      }
-    }
-
-    return stars;
-  }
+  // stars() {
+  //   const rating = this.state.rating;
+  //   const stars = [];
+  //
+  //   for (let i = 1; i <= 5; i++) {
+  //     if (i <= rating) {
+  //       stars.push(
+  //         <li key={ i }>
+  //           <img src={ window.images.gold_star }
+  //                value={ i } onClick={ this.highlightStar } />
+  //         </li>);
+  //     } else {
+  //       stars.push(
+  //         <li key={ i }>
+  //           <img src={ window.images.silver_star }
+  //                value={ i } onClick={ this.highlightStar } />
+  //         </li>);
+  //     }
+  //   }
+  //
+  //   return stars;
+  // }
 
   render() {
     const restaurant = this.props.restaurant;
@@ -113,9 +115,11 @@ class ReviewForm extends React.Component {
             <form>
               <section>
                 <figure>
-                  <ul className="stars">
-                    { this.stars() }
-                  </ul>
+                  <Rating initialRate={ this.state.rating }
+                          empty={['fa fa-star-o fa-2x']}
+                          full={['fa fa-star fa-2x']}
+                          onClick={ rate => this.updateRating(rate) }
+                          className="stars" />
                   Select your rating.
                 </figure>
                 <textarea
