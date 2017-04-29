@@ -49,6 +49,7 @@ class ReviewForm extends React.Component {
   //     this.props.fetchRestaurant(this.props.params.restaurantId);
   //     this.props.fetchReviews(this.props.params.restaurantId);
   //   }
+  // check the conditional. currently does infinite fetching.
   // }
 
   submitForm(e) {
@@ -65,48 +66,30 @@ class ReviewForm extends React.Component {
     this.setState({ rating: rate });
   }
 
-  // stars() {
-  //   const rating = this.state.rating;
-  //   const stars = [];
-  //
-  //   for (let i = 1; i <= 5; i++) {
-  //     if (i <= rating) {
-  //       stars.push(
-  //         <li key={ i }>
-  //           <img src={ window.images.gold_star }
-  //                value={ i } onClick={ this.highlightStar } />
-  //         </li>);
-  //     } else {
-  //       stars.push(
-  //         <li key={ i }>
-  //           <img src={ window.images.silver_star }
-  //                value={ i } onClick={ this.highlightStar } />
-  //         </li>);
-  //     }
-  //   }
-  //
-  //   return stars;
-  // }
-
   render() {
     const restaurant = this.props.restaurant;
 
     if (restaurant) {
+      const {
+        id, name, image_url, address,
+        city, state, zip
+      } = restaurant;
+
       return(
         <div className="review-form">
           <section className="form-input">
             <h2>Write a Review</h2>
 
             <article>
-              <img src={ restaurant.image_url } />
+              <img src={ image_url } />
               <div>
-                <Link to={`/restaurants/${restaurant.id}`}>
-                  { restaurant.name }
+                <Link to={`/restaurants/${id}`}>
+                  { name }
                 </Link> <br />
 
                 <div>
-                  { restaurant.address } <br />
-                  { restaurant.city }, { restaurant.state } { restaurant.zip}
+                  { address } <br />
+                  { city }, { state } { zip}
                 </div>
               </div>
             </article>
@@ -125,10 +108,11 @@ class ReviewForm extends React.Component {
                 <textarea
                   onChange={ this.update }
                   value={ this.state.review }
-                  placeholder="Got the inside scoop on the best happy hours? Let others know so they can get happy too!" />
+                  placeholder="Got the inside scoop on the best happy
+                  hours? Let others know so they can get happy too!" />
               </section>
 
-              <Link to={`/restaurants/${this.props.params.restaurantId}`}>
+              <Link to={`/restaurants/${id}`}>
                 <button onClick={ this.submitForm }>
                   Submit
                 </button>
@@ -138,7 +122,7 @@ class ReviewForm extends React.Component {
           </section>
           <aside>
             <h2>Reviews for {restaurant.name }</h2>
-            <ReviewContainer restaurantId={ restaurant.id } className="review-show" />
+            <ReviewContainer restaurantId={ id } className="review-show" />
           </aside>
         </div>
       )
