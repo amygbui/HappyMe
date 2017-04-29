@@ -11,11 +11,12 @@ class Greeting extends React.Component {
   }
 
   render() {
-    let dropdown;
+    let header;
     let login;
     let currentUser = this.props.currentUser
     if (currentUser) {
-      dropdown = <Dropdown />
+      header = <Dropdown logout={ this.props.logout }
+                         currentUser={ this.props.currentUser }/>
       login = (<div></div>)
     } else {
       header = (
@@ -31,7 +32,7 @@ class Greeting extends React.Component {
         <header className="header-fixed">
           <Link to='/'><h1>HappyMe</h1></Link>
           <SearchContainer />
-          { dropdown }
+          { header }
         </header>
 
         <section>

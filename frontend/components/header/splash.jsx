@@ -13,13 +13,14 @@ class Splash extends React.Component {
   }
 
   render() {
-    let dropdown;
+    let header;
     let currentUser = this.props.currentUser
 
     if (currentUser) {
-      dropdown = (
+      header = (
         <div className="splash-session">
-          <Dropdown />
+          <Dropdown currentUser={ this.props.currentUser}
+                    logout={ this.props.logout } />
         </div>
       )
     } else {
@@ -53,7 +54,7 @@ class Splash extends React.Component {
               </nav>
           </main>
 
-          { dropdown }
+          { header }
         </header>
 
         <section className="content">
