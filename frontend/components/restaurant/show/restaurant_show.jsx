@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Rating from 'react-rating';
 
 import ReviewContainer from '../../review/review_container';
-import Rating from '../../rating/rating';
 import RestaurantMapContainer from '../../map/restaurant_map_container';
 import PhotoHighlights from './photo_highlights';
 
@@ -49,8 +49,11 @@ class RestaurantShow extends React.Component {
             <section>
               <h2>{ name }</h2>
               <div id="rating-reviews">
-                <Rating rating={ average_rating } />
-                <span>{ all_reviewers.length } reviews</span>
+                <Rating initialRate={ average_rating }
+                  empty={['fa fa-star-o fa-2x']}
+                  full={['fa fa-star fa-2x']}
+                  readonly />
+                <p>{ all_reviewers.length } reviews</p>
               </div>
             <article className="address">
               <div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
-import Rating from '../rating/rating';
+import Rating from 'react-rating';
 
 class UserReview extends React.Component {
   render() {
@@ -19,14 +18,18 @@ class UserReview extends React.Component {
 
             <p>
               { restaurant.address } <br />
-            { restaurant.city }, { restaurant.state } { restaurant.zip}
-          </p>
+              { restaurant.city }, { restaurant.state } { restaurant.zip}
+            </p>
         </div>
       </article>
 
       <section className="user-review">
         <article className="user-rating">
-          <Rating rating={ rating } /> { date }
+          <Rating initialRate={ rating }
+                  empty={['fa fa-star-o fa-2x']}
+                  full={['fa fa-star fa-2x']}
+                  readonly
+                  className="stars" /> { date }
           </article>
           { review.review }
         </section>

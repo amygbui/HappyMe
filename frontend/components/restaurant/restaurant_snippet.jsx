@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
-import Rating from '../rating/rating';
+import Rating from 'react-rating';
 
 class RestaurantSnippet extends React.Component {
   render() {
@@ -15,7 +14,12 @@ class RestaurantSnippet extends React.Component {
 
         <section>
           <h3>{ name }</h3>
-          <Rating rating={ average_rating } /> { all_reviewers.length }
+          <div className="rating">
+            <Rating initialRate={ average_rating }
+              empty={['fa fa-star-o fa-2x']}
+              full={['fa fa-star fa-2x']}
+              readonly />
+          </div> { all_reviewers.length }
           { address } <br />
           { city }, { state } { zip}
         </section>

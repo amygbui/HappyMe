@@ -42,20 +42,22 @@
   font-size: 16px;
 }
 
-.preview-info .rating img {
-  width: 25px;
-  height: 25px;
-}
-
 .preview-info > div {
   margin-top: 10px;
 }
 
 .name-rating {
   width: 156px;
+  display: flex;
+  flex-direction: column;
 }
 
 .name-rating .fa {
   margin-top: 2px;
   margin-right: 5px;
+}
+
+.react-rating {
+  color: #f3b116;
+  font-size: 10px;
 }

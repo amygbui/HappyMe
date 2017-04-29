@@ -22,11 +22,14 @@
 #rating-reviews {
   display: flex;
   align-items: center;
+  color: #f3b116;
+  font-size: 14px;
 }
 
-#rating-reviews span {
-  margin-left: 5px;
+#rating-reviews p {
+  margin-left: 10px;
   color: #555;
+  font-size: 16px;
 }
 
 .address {

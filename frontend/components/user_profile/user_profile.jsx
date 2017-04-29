@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import Rating from '../rating/rating';
 import UserReview from './user_review';
 
 class UserProfile extends React.Component {
@@ -75,7 +74,7 @@ class UserProfile extends React.Component {
                 </ul>
               </div>
             </article>
-            
+
             <ul className="improve-stats">
               { addFriend }
               { changeProfilePic }
