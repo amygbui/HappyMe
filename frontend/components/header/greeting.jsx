@@ -1,13 +1,21 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
-import Dropdown from './dropdown';
 import SearchContainer from '../search/search_container';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { dropdown: "dropdown-details hidden" }
+    this.logout = this.logout.bind(this);
     this.makeSearch = this.makeSearch.bind(this);
+    this.showDetails = this.showDetails.bind(this);
+    this.hideDetails = this.hideDetails.bind(this);
+  }
+
+  logout(e) {
+    e.preventDefault();
+    this.props.logout();
   }
 
   makeSearch(e) {
@@ -20,13 +28,43 @@ class Greeting extends React.Component {
       });
   }
 
+  showDetails(e) {
+    this.setState({ dropdown: "dropdown-details" })
+  }
+
+  hideDetails(e) {
+    this.setState({ dropdown: "dropdown-details hidden" })
+  }
+
   render() {
     let header;
     let login;
     let currentUser = this.props.currentUser
     if (currentUser) {
-      header = <Dropdown currentUser = { currentUser }
-                         logout = { this.props.logout } />
+      header = (
+        <div id="user-dropdown-btn">
+          <button onMouseEnter={ this.showDetails }
+                  onMouseLeave={ this.hideDetails }>
+
+            <img src={ currentUser.image_url }
+              alt={`Hello ${currentUser}`} />
+
+            <ul className={ this.state.dropdown }>
+              <span>Hello, { currentUser.name }</span>
+              <li>
+                <i className="fa fa-user" aria-hidden="true"></i>
+                <Link to={ `users/${currentUser.id}` }>View Profile</Link>
+              </li>
+              <li>
+                <i className="fa fa-sign-out" aria-hidden="true"></i>
+                <Link onClick={ this.logout }>Log Out</Link>
+              </li>
+            </ul>
+          </button>
+
+        </div>
+      );
+
       login = (<div></div>)
     } else {
       header = (

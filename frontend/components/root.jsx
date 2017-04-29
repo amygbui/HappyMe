@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
-import SplashContainer from './splash/splash_container';
-import GreetingContainer from './greeting/greeting_container'
+import SplashContainer from './header/splash_container';
+import GreetingContainer from './header/greeting_container'
 import SessionFormContainer from './session/session_form_container';
 import RestaurantSearchContainer from './restaurant/preview/restaurant_search_container';
 import RestaurantShowContainer from './restaurant/show/restaurant_show_container';
