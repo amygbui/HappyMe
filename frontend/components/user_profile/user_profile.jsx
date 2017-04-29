@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Rating from '../rating/rating';
+import UserReview from './user_review';
 
 class UserProfile extends React.Component {
   componentDidMount() {
@@ -23,37 +24,12 @@ class UserProfile extends React.Component {
       return(<div className="loader">Loading...</div>)
     }
 
-    const { id, name, image_url, reviews } = this.props.user
-    const totalReviews = Object.keys(reviews).length
+    const { id, name, image_url, reviews } = this.props.user;
+    const totalReviews = Object.keys(reviews).length;
 
     const formattedReviews = reviews.map(review => {
-      const { id, rating, date, restaurant } = review;
-
-      return(
-        <li key={ review.id } className="single-review">
-          <article className="reviewed-restaurant">
-            <img src={ restaurant.image_url } />
-            <div>
-              <Link to={`/restaurants/${restaurant.id}`}>
-                { restaurant.name }
-              </Link> <br />
-
-              <p>
-                { restaurant.address } <br />
-                { restaurant.city }, { restaurant.state } { restaurant.zip}
-              </p>
-            </div>
-          </article>
-
-          <section className="user-review">
-            <article className="user-rating">
-              <Rating rating={ rating } /> { date }
-              </article>
-              { review.review }
-          </section>
-        </li>
-      )
-    })
+      return(<UserReview review={ review } />);
+    });
 
     let addFriend;
     let changeProfilePic;
