@@ -6,10 +6,6 @@ import Dropdown from './dropdown';
 import NavLinks from './nav_links';
 
 class Greeting extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let header;
     let login;

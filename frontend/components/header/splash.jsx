@@ -51,7 +51,7 @@ class Splash extends React.Component {
             <nav>
               <NavLinks bounds={ this.props.bounds }
                         fetchRestaurants = { this.props.fetchRestaurants }/>
-              </nav>
+            </nav>
           </main>
 
           { header }
