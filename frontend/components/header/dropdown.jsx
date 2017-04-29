@@ -25,6 +25,7 @@ class Dropdown extends React.Component {
 
   render() {
     if (this.props.currentUser) {
+      const currentUser = this.props.currentUser;
       return (
         <div>
           <section id="user-dropdown-btn">
