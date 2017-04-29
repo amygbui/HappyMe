@@ -23,8 +23,6 @@ class Dropdown extends React.Component {
     this.setState({ dropdown: "hidden" })
   }
 
-  // <div className="splash-session">
-
   render() {
     return (
       <div>

@@ -4,6 +4,7 @@ import { Link, hashHistory } from 'react-router';
 import SearchContainer from '../search/search_container';
 import RestaurantSnippet from '../restaurant/restaurant_snippet';
 import Dropdown from './dropdown';
+import SplashCategories from './splash_categories';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -91,27 +92,7 @@ class Splash extends React.Component {
             </div>
           </article>
 
-          <article className="categories">
-            <h2>Browse Restaurants by Category</h2>
-            <p>
-              <Link value="beer" onClick={ this.makeSearch }>
-                <img src={ window.images.beer } />
-                Beer
-              </Link>
-              <Link value="cocktail" onClick={ this.makeSearch }>
-                <img src={ window.images.cocktails } />
-                Cocktails
-              </Link>
-              <Link value="oyster" onClick={ this.makeSearch }>
-                <img src={ window.images.oysters } />
-                Oysters
-              </Link>
-              <Link value="food pizza fries" onClick={ this.makeSearch }>
-                <img src={ window.images.food } />
-                Food
-              </Link>
-            </p>
-          </article>
+          <SplashCategories />
         </section>
     </div>
     )
