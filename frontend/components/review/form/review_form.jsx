@@ -36,7 +36,6 @@ class ReviewForm extends React.Component {
       this.props.fetchReviews(restaurantId)
         .then((reviews => {
           if (reviews.reviews[reviewId]) {
-            console.log(reviews.reviews[reviewId]);
             const { rating, review } = reviews.reviews[reviewId];
             this.setState({ rating, review, id: reviewId })
           }

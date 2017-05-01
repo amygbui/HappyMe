@@ -1,7 +1,7 @@
 {
   "name": "HappyMe",
   "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "Finding the best happy hours near you since 2017",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -38,8 +38,10 @@
     "react-redux": "^5.0.4",
     "react-router": "^3.0.5",
     "redux": "^3.6.0",
-    "redux-logger": "^3.0.1",
     "redux-thunk": "^2.2.0",
     "webpack": "^2.4.1"
-  }
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.1"
+  },
 }
