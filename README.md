@@ -32,26 +32,28 @@ Upon making a search, HappyMe first checks for if a location is specified. If a 
 HappyMe then narrow all of the restaurants in the database by matching the `lat` and `lng` to the bounds. From all of the restaurants within the bounds, it searches through the restaurants' `name`s and `description`s and tries to match restaurants to the search query.
 
 The search feature is implemented using PgSearch, a Ruby Gem that uses PostgreSQL's full text search. HappyMe uses PgSearch's single-model search scope strategy, and configures PostgreSQL's full text search to match partial words and stemming (variants of words, for example "jumping" and "jumped" will result in a match).
+![Screenshot of User Profile Page](/app/assets/images/readme_shots/r_index.png)
 
 ### Map
 After making a search, all locations matching the search query will be marked on a map. With every subsequent search, the old markers are removed and new ones are placed. The map then automatically resizes and rezooms to encompass the new result markers. This map functionality is implemented using the Google Maps API.
 
 ### Business page
 All restaurants are stored in one table in the database, which contains columns for `id`, `name`, full address (as `address`, `city`, `state`, `zip`), `phone_number`, `description` and geographic location (`lat` and `lng`). Every restaurant also has a profile image, which is uploaded to Amazon Web Services using Paperclip.
+![Screenshot of User Profile Page](/app/assets/images/readme_shots/r_show.png)
 
 ### Reviews/Ratings
 Every review made by a user contains the following information stored in the database: `id`, `rating`, `review`, `author_id`, and `restaurant_id`.
 
 Every time a user creates or updates a review, the restaurant's overall rating is recalculated and updated. HappyMe uses React-Rating for its dynamic stars rating feature.
 
+![Screenshot of User Profile Page](/app/assets/images/readme_shots/review.png)
+
 ### User Profile Page
 The user's profile page aggregates all of the reviews that user has ever made of happy hour locations. This consolidation of data allows users to quickly find past locations they've patronized.
 
 The user's profile page also allows them to change their profile picture (using Amazon Web Services and Paperclip), as well as see their total activity stats.
 
-![Screenshot of User Profile Page](app/assets/images/readme_shots/user_profile)
-
-![Screenshot of User Profile Page](assets/user_profile)
+![Screenshot of User Profile Page](/app/assets/images/readme_shots/user_prof.png)
 
 
 ## Future Directions for the Project

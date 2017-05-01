@@ -31,7 +31,7 @@ class PhotoHighlights extends React.Component {
           value={ "img1" }
           onMouseEnter={ this.switchHover }
           onMouseLeave={ this.resetHover }
-          src={ window.images.oysters1 } />
+          src={ window.images.cocktail } />
         <img className={ this.state.img2 }
           value={ "img2" }
           onMouseEnter={ this.switchHover }
