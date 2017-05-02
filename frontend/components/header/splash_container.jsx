@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Splash from './splash';
-import { logout } from '../../actions/session_actions';
+import { logout, login } from '../../actions/session_actions';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 import { fetchUser } from '../../actions/user_actions';
 
@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
+  login: user => dispatch(login(user)),
   fetchRestaurants: (query, location) => dispatch(fetchRestaurants(query, location)),
   fetchUser: userId => dispatch(fetchUser(userId))
 });

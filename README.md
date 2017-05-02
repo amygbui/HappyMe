@@ -4,7 +4,7 @@
 
 Every time I or my friends want to take advantage of the best happy hour deals nearby, we have to scour Yelp's reviews to 1) find places with happy hours, 2) find the actual happy hour specials or menu, and 3) determine the actual hours the happy hour deals run. Frustrated with Yelp's inadequacies, I decided to create a new app that quickly and easily finds the best happy hour deals nearby.
 
-HappyMe is a single-age web application inspired by Yelp to help you find the best Happy Hours near you. HappyMe is built using a PostgreSQL database, with Ruby on Rails on the back-end and React.js with a Redux architectural framework on the front-end.
+HappyMe is a single-page web application inspired by Yelp to help you find the best Happy Hours near you. HappyMe is built using a PostgreSQL database, with Ruby on Rails on the back-end and React.js with a Redux architectural framework on the front-end.
 
 
 ## Features
@@ -27,18 +27,20 @@ HappyMe is a single-age web application inspired by Yelp to help you find the be
 User authentication is handled on the back-end. Passwords are hashed using BCrypt, and the resulting hash is stored in the database (passwords are never saved to the database). Whenever a user logs in, the password provided is rehashed and compared to the original encrypted password in order to verify the user's credentials.
 
 ### Search/Filters
-Upon making a search, HappyMe first checks for if a location is specified. If a location is specified, it make an API request to Google Maps to get the geographic bounds (in latitude and longitude) of the location. If there is no location, the location bounds defaults to New York City.
+Upon making a search, HappyMe first checks for if a location is specified. If a location is specified, it make an API request to Google Maps to get the geographic bounds (in latitude and longitude) of the entered location, and subsequently updates the Redux global state with the new bounds. If there is no location, the location bounds defaults to New York City.
 
 HappyMe then narrow all of the restaurants in the database by matching the `lat` and `lng` to the bounds. From all of the restaurants within the bounds, it searches through the restaurants' `name`s and `description`s and tries to match restaurants to the search query.
 
 The search feature is implemented using PgSearch, a Ruby Gem that uses PostgreSQL's full text search. HappyMe uses PgSearch's single-model search scope strategy, and configures PostgreSQL's full text search to match partial words and stemming (variants of words, for example "jumping" and "jumped" will result in a match).
+
 ![Screenshot of User Profile Page](/app/assets/images/readme_shots/r_index.png)
 
 ### Map
-After making a search, all locations matching the search query will be marked on a map. With every subsequent search, the old markers are removed and new ones are placed. The map then automatically resizes and rezooms to encompass the new result markers. This map functionality is implemented using the Google Maps API.
+After making a search, the Redux state is updated with a list of all the restaurants matching both the search query and location bounds. A location marker is then created and placed on the map as an overlay for every restaurant stored in the state. With every subsequent search, the old markers are removed and new ones are placed. The map then automatically resizes to encompass the new result markers by extending the map bounds every time a marker is place. When all of the markers are placed, the map is re-centered around all of the markers.
 
 ### Business page
 All restaurants are stored in one table in the database, which contains columns for `id`, `name`, full address (as `address`, `city`, `state`, `zip`), `phone_number`, `description` and geographic location (`lat` and `lng`). Every restaurant also has a profile image, which is uploaded to Amazon Web Services using Paperclip.
+
 ![Screenshot of User Profile Page](/app/assets/images/readme_shots/r_show.png)
 
 ### Reviews/Ratings

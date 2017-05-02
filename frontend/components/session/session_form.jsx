@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
     return(
       <div className="session">
         <div className="form">
-          Welcome to <strong>HappyMe</strong>
+          Welcome to HappyMe
           <form onSubmit={ this.handleSubmit }>
             { extraFields }
 

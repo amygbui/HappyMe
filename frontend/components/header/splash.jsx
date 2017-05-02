@@ -9,7 +9,14 @@ import NavLinks from './nav_links';
 
 class Splash extends React.Component {
   componentDidMount() {
-    this.props.fetchRestaurants("GetTheNewestPlaces", this.props.bounds)
+    this.props.fetchRestaurants("GetTheNewestPlaces", this.props.bounds);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    const demoUser = { username: "guest", password: "password" }
+    this.props.login(demoUser);
   }
 
   render() {
@@ -26,6 +33,7 @@ class Splash extends React.Component {
     } else {
       header = (
         <nav className="splash-session">
+          <Link onClick={ this.handleClick }>Guest Demo</Link>
           <Link to='login'>Log In</Link>
           <Link to='signup'>Sign Up</Link>
         </nav>

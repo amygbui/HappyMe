@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Greeting from './greeting';
-import { logout } from '../../actions/session_actions';
+import { login, logout } from '../../actions/session_actions';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 import { fetchUser } from '../../actions/user_actions';
 
@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    login: user => dispatch(login(user)),
     logout: () => dispatch(logout()),
     fetchRestaurants: (query, location) => dispatch(fetchRestaurants(query, location)),
     fetchUser: userId => dispatch(fetchUser(userId))
