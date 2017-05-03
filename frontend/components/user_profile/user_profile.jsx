@@ -80,11 +80,11 @@ class UserProfile extends React.Component {
               { changeProfilePic }
               <li>
                 <i className="fa fa-camera-retro" aria-hidden="true"></i>
-                <Link>Add Photos</Link>
+                Add Photos <span> (coming soon)</span>
               </li>
               <li>
                 <i className="fa fa-users" aria-hidden="true"></i>
-                <Link>Find Friends</Link>
+                Find Friends <span> (coming soon)</span>
               </li>
             </ul>
           </section>
