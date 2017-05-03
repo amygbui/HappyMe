@@ -63,7 +63,8 @@
 .splash nav .fa {
   background: transparent;
   color: white;
-  padding: 0 10px;
+  padding: 0;
+  padding-right: 10px;
 }
 
 .splash main nav ul {
@@ -73,6 +74,11 @@
 
 .splash main nav li {
   margin-right: 35px;
+  padding-bottom: 5px;
+}
+
+.splash main nav li:hover {
+  border-bottom: 2px solid #fff;
 }
 
 .splash-session {
