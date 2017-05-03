@@ -27,19 +27,19 @@ HappyMe is a single-page web application inspired by Yelp to help you find the b
 User authentication is handled on the back-end. Passwords are hashed using BCrypt, and the resulting hash is stored in the database (passwords are never saved to the database). Whenever a user logs in, the password provided is rehashed and compared to the original encrypted password in order to verify the user's credentials.
 
 ### Search/Filters
-Upon making a search, HappyMe first checks for if a location is specified. If a location is specified, it make an API request to Google Maps to get the geographic bounds (in latitude and longitude) of the entered location, and subsequently updates the Redux global state with the new bounds. If there is no location, the location bounds defaults to New York City.
+Upon making a search, HappyMe first checks for if a location is specified. If a location is specified, it makes an API request to Google Maps to get the geographic bounds (in latitude and longitude) of the entered location, and subsequently updates the Redux global state with the new bounds. If there is no location, the location bounds defaults to New York City.
 
-HappyMe then narrow all of the restaurants in the database by matching the `lat` and `lng` to the bounds. From all of the restaurants within the bounds, it searches through the restaurants' `name`s and `description`s and tries to match restaurants to the search query.
+HappyMe then narrows all of the restaurants in the database by matching the `lat` and `lng` to the bounds. From all of the restaurants within the bounds, it searches through the restaurants' `name`s and `description`s and tries to match restaurants to the search query.
 
 The search feature is implemented using PgSearch, a Ruby Gem that uses PostgreSQL's full text search. HappyMe uses PgSearch's single-model search scope strategy, and configures PostgreSQL's full text search to match partial words and stemming (variants of words, for example "jumping" and "jumped" will result in a match).
 
 ![Screenshot of User Profile Page](/app/assets/images/readme_shots/r_index.png)
 
 ### Map
-After making a search, the Redux state is updated with a list of all the restaurants matching both the search query and location bounds. A location marker is then created and placed on the map as an overlay for every restaurant stored in the state. With every subsequent search, the old markers are removed and new ones are placed. The map then automatically resizes to encompass the new result markers by extending the map bounds every time a marker is place. When all of the markers are placed, the map is re-centered around all of the markers.
+After making a search, the Redux state is updated with a list of all the restaurants matching both the search query and location bounds. A location marker is then created and placed on the map as an overlay for every restaurant stored in the state. With every subsequent search, the old markers are removed and new ones are placed. The map automatically resizes to encompass the new markers by extending the map bounds every time a marker is place. When all of the markers are placed, the map is re-centered around all of the markers.
 
 ### Business page
-All restaurants are stored in one table in the database, which contains columns for `id`, `name`, full address (as `address`, `city`, `state`, `zip`), `phone_number`, `description` and geographic location (`lat` and `lng`). Every restaurant also has a profile image, which is uploaded to Amazon Web Services using Paperclip.
+All restaurants are stored in one table in the database, which contains columns for `id`, `name`, full address (as `address`, `city`, `state`, `zip`), `phone_number`, `description` and geographic location (`lat` and `lng`). Every restaurant also has a profile image, which is uploaded to Amazon Web Services S3 using Paperclip.
 
 ![Screenshot of User Profile Page](/app/assets/images/readme_shots/r_show.png)
 
@@ -53,7 +53,7 @@ Every time a user creates or updates a review, the restaurant's overall rating i
 ### User Profile Page
 The user's profile page aggregates all of the reviews that user has ever made of happy hour locations. This consolidation of data allows users to quickly find past locations they've patronized.
 
-The user's profile page also allows them to change their profile picture (using Amazon Web Services and Paperclip), as well as see their total activity stats.
+The user's profile page also allows them to change their profile picture (using Amazon Web Services and Paperclip), as well as see their overall total activity stats.
 
 ![Screenshot of User Profile Page](/app/assets/images/readme_shots/user_prof.png)
 
@@ -65,7 +65,7 @@ In addition to the features already implemented, I plan to continue adding featu
 Ever find a ridiculously amazing place you want to try on Yelp, and when you're just about to tell everyone where to go, you realize it's closed because Yelp's search feature doesn't default to open now? HappyMe will default the "Open Now" search filter to make sure that every time you search, you only get places that are open and ready for your business!
 
 ### Bookmarking
-Sometimes, you find several amazing happy hour deals that cater to your interests, but you aren't able to hit up all these places before the end of happy hour. HappyMe will implement a bookmarking feature so you can keep track of every great happy hour place you find!
+Sometimes, you find several amazing happy hour deals that cater to your interests, but you aren't able to visit all of these places before the end of happy hour. HappyMe will implement a bookmarking feature so you can keep track of every great happy hour deal you find!
 
 ### Friending/MeetUp
-Once you finally find a place to meet up for Happy Hour, you need to send your friends or coworkers the location. Maybe you can't decide on the location and end up sending them a barrage of options, eventually confusing everyone on the actual place you all are supposed to meet up. Enter MeetUp: create a MeetUp, set the time and location, and add your friends to it. It doesn't matter how indecisive you are now! With MeetUp, the location and time will be centrally displayed so there's no confusion on the night's plans!
+Once you finally find a place to meet up for Happy Hour, you need to send your friends or coworkers the location. Maybe you can't decide on the location and end up sending them a barrage of options, eventually confusing everyone on the actual place you all are supposed to meet up. Enter MeetUp: create a MeetUp, set the time and location, and add your friends to it. With MeetUp, the location and time will be centrally displayed so there's no confusion on the night's plans!

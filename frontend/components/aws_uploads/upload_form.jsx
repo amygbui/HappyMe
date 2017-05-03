@@ -27,6 +27,8 @@ class AvatarUploadForm extends React.Component {
   }
 
   uploadPic(e) {
+    e.preventDefault();
+    
     const formData = new FormData();
     let id = this.props.params.userId;
     let update = updateUser;
