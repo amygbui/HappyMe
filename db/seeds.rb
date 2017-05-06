@@ -256,6 +256,61 @@ r17 = Restaurant.create(
   image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17881954_1828739227447128_6825094377879109632_n.jpg"
 )
 
+r18 = Restaurant.create(
+  name: "The Misfit Restaurant + Bar",
+  address: "225 Santa Monica Blvd",
+  city: "Santa Monica",
+  state: "CA",
+  zip: 90401,
+  phone_number: "(310) 656-9800",
+  lat: 34.015655,
+  lng: -118.495711,
+  # Hours: "Every day 5-7pm, but Sundays - all night!"
+  description: "Delicious craft cocktails for $4-6, all day until 7pm!",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/18252333_1836586683259401_2484519932264448000_n.jpg"
+)
+
+r19 = Restaurant.create(
+  name: "Fly ‘N’ Fish Oyster Bar & Grill",
+  address: "2304 W Oceanfront",
+  city: "Newport Beach",
+  state: "CA",
+  zip: 92663,
+  phone_number: "(949) 673-8400",
+  lat: 33.610143,
+  lng: -117.930077,
+  # Hours: "Every day 5-7pm, but Sundays - all night!"
+  description: "Seafood, oysters, drinks, we've got it all!",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17493621_382213762161716_3967091863445307392_n.jpg"
+)
+
+r20 = Restaurant.create(
+  name: "List",
+  address: "2226 1st Ave",
+  city: "Seattle",
+  state: "WA",
+  zip: 98121,
+  phone_number: "(206) 441-1000",
+  lat: 47.613514,
+  lng: -122.345987,
+  # Hours: "Every day 5-7pm, but Sundays - all night!"
+  description: "50% off everything!!",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/15251657_2217210175170857_4408419883621023744_n.jpg"
+)
+
+r21 = Restaurant.create(
+  name: "SafeHouse Chicago",
+  address: "60 E Ontario St",
+  city: "Chicago",
+  state: "IL",
+  zip: 60611,
+  phone_number: "(312) 313-1007",
+  lat: 41.893321,
+  lng: -87.626084,
+  # Hours: "Every day 5-7pm, but Sundays - all night!"
+  description: "$5 beers and well drinks, $6 wines",
+  image: "https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17596145_354090554991110_8132904154210238464_n.jpg"
+)
 
 review1 = Review.create(
   rating: 3,
@@ -580,7 +635,125 @@ review46 = Review.create(
 
 review47 = Review.create(
   rating: 5,
-  review: "The most amazing and yummy oysters ever! Plump, juicy, and absolutely devine!",
+  review: "Who can say no to PUNCH BOWLS?!",
   restaurant_id: r17.id,
   author_id: v.id
+)
+
+review48 = Review.create(
+  rating: 4,
+  review: "I can practically swim in these punch bowls! They're that big!",
+  restaurant_id: r17.id,
+  author_id: g.id
+)
+
+review49 = Review.create(
+rating: 5,
+review: "The most amazing and yummy oysters ever! Plump, juicy, and absolutely devine!",
+restaurant_id: r10.id,
+author_id: g.id
+)
+
+review50 = Review.create(
+  rating: 4,
+  review: "I can practically swim in these punch bowls! They're that big!",
+  restaurant_id: r17.id,
+  author_id: g.id
+)
+
+review51 = Review.create(
+  rating: 4,
+  review: "Yum yum yum!",
+  restaurant_id: r14.id,
+  author_id: g.id
+)
+
+review51 = Review.create(
+  rating: 4,
+  review: "Can't complain when these are 50 cents a pop!",
+  restaurant_id: r6.id,
+  author_id: g.id
+)
+
+review52 = Review.create(
+  rating: 4,
+  review: "Drinks on the beach? Nothing beats this!",
+  restaurant_id: r18.id,
+  author_id: g.id
+)
+
+review53 = Review.create(
+  rating: 5,
+  review: "All day happy hour? Count me in!",
+  restaurant_id: r18.id,
+  author_id: a.id
+)
+
+review54 = Review.create(
+  rating: 5,
+  review: "Best happy hour in town!",
+  restaurant_id: r18.id,
+  author_id: s.id
+)
+
+review55 = Review.create(
+  rating: 5,
+  review: "Fresh seafood on the beach -- AMAZING!",
+  restaurant_id: r19.id,
+  author_id: g.id
+)
+
+review56 = Review.create(
+  rating: 5,
+  review: "Some of the best oysters I've tasted!",
+  restaurant_id: r19.id,
+  author_id: j.id
+)
+review57 = Review.create(
+  rating: 4,
+  review: "I love food, but I love food more when it's happy hour priced!",
+  restaurant_id: r19.id,
+  author_id: s.id
+)
+
+review58 = Review.create(
+  rating: 4,
+  review: "Really cool place!",
+  restaurant_id: r20.id,
+  author_id: g.id
+)
+
+review59 = Review.create(
+  rating: 3,
+  review: "I wanted to love this place, but it's so overrated :(",
+  restaurant_id: r20.id,
+  author_id: s.id
+)
+
+review59 = Review.create(
+  rating: 3,
+  review: "I wanted to love this place, but it's so overrated :(",
+  restaurant_id: r20.id,
+  author_id: j.id
+)
+
+review60 = Review.create(
+  rating: 5,
+  review: "James Bond's happy hour spot of choice",
+  restaurant_id: r21.id,
+  author_id: g.id
+)
+
+review61 = Review.create(
+  rating: 4,
+  review: "I've always wanted to be a spy! Such a cool concept",
+  restaurant_id: r21.id,
+  author_id: a.id
+)
+
+review62 = Review.create(
+  rating: 4,
+  review: "The drinks were terribly but who cares when you're James Bond!",
+  restaurant_id: r21.id,
+  author_id: a.id
 )
