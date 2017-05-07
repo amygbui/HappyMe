@@ -32,14 +32,7 @@ class UserProfile extends React.Component {
 
     let addFriend;
     let changeProfilePic;
-    if (!this.props.currentUser || this.props.currentUser.id !== parseInt(this.props.params.userId)) {
-      addFriend = (
-        <li>
-          <i className="fa fa-user-plus" aria-hidden="true"></i>
-          <Link>Add Friend</Link>
-        </li>
-      )
-    } else {
+    if (this.props.currentUser && this.props.currentUser.id === parseInt(this.props.params.userId)) {
       changeProfilePic = (
         <li>
           <i className="fa fa-picture-o" aria-hidden="true"></i>
@@ -48,6 +41,13 @@ class UserProfile extends React.Component {
           </Link>
         </li>
       )
+    } else {
+      // addFriend = (
+      //   <li>
+      //     <i className="fa fa-user-plus" aria-hidden="true"></i>
+      //     <Link>Add Friend</Link>
+      //   </li>
+      // )
     }
 
     return(
@@ -78,14 +78,6 @@ class UserProfile extends React.Component {
             <ul className="improve-stats">
               { addFriend }
               { changeProfilePic }
-              <li>
-                <i className="fa fa-camera-retro" aria-hidden="true"></i>
-                Add Photos <span> (coming soon)</span>
-              </li>
-              <li>
-                <i className="fa fa-users" aria-hidden="true"></i>
-                Find Friends <span> (coming soon)</span>
-              </li>
             </ul>
           </section>
 
@@ -100,5 +92,14 @@ class UserProfile extends React.Component {
     )
   }
 }
+
+// <li>
+//   <i className="fa fa-camera-retro" aria-hidden="true"></i>
+//   Add Photos <span> (coming soon)</span>
+// </li>
+// <li>
+//   <i className="fa fa-users" aria-hidden="true"></i>
+//   Find Friends <span> (coming soon)</span>
+// </li>
 
 export default UserProfile;
