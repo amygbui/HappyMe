@@ -2,10 +2,6 @@ class Restaurant < ApplicationRecord
   include PgSearch
 
   pg_search_scope :search_restaurants, against: [:name, :description],
-                  # associated_against: {
-                  #   reviews: [:review]
-                  #   hh_types: [:type]
-                  # },
                   using: { tsearch: { prefix: true,
                                       any_word: true,
                                       dictionary: "english" } }
@@ -13,7 +9,13 @@ class Restaurant < ApplicationRecord
   validates :name, :address, :city, :state, :zip, :lat, :lng,
             :phone_number, :description, presence: true
 
-  has_attached_file :image, default_url: "restaurant_avatar.ico"
+  has_attached_file :image, default_url: "restaurant_avatar.ico",
+    styles: {
+      thumb: "37x37#",
+      small: "60x60>",
+      medium: "250x250"
+    }
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :reviews,

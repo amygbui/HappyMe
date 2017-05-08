@@ -23,7 +23,7 @@ class UserProfile extends React.Component {
       return(<div className="loader">Loading...</div>)
     }
 
-    const { id, name, image_url, reviews } = this.props.user;
+    const { id, name, image_url_big, reviews } = this.props.user;
     const totalReviews = Object.keys(reviews).length;
 
     const formattedReviews = reviews.map(review => {
@@ -55,21 +55,13 @@ class UserProfile extends React.Component {
         <main className="userHeader">
           <section className="userStats">
             <article>
-              <img src={ image_url } />
+              <img src={ image_url_big } />
               <div>
                 <h2>{ name }</h2>
                 <ul className="current-stats">
                   <li>
                     <i className="fa fa-newspaper-o" aria-hidden="true"></i>
                     { totalReviews } reviews
-                  </li>
-                  <li>
-                    <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-                    0 Friends
-                  </li>
-                  <li>
-                    <i className="fa fa-camera" aria-hidden="true"></i>
-                    0 Photos
                   </li>
                 </ul>
               </div>
@@ -92,6 +84,15 @@ class UserProfile extends React.Component {
     )
   }
 }
+
+// <li>
+//   <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+//   0 Friends
+// </li>
+// <li>
+//   <i className="fa fa-camera" aria-hidden="true"></i>
+//   0 Photos
+// </li>
 
 // <li>
 //   <i className="fa fa-camera-retro" aria-hidden="true"></i>
