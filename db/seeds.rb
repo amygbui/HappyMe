@@ -637,21 +637,21 @@ review47 = Review.create(
   rating: 5,
   review: "Who can say no to PUNCH BOWLS?!",
   restaurant_id: r17.id,
-  author_id: v.id
+  author_id: g.id
 )
 
 review48 = Review.create(
   rating: 4,
   review: "I can practically swim in these punch bowls! They're that big!",
   restaurant_id: r17.id,
-  author_id: g.id
+  author_id: a.id
 )
 
 review49 = Review.create(
 rating: 5,
 review: "The most amazing and yummy oysters ever! Plump, juicy, and absolutely devine!",
 restaurant_id: r10.id,
-author_id: g.id
+author_id: s.id
 )
 
 review50 = Review.create(

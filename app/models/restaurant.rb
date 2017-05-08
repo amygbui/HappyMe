@@ -11,9 +11,8 @@ class Restaurant < ApplicationRecord
 
   has_attached_file :image, default_url: "restaurant_avatar.ico",
     styles: {
-      thumb: "37x37#",
-      small: "60x60>",
-      medium: "250x250"
+      small: "300x300>",
+      medium: "600x600"
     }
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

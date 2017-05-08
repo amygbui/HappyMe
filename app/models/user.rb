@@ -7,8 +7,7 @@ class User < ApplicationRecord
 
   has_attached_file :avatar, default_url: "default_avatar.jpg",
     styles: {
-      thumb: "60x60>",
-      medium: "200x200"
+      medium: "600x600"
     }
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
