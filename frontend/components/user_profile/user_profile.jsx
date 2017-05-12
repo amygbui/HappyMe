@@ -5,15 +5,13 @@ import UserReview from './user_review';
 
 class UserProfile extends React.Component {
   componentDidMount() {
-    const userIds = Object.keys(this.props.users);
-    if (!userIds.includes(this.props.params.userId)) {
+    if (!this.props.users[this.props.params.userId]) {
       this.props.fetchUser(this.props.params.userId)
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    const userIds = Object.keys(this.props.users);
-    if (!userIds.includes(nextProps.params.userId)) {
+    if (!this.props.users[nextProps.params.userId]) {
       this.props.fetchUser(nextProps.params.userId)
     };
   }
