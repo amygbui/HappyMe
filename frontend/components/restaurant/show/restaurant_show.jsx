@@ -8,14 +8,22 @@ import PhotoHighlights from './photo_highlights';
 
 class RestaurantShow extends React.Component {
   componentDidMount() {
-    this.props.fetchReviews(this.props.params.restaurantId);
-    this.props.fetchRestaurant(this.props.params.restaurantId);
+    if (!this.props.restaurant) {
+      this.props.fetchRestaurant(this.props.params.restaurantId);
+    }
+
+    if (!this.props.reviews[this.props.params.restaurantId]){
+      this.props.fetchReviews(this.props.params.restaurantId);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.params.restaurantId !== nextProps.params.restaurantId) {
-      this.props.fetchReviews(nextProps.params.restaurantId);
-      this.props.fetchRestaurant(nextProps.params.restaurantId);
+    const curRest = this.props.params.restaurantId;
+    const nextRest = nextProps.params.restaurantId;
+
+    if (!this.props.restaurants[nextRest] && curRest !== nextRest) {
+      this.props.fetchRestaurant(nextRest);
+      this.props.fetchReviews(nextRest);
     }
   }
 

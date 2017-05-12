@@ -2,7 +2,6 @@ import React from 'react';
 
 import RestaurantPreview from './restaurant';
 import RestaurantMapContainer from '../../map/restaurant_map_container';
-import RestaurantMap from '../../map/restaurant_map';
 
 class RestaurantIndex extends React.Component {
   render() {
