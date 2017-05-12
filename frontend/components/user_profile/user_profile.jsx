@@ -27,7 +27,7 @@ class UserProfile extends React.Component {
     const totalReviews = Object.keys(reviews).length;
 
     const formattedReviews = reviews.map(review => {
-      return(<UserReview review={ review } />);
+      return(<UserReview key={ review.id } review={ review } />);
     });
 
     let addFriend;
