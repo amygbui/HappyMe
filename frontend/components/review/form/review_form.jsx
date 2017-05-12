@@ -43,14 +43,6 @@ class ReviewForm extends React.Component {
     }
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.restaurant !== nextProps.restaurant && nextProps.restaurant) {
-  //     this.props.fetchRestaurant(this.props.params.restaurantId);
-  //     this.props.fetchReviews(this.props.params.restaurantId);
-  //   }
-  // check the conditional. currently does infinite fetching.
-  // }
-
   submitForm(e) {
     e.preventDefault();
     this.props.processForm(this.state)

@@ -23,8 +23,6 @@ class Dropdown extends React.Component {
     this.setState({ dropdown: "dropdown-details hidden" })
   }
 
-// <i class="fa fa-caret-down" aria-hidden="true"></i> // user for dropdown
-
   render() {
     if (this.props.currentUser) {
       const currentUser = this.props.currentUser;

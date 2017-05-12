@@ -39,13 +39,6 @@ class UserProfile extends React.Component {
           </Link>
         </li>
       )
-    } else {
-      // addFriend = (
-      //   <li>
-      //     <i className="fa fa-user-plus" aria-hidden="true"></i>
-      //     <Link>Add Friend</Link>
-      //   </li>
-      // )
     }
 
     return(
@@ -82,23 +75,5 @@ class UserProfile extends React.Component {
     )
   }
 }
-
-// <li>
-//   <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-//   0 Friends
-// </li>
-// <li>
-//   <i className="fa fa-camera" aria-hidden="true"></i>
-//   0 Photos
-// </li>
-
-// <li>
-//   <i className="fa fa-camera-retro" aria-hidden="true"></i>
-//   Add Photos <span> (coming soon)</span>
-// </li>
-// <li>
-//   <i className="fa fa-users" aria-hidden="true"></i>
-//   Find Friends <span> (coming soon)</span>
-// </li>
 
 export default UserProfile;
