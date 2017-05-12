@@ -7,10 +7,6 @@ class ReviewIndex extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchReviews(this.props.restaurantId);
-  // }
-
   render () {
     const reviews = Object.values(this.props.reviews).map(review => {
       return(
