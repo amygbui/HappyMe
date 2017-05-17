@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     restaurant: state.restaurants[ownProps.params.restaurantId],
     reviews: state.reviews,
+    errors: state.reviews.errors,
     formType
   };
 };

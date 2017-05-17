@@ -11,7 +11,7 @@ class ReviewForm extends React.Component {
 
     let id;
     let review = "";
-    let rating = 0;
+    let rating = null;
     const editReview = props.reviews[props.params.reviewId]
 
     if (editReview) {
@@ -66,6 +66,14 @@ class ReviewForm extends React.Component {
         city, state, zip
       } = restaurant;
 
+      const all_errors = this.props.errors
+      const errors = Object.keys(this.props.errors).map(id => {
+        if (id === "base") {
+          return (<li key={ id }>{ all_errors[id] }</li>)
+        }
+        return (<li key={ id }>{id} {all_errors[id]}</li>)
+      });
+
       return(
         <div className="review-form">
           <section className="form-input">
@@ -108,6 +116,12 @@ class ReviewForm extends React.Component {
                   Submit
                 </button>
               </Link>
+
+              <div className="errors">
+                <ul>
+                  { errors }
+                </ul>
+              </div>
             </form>
 
           </section>
