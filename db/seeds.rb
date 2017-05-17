@@ -724,8 +724,8 @@ review58 = Review.create(
 )
 
 review59 = Review.create(
-  rating: 3,
-  review: "I wanted to love this place, but it's so overrated :(",
+  rating: 4,
+  review: "Great ambiance",
   restaurant_id: r20.id,
   author_id: s.id
 )
@@ -755,5 +755,5 @@ review62 = Review.create(
   rating: 4,
   review: "The drinks were terribly but who cares when you're James Bond!",
   restaurant_id: r21.id,
-  author_id: a.id
+  author_id: v.id
 )

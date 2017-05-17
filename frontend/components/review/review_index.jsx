@@ -9,12 +9,14 @@ class ReviewIndex extends React.Component {
 
   render () {
     const reviews = Object.values(this.props.reviews).map(review => {
-      return(
-        <Review key={ review.id }
-                review={ review }
-                currentUser={ this.props.currentUser }
-                fetchReview={ this.props.fetchReview } />
-      )
+      if (review.restaurant_id === this.props.restaurantId) {
+        return(
+          <Review key={ review.id }
+            review={ review }
+            currentUser={ this.props.currentUser }
+            fetchReview={ this.props.fetchReview } />
+        )
+      }
     });
 
     return (
