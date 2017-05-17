@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_attached_file :avatar, default_url: "default_avatar.jpg",
     styles: {
+      small: "150x150>",
       medium: "600x600"
     }
 
