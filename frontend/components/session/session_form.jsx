@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   componentWillUnmount() {
     this.setState = { name: "", username: "", password: "" };
     this.props.clearErrors();
