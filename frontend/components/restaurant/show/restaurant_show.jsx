@@ -8,9 +8,7 @@ import PhotoHighlights from './photo_highlights';
 
 class RestaurantShow extends React.Component {
   componentDidMount() {
-    if (!this.props.restaurant) {
-      this.props.fetchRestaurant(this.props.params.restaurantId);
-    }
+    this.props.fetchRestaurant(this.props.params.restaurantId);
 
     if (!this.props.reviews[this.props.params.restaurantId]){
       this.props.fetchReviews(this.props.params.restaurantId);
