@@ -41,7 +41,7 @@ class PhotoHighlights extends React.Component {
           value={ "img3" }
           onMouseEnter={ this.switchHover }
           onMouseLeave={ this.resetHover }
-          src="https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e35/17932707_1751729501805103_386157752214355968_n.jpg" />
+          src={ window.images.oyster } />
       </section>
     )
   }
